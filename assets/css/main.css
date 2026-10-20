@@ -5074,6 +5074,10 @@ html:not(.dark) .vk-contact-hero::before {
 /* ============================================================
    AUTHENTICATION (login.html) STYLES
    ============================================================ */
+body.vk-auth-body {
+  padding-top: 0;
+}
+
 .vk-auth-layout {
   min-height: 100dvh;
   display: flex;
