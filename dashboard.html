@@ -994,17 +994,17 @@
 
         historyTableBody.innerHTML = hist.map(h => `
           <tr>
-            <td><strong>${h.chamber}</strong></td>
-            <td><span class="vk-demo-badge">${h.diff}</span></td>
-            <td>
+            <td data-label="Chamber Name"><strong>${h.chamber}</strong></td>
+            <td data-label="Difficulty"><span class="vk-demo-badge">${h.diff}</span></td>
+            <td data-label="Result">
               <span style="color: ${h.result === 'Escaped' ? 'var(--vk-accent-emerald)' : '#ef4444'}; font-weight: 800;">
                 ${h.result}
               </span>
             </td>
-            <td><code>${h.time}</code></td>
-            <td>${h.hints}</td>
-            <td>${h.date}</td>
-            <td>
+            <td data-label="Escape Time"><code>${h.time}</code></td>
+            <td data-label="Hints Used">${h.hints}</td>
+            <td data-label="Date">${h.date}</td>
+            <td data-label="Status">
               <span class="vk-upcoming-badge" style="background: ${h.status === 'VICTORY' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)'}; color: ${h.status === 'VICTORY' ? 'var(--vk-accent-emerald)' : '#ef4444'};">
                 ${h.status}
               </span>

@@ -5346,6 +5346,7 @@ body.vk-dash-body {
 /* DASHBOARD DEDICATED TAB VIEWS (SPA VIEW SWITCHER) */
 .vk-dash-section {
   display: none !important;
+  min-width: 0;
   animation: vkTabFadeIn 0.3s ease;
 }
 
@@ -5908,7 +5909,9 @@ html.dark .vk-upcoming-badge {
 /* HISTORY TABLE HIGH CONTRAST */
 .vk-table-responsive {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   border-radius: var(--vk-radius-lg);
   border: 1.5px solid var(--vk-border);
   background: var(--vk-surface);
@@ -5916,6 +5919,7 @@ html.dark .vk-upcoming-badge {
 
 .vk-dash-table {
   width: 100%;
+  min-width: 760px;
   border-collapse: collapse;
   font-size: 13.5px;
   text-align: left;
@@ -5968,6 +5972,10 @@ html.dark .vk-dash-table td code {
   background: rgba(255,255,255,0.06);
 }
 
+html.dark .vk-dash-body input[type="date"] {
+  color-scheme: dark;
+}
+
 /* EMPTY STATES */
 .vk-empty-box {
   padding: 48px 24px;
@@ -5994,7 +6002,7 @@ html.dark .vk-dash-table td code {
 }
 
 /* DASHBOARD RESPONSIVENESS */
-@media (max-width: 980px) {
+@media (max-width: 1180px) {
   .vk-dash-shell {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -6052,9 +6060,75 @@ html.dark .vk-dash-table td code {
   }
 }
 
-@media (min-width: 981px) {
+@media (min-width: 1181px) {
   .vk-dash-toggle-btn {
     display: none !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1180px) {
+  .vk-dash-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .vk-dash-rooms-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .vk-dash-main {
+    min-width: 0;
+  }
+  .vk-table-responsive {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+  .vk-dash-table,
+  .vk-dash-table tbody {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+  .vk-dash-table thead {
+    display: none;
+  }
+  .vk-dash-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+  .vk-dash-table tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--vk-border);
+    border-radius: var(--vk-radius-md);
+    background: var(--vk-surface);
+  }
+  .vk-dash-table td {
+    display: grid;
+    grid-template-columns: minmax(88px, 0.8fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    white-space: normal;
+    text-align: end;
+  }
+  .vk-dash-table td::before {
+    content: attr(data-label);
+    color: var(--vk-text-muted);
+    font-size: 11px;
+    font-weight: 800;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .vk-dash-table td .vk-upcoming-badge {
+    justify-self: end;
+    max-width: none;
+    white-space: nowrap;
+    overflow-wrap: normal;
   }
 }
 
