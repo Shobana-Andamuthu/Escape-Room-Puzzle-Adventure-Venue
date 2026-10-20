@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Vault & Key Mission Control — Real-time tactical escape room missions. Deploy your squad into high-stakes physical chambers with automated ciphers, sensory puzzles, and live telemetry."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Vault & Key — Mission Control & Expressive Quests | Home 2</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       00. GLOBAL HEADER & FLOATING NAVIGATION
+       ============================================================ -->
+  <header class="vk-header">
+    <div class="vk-container">
+      <div class="vk-header-inner">
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+
+        <!-- DESKTOP NAVBAR -->
+        <nav class="vk-nav" aria-label="Main navigation">
+          <!-- HOME DROPDOWN -->
+          <div class="vk-nav-dropdown">
+            <button
+              type="button"
+              class="vk-nav-link vk-nav-dropdown-trigger is-active"
+              data-home-dropdown
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>Home</span>
+              <span class="material-symbols-rounded" style="font-size:18px;"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-nav-dropdown-menu" aria-label="Home variations">
+              <a href="index.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> meeting_room </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 1 — Signature</strong>
+                  <small>Classic Vault Experience</small>
+                </span>
+              </a>
+              <a href="home-2.html" class="vk-nav-dropdown-item is-current">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> radar </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 2 — Mission Control</strong>
+                  <small>Expressive Quest Operations</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a href="rooms.html" class="vk-nav-link">Rooms & Quests</a>
+          <a href="pricing.html" class="vk-nav-link">Pricing & Groups</a>
+          <a href="about.html" class="vk-nav-link">About</a>
+          <a href="contact.html" class="vk-nav-link">Contact</a>
+          <a href="dashboard.html" class="vk-nav-link">Player Dashboard</a>
+        </nav>
+
+        <!-- HEADER ACTIONS & TOGGLES -->
+        <div class="vk-header-actions">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <a href="login.html" class="vk-nav-link" style="font-weight:700; border: 1px solid var(--vk-border);">Login</a>
+          <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+            Launch Quest
+          </button>
+
+          <!-- MOBILE HAMBURGER BUTTON -->
+          <button
+            type="button"
+            class="vk-icon-button vk-menu-toggle"
+            data-menu-toggle
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-rounded"> menu </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE SLIDE-DOWN DRAWER -->
+      <div class="vk-mobile-menu" data-mobile-menu>
+        <div class="vk-mobile-menu-inner">
+          <div class="vk-mobile-toggles">
+            <button type="button" data-theme-toggle aria-label="Toggle theme">
+              <span class="material-symbols-rounded"> light_mode </span>
+            </button>
+            <button type="button" data-rtl-toggle aria-label="Toggle RTL">
+              <i class="fa-solid fa-right-left"></i>
+            </button>
+          </div>
+
+          <div class="vk-mobile-home">
+            <button
+              type="button"
+              class="vk-mobile-home-trigger"
+              data-mobile-home-toggle
+              aria-expanded="false"
+            >
+              <span>Home Options</span>
+              <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-mobile-home-links">
+              <a href="index.html">Home 1 — Signature</a>
+              <a href="home-2.html" class="is-current">Home 2 — Mission Control</a>
+            </div>
+          </div>
+
+          <a href="rooms.html">Rooms & Quests</a>
+          <a href="pricing.html">Pricing & Groups</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="dashboard.html">Player Dashboard</a>
+
+          <div class="vk-mobile-menu-actions">
+            <a href="login.html" class="vk-button vk-button-outline">Login</a>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Launch Quest
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PAGE MAIN CONTENT
+       ============================================================ -->
+  <main>
+    <!-- ======================================================
+         SECTION 1: FULL-SCREEN TACTICAL COMMAND DECK HERO
+         ====================================================== -->
+    <section class="vk-hero2" id="hero2Section">
+      <div class="vk-container">
+        <div class="vk-h2-hero-content" data-reveal>
+          <!-- TACTICAL HUD STATUS RIBBON -->
+          <div class="vk-h2-hud-ribbon">
+            <span class="vk-h2-hud-dot"></span>
+            <span class="vk-h2-hud-tag">BLACK-SITE TELEMETRY ACTIVE</span>
+            <span class="vk-h2-hud-divider"></span>
+            <span class="vk-h2-hud-ticker" id="h2HeroClock">OP CLOCK: 59:42:18</span>
+          </div>
+
+          <h1 class="vk-h2-hero-title">
+            Physical Chambers.
+            <br />
+            <span class="highlight-gold">High-Tech Adrenaline.</span>
+            <br />
+            Crack The Unbreakable.
+          </h1>
+
+          <p class="vk-h2-hero-desc">
+            Deploy your strike squad into hermetically sealed, multi-room tactical operations. Automated vault airlocks, infrared laser defense grids, and authentic electronic ciphers engineered for peak adrenaline.
+          </p>
+
+          <div class="vk-h2-hero-actions">
+            <button type="button" class="vk-h2-btn-gold" data-modal-open="bookingModalOverlay">
+              <span class="material-symbols-rounded"> rocket_launch </span>
+              Initialize Operation
+            </button>
+            <a href="#cipherDecoder" class="vk-h2-btn-outline-amber">
+              <span class="material-symbols-rounded"> dialpad </span>
+              Test Cipher Decoder
+            </a>
+          </div>
+
+          <!-- BOTTOM TELEMETRY STRIP -->
+          <div class="vk-h2-telemetry-strip">
+            <div class="vk-h2-telemetry-item">
+              <strong>4 Active</strong>
+              <span>Airlocks Armed</span>
+            </div>
+            <div class="vk-h2-telemetry-item">
+              <strong>84,200+</strong>
+              <span>Breaches Logged</span>
+            </div>
+            <div class="vk-h2-telemetry-item">
+              <strong style="color:var(--vk-accent-emerald);">18.4%</strong>
+              <span>Master Clear Rate</span>
+            </div>
+            <div class="vk-h2-telemetry-item">
+              <strong style="color:var(--vk-primary);">7.1 Sub</strong>
+              <span>Spatial Haptics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 2: TACTICAL CHAMBER COMMAND TERMINAL (CENTERED & SMOOTH)
+         ====================================================== -->
+    <section class="vk-section" id="tacticalTerminal">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Chamber Dispatch Matrix</div>
+          <h2 class="vk-section-title">Tactical Chamber Command Terminal</h2>
+          <p class="vk-section-desc">
+            Select a classified black-site simulation below to stream live telemetry, chamber schematics, and operative difficulty ratings.
+          </p>
+        </div>
+
+        <div class="vk-h2-terminal-container" data-reveal>
+          <!-- CENTERED MISSION SELECTOR FILTRATION BAR -->
+          <div class="vk-h2-terminal-filterbar" role="tablist" aria-label="Select Target Operation">
+            <!-- TAB 1: CYBER HEIST -->
+            <button
+              type="button"
+              class="vk-h2-filter-pill active"
+              data-chamber-tab="heist"
+              role="tab"
+              aria-selected="true"
+            >
+              <span class="vk-h2-filter-idx">[01]</span>
+              <span class="vk-h2-filter-label">
+                <strong>Neon Mainframe Heist</strong>
+                <span class="vk-h2-filter-badge">Armed</span>
+              </span>
+            </button>
+
+            <!-- TAB 2: SUBMARINE ABYSS -->
+            <button
+              type="button"
+              class="vk-h2-filter-pill"
+              data-chamber-tab="submarine"
+              role="tab"
+              aria-selected="false"
+            >
+              <span class="vk-h2-filter-idx">[02]</span>
+              <span class="vk-h2-filter-label">
+                <strong>Submarine Abyss 404</strong>
+                <span class="vk-h2-filter-badge">Sealed</span>
+              </span>
+            </button>
+
+            <!-- TAB 3: BIOHAZARD CONTAINMENT -->
+            <button
+              type="button"
+              class="vk-h2-filter-pill"
+              data-chamber-tab="biohazard"
+              role="tab"
+              aria-selected="false"
+            >
+              <span class="vk-h2-filter-idx">[03]</span>
+              <span class="vk-h2-filter-label">
+                <strong>Alien Biohazard Lab</strong>
+                <span class="vk-h2-filter-badge" style="background: rgba(239, 68, 68, 0.2); color: #f87171;">Critical</span>
+              </span>
+            </button>
+
+            <!-- TAB 4: QUANTUM COLLIDER -->
+            <button
+              type="button"
+              class="vk-h2-filter-pill"
+              data-chamber-tab="quantum"
+              role="tab"
+              aria-selected="false"
+            >
+              <span class="vk-h2-filter-idx">[04]</span>
+              <span class="vk-h2-filter-label">
+                <strong>Quantum Collider Hazard</strong>
+                <span class="vk-h2-filter-badge">Unstable</span>
+              </span>
+            </button>
+          </div>
+
+          <!-- CENTERED SMOOTH SHOWCASE CARD -->
+          <div class="vk-h2-showcase-card" id="h2ChamberScreen">
+            <div class="vk-h2-showcase-media">
+              <img
+                id="h2ChamberImg"
+                src="assets/images/quest_cyber_heist.jpg"
+                alt="Neon Mainframe Heist Chamber Preview"
+              />
+              <div class="vk-h2-showcase-overlay">
+                <div class="vk-h2-showcase-top">
+                  <span class="vk-h2-pill-code" id="h2ChamberCode">CHAMBER #NX-701</span>
+                  <span class="vk-h2-pill-tier" id="h2ChamberTier">Tier 4 · High Security</span>
+                </div>
+                <div class="vk-h2-showcase-tags" id="h2ChamberTags">
+                  <span class="vk-h2-showcase-tag"><i class="fa-solid fa-bolt"></i> Laser Tripwires</span>
+                  <span class="vk-h2-showcase-tag"><i class="fa-solid fa-fingerprint"></i> Biometric Locks</span>
+                  <span class="vk-h2-showcase-tag"><i class="fa-solid fa-shield-halved"></i> 12-Ton Vault</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="vk-h2-showcase-body">
+              <h3 class="vk-h2-showcase-title" id="h2ChamberTitle">Neon Mainframe Heist</h3>
+
+              <div class="vk-h2-showcase-stats">
+                <span class="vk-h2-stat-pill">Clear Rate: <strong id="h2ChamberClear">24%</strong></span>
+                <span class="vk-h2-stat-pill">Time Limit: <strong id="h2ChamberTime">60 Mins</strong></span>
+                <span class="vk-h2-stat-pill">Squad: <strong id="h2ChamberSquad">3–8 Agents</strong></span>
+              </div>
+
+              <p class="vk-h2-showcase-desc" id="h2ChamberDesc">
+                Infiltrate the subterranean server vault of a rogue cyber syndicate. Disable volumetric infrared lasers, bypass thermal sensors, and crack the electromagnetic vault lock before the security reboot.
+              </p>
+
+              <div class="vk-h2-showcase-footer">
+                <div>
+                  <small style="color:var(--vk-text-muted); display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.06em;">Entry Specification</small>
+                  <strong style="color:var(--vk-primary); font-size:14px;" id="h2ChamberBrief">Full Multi-Room Physical Complex</strong>
+                </div>
+                <button
+                  type="button"
+                  class="vk-button vk-button-primary"
+                  data-modal-open="bookingModalOverlay"
+                  id="h2ChamberDeployBtn"
+                  style="border-radius: var(--vk-radius-pill); padding: 12px 28px;"
+                >
+                  Deploy Strike Team
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 3: PLAYABLE BIOMETRIC CIPHER DECODER CONSOLE
+         ====================================================== -->
+    <section class="vk-section" id="cipherDecoder" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Interactive Field Protocol</div>
+          <h2 class="vk-section-title">Playable Biometric Cipher Terminal</h2>
+          <p class="vk-section-desc">
+            Test your decryption skills before deployment. Punch in the 4-digit master bypass code to unlock a confidential 15% discount cipher.
+          </p>
+        </div>
+
+        <div class="vk-h2-decoder-wrapper" data-reveal>
+          <!-- LEFT BIOMETRIC INTERFACE PROP -->
+          <div class="vk-h2-decoder-visual">
+            <img
+              src="assets/images/tech_cyber_interface.jpg"
+              alt="High-Tech Biometric Cipher Interface Prop"
+            />
+            <div class="vk-h2-decoder-scanline"></div>
+            <div class="vk-h2-decoder-badge">
+              <i class="fa-solid fa-fingerprint"></i> BIOMETRIC HARDWARE // MODEL VK-CIPHER-X
+            </div>
+          </div>
+
+          <!-- RIGHT KEYPAD CONSOLE -->
+          <div class="vk-h2-keypad-console">
+            <div class="vk-h2-keypad-screen">
+              <div class="vk-h2-keypad-status" id="decoderStatus">AWAITING 4-DIGIT OVERRIDE CODE</div>
+              <div class="vk-h2-keypad-digits" id="decoderDisplay">
+                <span class="digit-slot" id="slot0">-</span>
+                <span class="digit-slot" id="slot1">-</span>
+                <span class="digit-slot" id="slot2">-</span>
+                <span class="digit-slot" id="slot3">-</span>
+              </div>
+              <div class="vk-h2-keypad-hint">
+                <i class="fa-solid fa-circle-info"></i> Intel Clue: The current operational year: [2] [0] [2] [6]
+              </div>
+            </div>
+
+            <!-- INTERACTIVE BUTTON MATRIX -->
+            <div class="vk-h2-keypad-grid">
+              <button type="button" class="vk-h2-key-btn" data-key="1">1</button>
+              <button type="button" class="vk-h2-key-btn" data-key="2">2</button>
+              <button type="button" class="vk-h2-key-btn" data-key="3">3</button>
+              <button type="button" class="vk-h2-key-btn" data-key="4">4</button>
+              <button type="button" class="vk-h2-key-btn" data-key="5">5</button>
+              <button type="button" class="vk-h2-key-btn" data-key="6">6</button>
+              <button type="button" class="vk-h2-key-btn" data-key="7">7</button>
+              <button type="button" class="vk-h2-key-btn" data-key="8">8</button>
+              <button type="button" class="vk-h2-key-btn" data-key="9">9</button>
+              <button type="button" class="vk-h2-key-btn action-clear" id="keyClear">CLEAR</button>
+              <button type="button" class="vk-h2-key-btn" data-key="0">0</button>
+              <button type="button" class="vk-h2-key-btn action-enter" id="keyEnter">ENTER</button>
+            </div>
+
+            <!-- RESULT BANNER -->
+            <div class="vk-h2-decoder-result" id="decoderResult"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 4: SQUAD SPECIALIZATION LOADOUT MATRIX
+         ====================================================== -->
+    <section class="vk-section" id="squadMatrix">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Operative Architecture</div>
+          <h2 class="vk-section-title">Squad Specialization Loadouts</h2>
+          <p class="vk-section-desc">
+            Every successful breach requires diverse cognitive skills. Match your team members to key field roles for maximum operational efficiency.
+          </p>
+        </div>
+
+        <div class="vk-h2-squad-grid">
+          <!-- ROLE 1: COMMAND & TACTICAL LEAD -->
+          <article class="vk-h2-squad-card" data-reveal>
+            <div class="vk-h2-squad-code">[ROLE-CMD-01]</div>
+            <div class="vk-h2-squad-icon">
+              <span class="material-symbols-rounded"> military_tech </span>
+            </div>
+            <h3>Lead Tactician</h3>
+            <p>
+              Coordinates squad assignments, monitors the master countdown timer, and establishes priority order across parallel puzzle threads under acute time pressure.
+            </p>
+            <div class="vk-h2-squad-stats">
+              <div class="vk-h2-stat-row">
+                <span>Tactical Leadership</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 95%;"></div></div>
+              </div>
+              <div class="vk-h2-stat-row">
+                <span>Composure Under Pressure</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 90%;"></div></div>
+              </div>
+            </div>
+            <button type="button" class="vk-button vk-button-outline" data-modal-open="bookingModalOverlay">
+              Select Role Briefing
+            </button>
+          </article>
+
+          <!-- ROLE 2: CRYPTOGRAPHER & HACKER -->
+          <article class="vk-h2-squad-card" data-reveal>
+            <div class="vk-h2-squad-code">[ROLE-CRPT-02]</div>
+            <div class="vk-h2-squad-icon">
+              <span class="material-symbols-rounded"> terminal </span>
+            </div>
+            <h3>Crypto Specialist</h3>
+            <p>
+              Decodes alphanumeric cipher wheels, audio frequency spectrograms, and electronic keypads. Essential for deciphering encrypted field notes and computer terminals.
+            </p>
+            <div class="vk-h2-squad-stats">
+              <div class="vk-h2-stat-row">
+                <span>Algorithmic Logic</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 98%;"></div></div>
+              </div>
+              <div class="vk-h2-stat-row">
+                <span>Pattern Recognition</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 92%;"></div></div>
+              </div>
+            </div>
+            <button type="button" class="vk-button vk-button-outline" data-modal-open="bookingModalOverlay">
+              Select Role Briefing
+            </button>
+          </article>
+
+          <!-- ROLE 3: FIELD BREACHER & LOCKSMITH -->
+          <article class="vk-h2-squad-card" data-reveal>
+            <div class="vk-h2-squad-code">[ROLE-MECH-03]</div>
+            <div class="vk-h2-squad-icon">
+              <span class="material-symbols-rounded"> key </span>
+            </div>
+            <h3>Hardware Breacher</h3>
+            <p>
+              Specializes in physical mechanisms, pneumatic valves, hidden sliding panels, and mechanical locks. High manual dexterity for intricate multi-pin tumbler manipulations.
+            </p>
+            <div class="vk-h2-squad-stats">
+              <div class="vk-h2-stat-row">
+                <span>Manual Dexterity</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 94%;"></div></div>
+              </div>
+              <div class="vk-h2-stat-row">
+                <span>Mechanical Insight</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 88%;"></div></div>
+              </div>
+            </div>
+            <button type="button" class="vk-button vk-button-outline" data-modal-open="bookingModalOverlay">
+              Select Role Briefing
+            </button>
+          </article>
+
+          <!-- ROLE 4: SENSORY SCOUT & RECON -->
+          <article class="vk-h2-squad-card" data-reveal>
+            <div class="vk-h2-squad-code">[ROLE-RCN-04]</div>
+            <div class="vk-h2-squad-icon">
+              <span class="material-symbols-rounded"> visibility </span>
+            </div>
+            <h3>Sensory Scout</h3>
+            <p>
+              Identifies concealed UV blacklight symbols, discreet wall seams, acoustic tumbler echoes, and hidden compartments. Unmatched spatial perception in dimly lit chambers.
+            </p>
+            <div class="vk-h2-squad-stats">
+              <div class="vk-h2-stat-row">
+                <span>Perceptual Acuity</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 96%;"></div></div>
+              </div>
+              <div class="vk-h2-stat-row">
+                <span>Spatial Search Speed</span>
+                <div class="vk-h2-stat-bar"><div class="vk-h2-stat-fill" style="width: 91%;"></div></div>
+              </div>
+            </div>
+            <button type="button" class="vk-button vk-button-outline" data-modal-open="bookingModalOverlay">
+              Select Role Briefing
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 5: SENSORY HARDWARE TELEMETRY COMPARISON
+         ====================================================== -->
+    <section class="vk-section" id="hardwareTelemetry" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Physical Computing Specifications</div>
+          <h2 class="vk-section-title">Vault & Key Hardware vs Conventional Rooms</h2>
+          <p class="vk-section-desc">
+            We replaced fragile padlock boxes with military-grade solenoid maglocks, real PLC microcontrollers, and multi-zone spatial haptics.
+          </p>
+        </div>
+
+        <div class="vk-h2-hardware-grid">
+          <!-- MODULE 1 -->
+          <article class="vk-h2-hardware-card" data-reveal>
+            <span class="vk-h2-hw-badge">Hardware Locks</span>
+            <h3>Solenoid Mag-Locks</h3>
+            <p>
+              1,200 lbs electromagnetic holding force. Airlocks snap open automatically when sensors verify electrical circuit completion.
+            </p>
+            <div class="vk-h2-hw-diff">
+              <strong>Vault & Key Standard:</strong>
+              <span>Zero jammed keys or worn physical dials</span>
+            </div>
+          </article>
+
+          <!-- MODULE 2 -->
+          <article class="vk-h2-hardware-card" data-reveal>
+            <span class="vk-h2-hw-badge">Sensor Grid</span>
+            <h3>Infrared Laser Arrays</h3>
+            <p>
+              Authentic Class-2 laser photodiodes. Squads must navigate beam corridors or redirect lasers using optical glass prisms.
+            </p>
+            <div class="vk-h2-hw-diff">
+              <strong>Vault & Key Standard:</strong>
+              <span>Sub-millisecond audio alarm feedback</span>
+            </div>
+          </article>
+
+          <!-- MODULE 3 -->
+          <article class="vk-h2-hardware-card" data-reveal>
+            <span class="vk-h2-hw-badge">Immersion Audio</span>
+            <h3>7.1 Spatial Haptics</h3>
+            <p>
+              Sub-bass tactile transducers embedded directly into chamber floorboards simulate submarine depth tremors and reactor surges.
+            </p>
+            <div class="vk-h2-hw-diff">
+              <strong>Vault & Key Standard:</strong>
+              <span>Full-body physiological adrenaline rush</span>
+            </div>
+          </article>
+
+          <!-- MODULE 4 -->
+          <article class="vk-h2-hardware-card" data-reveal>
+            <span class="vk-h2-hw-badge">Clue Engine</span>
+            <h3>Autonomous AI Audio</h3>
+            <p>
+              Dynamic voice synthesis integrated with room telemetry. Chambers deliver contextual hints in-world without breaking narrative immersion.
+            </p>
+            <div class="vk-h2-hw-diff">
+              <strong>Vault & Key Standard:</strong>
+              <span>Zero static staff walkie-talkie interruptions</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 6: BLACK-SITE PRIVATE SYNDICATE PACKAGES
+         ====================================================== -->
+    <section class="vk-section" id="syndicatePackages">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Operational Access Tiers</div>
+          <h2 class="vk-section-title">Private Syndicate Deployments</h2>
+          <p class="vk-section-desc">
+            Transparent per-agent pricing with zero stranger pairing. Every booking guarantees exclusive tactical reservation of the target complex.
+          </p>
+        </div>
+
+        <div class="vk-h2-syndicate-grid">
+          <!-- PACKAGE 1: RECON PAIR -->
+          <article class="vk-h2-syndicate-card" data-reveal>
+            <h3>Recon Pair (2 Agents)</h3>
+            <p>
+              High-intensity two-agent infiltration. Intense mutual dependency with zero room for passive observation during critical sequences.
+            </p>
+            <div class="vk-h2-syndicate-price">$46 <small>/ Agent</small></div>
+            <ul class="vk-h2-syndicate-perks">
+              <li><i class="fa-solid fa-check"></i> Private hermetic chamber lockout</li>
+              <li><i class="fa-solid fa-check"></i> 60-Minute mission countdown</li>
+              <li><i class="fa-solid fa-check"></i> 1-on-1 Dedicated Game Master briefing</li>
+              <li><i class="fa-solid fa-check"></i> Duo leaderboard record tracking</li>
+            </ul>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Reserve Recon Pair
+            </button>
+          </article>
+
+          <!-- PACKAGE 2: STRIKE SQUAD (FEATURED) -->
+          <article class="vk-h2-syndicate-card featured" data-reveal>
+            <span class="vk-h2-syndicate-tag">Optimal Formation</span>
+            <h3>Strike Squad (4–6)</h3>
+            <p>
+              The definitive multi-room adventure formation. Allows optimal division of labor across parallel cryptographic and mechanical lines.
+            </p>
+            <div class="vk-h2-syndicate-price">$38 <small>/ Agent</small></div>
+            <ul class="vk-h2-syndicate-perks">
+              <li><i class="fa-solid fa-check"></i> Complete multi-chamber complex access</li>
+              <li><i class="fa-solid fa-check"></i> 60–75 Minute mission countdown</li>
+              <li><i class="fa-solid fa-check"></i> Complimentary high-res victory photo print</li>
+              <li><i class="fa-solid fa-check"></i> Biometric RFID lockers included</li>
+            </ul>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Reserve Strike Squad
+            </button>
+          </article>
+
+          <!-- PACKAGE 3: BLACK-SITE LOCKOUT -->
+          <article class="vk-h2-syndicate-card" data-reveal>
+            <h3>Facility Lockout (8–30+)</h3>
+            <p>
+              Simultaneous multi-chamber tournament format for corporate engineering retreats, departmental leagues, and milestone gatherings.
+            </p>
+            <div class="vk-h2-syndicate-price">$32 <small>/ Agent</small></div>
+            <ul class="vk-h2-syndicate-perks">
+              <li><i class="fa-solid fa-check"></i> Simultaneous dual-chamber race format</li>
+              <li><i class="fa-solid fa-check"></i> Private mission debrief conference lounge</li>
+              <li><i class="fa-solid fa-check"></i> Deep team synergy analytics & scoring</li>
+              <li><i class="fa-solid fa-check"></i> Catering and beverage add-on support</li>
+            </ul>
+            <a href="pricing.html" class="vk-button vk-button-primary">
+              View Corporate Packages
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 7: INTERCEPTED SURVEILLANCE AUDIO-LOGS
+         ====================================================== -->
+    <section class="vk-section" id="surveillanceLogs" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Debrief Transcripts</div>
+          <h2 class="vk-section-title">Classified Field Surveillance Logs</h2>
+          <p class="vk-section-desc">
+            Audio debrief transcripts recorded from operative communication channels immediately following successful chamber extractions.
+          </p>
+        </div>
+
+        <div class="vk-h2-audio-grid">
+          <!-- LOG 1 -->
+          <article class="vk-h2-audio-card" data-reveal>
+            <div class="vk-h2-audio-top">
+              <span class="vk-h2-audio-id">AUDIO LOG #9401-ALPHA</span>
+              <span class="vk-h2-audio-clear">52:14 CLEAR</span>
+            </div>
+            <div class="vk-h2-waveform">
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+            </div>
+            <blockquote>
+              "The laser grid in the Heist room is 100% authentic. One wrong step triggered a real airlock siren that had our hearts in our throats!"
+            </blockquote>
+            <div class="vk-h2-audio-footer">
+              <div>
+                <strong>Elena Vance</strong>
+                <small>Senior SRE, Google Cloud</small>
+              </div>
+              <span class="material-symbols-rounded" style="color:var(--vk-primary);"> graphic_eq </span>
+            </div>
+          </article>
+
+          <!-- LOG 2 -->
+          <article class="vk-h2-audio-card" data-reveal>
+            <div class="vk-h2-audio-top">
+              <span class="vk-h2-audio-id">AUDIO LOG #8129-VALKYRIE</span>
+              <span class="vk-h2-audio-clear">56:48 CLEAR</span>
+            </div>
+            <div class="vk-h2-waveform">
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+            </div>
+            <blockquote>
+              "We've done over 40 escape rooms across the country; the pneumatic pressure pipe puzzle in Submarine 404 is unmatched engineering."
+            </blockquote>
+            <div class="vk-h2-audio-footer">
+              <div>
+                <strong>Marcus Sterling</strong>
+                <small>MIT Robotics Society</small>
+              </div>
+              <span class="material-symbols-rounded" style="color:var(--vk-primary);"> graphic_eq </span>
+            </div>
+          </article>
+
+          <!-- LOG 3 -->
+          <article class="vk-h2-audio-card" data-reveal>
+            <div class="vk-h2-audio-top">
+              <span class="vk-h2-audio-id">AUDIO LOG #7743-PHOENIX</span>
+              <span class="vk-h2-audio-clear">58:02 CLEAR</span>
+            </div>
+            <div class="vk-h2-waveform">
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+              <span class="vk-h2-wave-bar"></span>
+            </div>
+            <blockquote>
+              "The particle accelerator chamber had 3 separate secret compartments that opened with electromagnetic switches. Truly movie-set quality."
+            </blockquote>
+            <div class="vk-h2-audio-footer">
+              <div>
+                <strong>Devon Patel</strong>
+                <small>Boston Tech Alliance</small>
+              </div>
+              <span class="material-symbols-rounded" style="color:var(--vk-primary);"> graphic_eq </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 8: TACTICAL RAPID DISPATCH LAUNCH CTA
+         ====================================================== -->
+    <section class="vk-section" id="rapidDispatch" style="padding-top: 0;">
+      <div class="vk-container">
+        <div class="vk-h2-launch-cta" data-reveal>
+          <div class="vk-h2-launch-content">
+            <span class="vk-h2-cta-pill"><i class="fa-solid fa-clock"></i> LIVE DISPATCH WINDOW</span>
+            <h2>Command Window Closing. Reserve Operation.</h2>
+            <p>
+              High-security weekend simulation windows book out 7 to 10 days in advance. Lock in your chamber, select your squad loadout, and prepare for immersion.
+            </p>
+          </div>
+          <div class="vk-h2-launch-action">
+            <button type="button" class="vk-h2-btn-gold" data-modal-open="bookingModalOverlay">
+              Launch Tactical Dispatch
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================
+       GLOBAL QUICK BOOKING MODAL POPUP
+       ====================================================== -->
+  <div class="vk-modal-overlay" id="bookingModalOverlay">
+    <div class="vk-modal-card">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+
+      <div id="bookingFormContainer">
+        <h2 class="vk-modal-title">Mission Dispatch Order</h2>
+        <p class="vk-modal-subtitle">Configure your squad's target chamber and tactical entry slot.</p>
+
+        <form class="vk-modal-form" id="popupBookingForm">
+          <div class="vk-modal-field">
+            <label for="modalChamber">Select Target Operation</label>
+            <select id="modalChamber" required>
+              <option value="">Choose an active quest...</option>
+              <option value="sub">Deep Sea Protocol 404 (Tier 3)</option>
+              <option value="manor">The Haunted Hollow Manor (Tier 2)</option>
+              <option value="bank">Federal Reserve Gold Heist (Tier 4)</option>
+              <option value="space">Orbital Station Odyssey (Tier 5)</option>
+              <option value="crypt">The Alchemist's Lost Crypt (Tier 2)</option>
+            </select>
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalDate">Operation Date</label>
+            <input type="date" id="modalDate" required />
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalSquadSize">Squad Headcount</label>
+            <select id="modalSquadSize" required>
+              <option value="2">2 Agents (Duo Infiltration)</option>
+              <option value="4" selected>4 Agents (Tactical Squad)</option>
+              <option value="6">6 Agents (Full Strike Team)</option>
+              <option value="8">8 Agents (Maximum Unit)</option>
+              <option value="12+">12+ Agents (Corporate Gauntlet)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="vk-modal-submit">Confirm Mission Dispatch</button>
+        </form>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="vk-success-popup" id="bookingSuccessContainer">
+        <div class="vk-success-icon">
+          <span class="material-symbols-rounded"> verified </span>
+        </div>
+        <h3 class="vk-success-title">Mission Scheduled!</h3>
+        <p class="vk-success-desc">
+          Your dispatch order has been encrypted and logged. Check your squad leader's inbox for confidential entry passcodes.
+        </p>
+        <button type="button" class="vk-success-done" id="closeSuccessBookingBtn">Confirmed</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       SUBSCRIBE SUCCESS MODAL POPUP
+       ====================================================== -->
+  <div class="vk-modal-overlay" id="subscribeModalOverlay">
+    <div class="vk-modal-card" style="text-align: center; max-width: 420px;">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+      <div class="vk-success-icon" style="margin: 0 auto 16px;">
+        <span class="material-symbols-rounded"> mark_email_read </span>
+      </div>
+      <h3 class="vk-success-title">Enlisted to Dispatch!</h3>
+      <p class="vk-success-desc">
+        Welcome to the field operative network. Classified chamber previews and secret discount ciphers will be transmitted to you.
+      </p>
+      <button type="button" class="vk-success-done" data-modal-close style="width: 100%;">Acknowledge</button>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       GLOBAL FOOTER
+       ====================================================== -->
+  <footer class="vk-footer">
+    <div class="vk-footer-main">
+      <div class="vk-container">
+        <div class="vk-footer-grid">
+          <div class="vk-footer-brand">
+            <a href="index.html" class="vk-brand">
+              <div class="vk-brand-mark">
+                <span class="material-symbols-rounded"> key </span>
+              </div>
+              <div class="vk-brand-name">Vault & <span>Key</span></div>
+            </a>
+            <p class="vk-footer-description">
+              Next-generation cinematic escape rooms and physical puzzle gauntlets. Engineered with authentic mechanical props, automated sensors, and deep storylines.
+            </p>
+            <div class="vk-footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="vk-social">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="vk-social">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="vk-social">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="vk-social">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="vk-footer-column">
+            <h3>Chambers</h3>
+            <a href="rooms.html">Submarine Protocol</a>
+            <a href="rooms.html">Haunted Manor</a>
+            <a href="rooms.html">Reserve Gold Heist</a>
+            <a href="rooms.html">Orbital Station</a>
+            <a href="rooms.html">All Difficulty Tiers</a>
+          </div>
+
+          <div class="vk-footer-column">
+            <h3>Experiences</h3>
+            <a href="pricing.html">Corporate Team Building</a>
+            <a href="pricing.html">Friends & Night Quests</a>
+            <a href="pricing.html">Family Detective Mode</a>
+            <a href="pricing.html">Birthday Packages</a>
+            <a href="dashboard.html">Player Leaderboards</a>
+          </div>
+
+          <div class="vk-footer-column">
+            <h3>Venue & Help</h3>
+            <a href="about.html">About Vault & Key</a>
+            <a href="contact.html">Venue Location & Map</a>
+            <a href="contact.html">Safety & Sensor Protocols</a>
+            <a href="contact.html">Frequently Asked Questions</a>
+            <a href="dashboard.html">Player Mission Portal</a>
+          </div>
+
+          <div class="vk-footer-cta">
+            <div class="vk-footer-cta-card">
+              <div class="vk-footer-cta-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <strong>Cipher Dispatch</strong>
+                <p>Receive secret monthly riddle perks.</p>
+              </div>
+            </div>
+            <form id="footerNewsletterForm" style="display: flex; gap: 8px; width: 100%; margin-top: 12px;">
+              <input
+                type="email"
+                id="footerSubscriberEmail"
+                placeholder="Enter operative email"
+                required
+                style="flex: 1; padding: 10px 14px; border-radius: var(--vk-radius-pill); background: var(--vk-bg-subtle); border: 1px solid var(--vk-border); color: var(--vk-text); font-size: 13px; outline: none;"
+              />
+              <button
+                type="submit"
+                class="vk-footer-button"
+                style="border:none; cursor:pointer; white-space: nowrap; padding: 5px 18px; width: auto;"
+              >
+                <span>Enlist</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vk-footer-bottom">
+      <div class="vk-container">
+        <div class="vk-footer-bottom-inner">
+          <p>© 2026 Vault & Key Adventure Venues Inc. All rights reserved.</p>
+          <div class="vk-footer-bottom-links">
+            <a href="contact.html">Terms & Rules</a>
+            <a href="contact.html">Privacy Policy</a>
+            <a href="contact.html">Booking Guarantee</a>
+          </div>
+          <div>Engineered for real-world mystery.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GLOBAL SCRIPT -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- HOME 2 INTERACTIONS SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. LIVE HUD MISSION CLOCK TICKER
+      const clockEl = document.getElementById("h2HeroClock");
+      if (clockEl) {
+        let secondsRemaining = 59 * 60 + 42;
+        let ms = 18;
+        setInterval(() => {
+          ms -= 3;
+          if (ms <= 0) {
+            ms = 99;
+            secondsRemaining--;
+          }
+          const m = String(Math.floor(secondsRemaining / 60)).padStart(2, "0");
+          const s = String(secondsRemaining % 60).padStart(2, "0");
+          const mstr = String(ms).padStart(2, "0");
+          clockEl.textContent = `OP CLOCK: ${m}:${s}:${mstr}`;
+        }, 30);
+      }
+
+      // 2. TACTICAL MISSION SELECTOR TERMINAL
+      const chamberData = {
+        heist: {
+          code: "CHAMBER #NX-701",
+          tier: "Tier 4 · High Security",
+          img: "assets/images/quest_cyber_heist.jpg",
+          title: "Neon Mainframe Heist",
+          clear: "24%",
+          time: "60 Mins",
+          squad: "3–8 Agents",
+          brief: "Subterranean Titanium Vault Infiltration",
+          desc: "Infiltrate the subterranean server vault of a rogue cyber syndicate. Disable volumetric infrared lasers, bypass thermal sensors, and crack the electromagnetic vault lock before the security reboot.",
+          tags: [
+            '<i class="fa-solid fa-bolt"></i> Laser Tripwires',
+            '<i class="fa-solid fa-fingerprint"></i> Biometric Locks',
+            '<i class="fa-solid fa-shield-halved"></i> 12-Ton Vault'
+          ],
+          modalVal: "bank"
+        },
+        submarine: {
+          code: "CHAMBER #SUB-404",
+          tier: "Tier 3 · Deep Immersion",
+          img: "assets/images/quest_submarine_abyss.jpg",
+          title: "Submarine Abyss 404",
+          clear: "38%",
+          time: "60 Mins",
+          squad: "3–7 Agents",
+          brief: "3,000 Fathoms Pneumatic Pressure Lock",
+          desc: "Trapped in a disabled nuclear submarine taking on water. Squads must balance manual pneumatic ballast valves, decode acoustic sonar hydrophone pulses, and engage auxiliary propulsion.",
+          tags: [
+            '<i class="fa-solid fa-water"></i> Flood Airlocks',
+            '<i class="fa-solid fa-gauge-high"></i> Pressure Dials',
+            '<i class="fa-solid fa-headphones"></i> Sonar Decoder'
+          ],
+          modalVal: "sub"
+        },
+        biohazard: {
+          code: "CHAMBER #BIO-919",
+          tier: "Tier 5 · Master Gauntlet",
+          img: "assets/images/quest_alien_containment.jpg",
+          title: "Alien Biohazard Lab",
+          clear: "14%",
+          time: "75 Mins",
+          squad: "4–8 Agents",
+          brief: "Level-4 Quarantine Airlock Complex",
+          desc: "An extraterrestrial specimen has breached containment. Navigate hazardous quarantine fog, solve biochemical centrifuge puzzles, and synthesize the cryogenic neutralization compound.",
+          tags: [
+            '<i class="fa-solid fa-biohazard"></i> Bio-Decon Chamber',
+            '<i class="fa-solid fa-dna"></i> DNA Sequence Keypad',
+            '<i class="fa-solid fa-microscope"></i> Centrifuge Lock'
+          ],
+          modalVal: "crypt"
+        },
+        quantum: {
+          code: "CHAMBER #QTM-303",
+          tier: "Tier 4 · Critical Hazard",
+          img: "assets/images/quest_quantum_collider.jpg",
+          title: "Quantum Collider Hazard",
+          clear: "21%",
+          time: "75 Mins",
+          squad: "4–10 Agents",
+          brief: "Subatomic Particle Core Stabilization",
+          desc: "A subatomic particle reactor is experiencing cascading resonance. Coordinate dual-terminal overrides, align high-energy optical prisms, and manually stabilize magnetic containment coils.",
+          tags: [
+            '<i class="fa-solid fa-atom"></i> Particle Accelerator',
+            '<i class="fa-solid fa-radiation"></i> Magnetic Coils',
+            '<i class="fa-solid fa-gem"></i> Optical Prisms'
+          ],
+          modalVal: "space"
+        }
+      };
+
+      const tabs = document.querySelectorAll("[data-chamber-tab]");
+      const imgEl = document.getElementById("h2ChamberImg");
+      const codeEl = document.getElementById("h2ChamberCode");
+      const tierEl = document.getElementById("h2ChamberTier");
+      const titleEl = document.getElementById("h2ChamberTitle");
+      const clearEl = document.getElementById("h2ChamberClear");
+      const timeEl = document.getElementById("h2ChamberTime");
+      const squadEl = document.getElementById("h2ChamberSquad");
+      const descEl = document.getElementById("h2ChamberDesc");
+      const briefEl = document.getElementById("h2ChamberBrief");
+      const tagsEl = document.getElementById("h2ChamberTags");
+      const deployBtn = document.getElementById("h2ChamberDeployBtn");
+      const modalChamberSelect = document.getElementById("modalChamber");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          tabs.forEach(t => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+          });
+          tab.classList.add("active");
+          tab.setAttribute("aria-selected", "true");
+
+          const chamberKey = tab.getAttribute("data-chamber-tab");
+          const data = chamberData[chamberKey];
+          if (!data) return;
+
+          // Fade image swap
+          imgEl.style.opacity = "0.2";
+          setTimeout(() => {
+            imgEl.src = data.img;
+            imgEl.alt = data.title;
+            imgEl.style.opacity = "1";
+          }, 150);
+
+          codeEl.textContent = data.code;
+          tierEl.textContent = data.tier;
+          titleEl.textContent = data.title;
+          clearEl.textContent = data.clear;
+          timeEl.textContent = data.time;
+          squadEl.textContent = data.squad;
+          descEl.textContent = data.desc;
+          briefEl.textContent = data.brief;
+
+          tagsEl.innerHTML = data.tags.map(tag => `<span class="vk-h2-showcase-tag">${tag}</span>`).join("");
+
+          if (modalChamberSelect) {
+            modalChamberSelect.value = data.modalVal;
+          }
+        });
+      });
+
+      // 3. PLAYABLE BIOMETRIC CIPHER DECODER MINI-GAME
+      let enteredCode = "";
+      const correctCode = "2026";
+      const slots = [
+        document.getElementById("slot0"),
+        document.getElementById("slot1"),
+        document.getElementById("slot2"),
+        document.getElementById("slot3")
+      ];
+      const statusEl = document.getElementById("decoderStatus");
+      const resultEl = document.getElementById("decoderResult");
+      const keyBtns = document.querySelectorAll(".vk-h2-key-btn[data-key]");
+      const clearBtn = document.getElementById("keyClear");
+      const enterBtn = document.getElementById("keyEnter");
+
+      function updateSlots() {
+        slots.forEach((slot, i) => {
+          if (enteredCode[i]) {
+            slot.textContent = enteredCode[i];
+            slot.classList.add("active");
+          } else {
+            slot.textContent = "-";
+            slot.classList.remove("active");
+          }
+        });
+      }
+
+      keyBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          if (enteredCode.length < 4) {
+            enteredCode += btn.getAttribute("data-key");
+            updateSlots();
+            resultEl.style.display = "none";
+          }
+        });
+      });
+
+      if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+          enteredCode = "";
+          updateSlots();
+          statusEl.textContent = "AWAITING 4-DIGIT OVERRIDE CODE";
+          statusEl.style.color = "var(--vk-primary)";
+          resultEl.className = "vk-h2-decoder-result";
+          resultEl.style.display = "none";
+        });
+      }
+
+      if (enterBtn) {
+        enterBtn.addEventListener("click", () => {
+          if (enteredCode.length < 4) {
+            resultEl.className = "vk-h2-decoder-result error";
+            resultEl.textContent = "PLEASE ENTER ALL 4 DIGITS!";
+            resultEl.style.display = "block";
+            return;
+          }
+
+          if (enteredCode === correctCode) {
+            statusEl.textContent = "SYSTEM OVERRIDE SUCCESSFUL!";
+            statusEl.style.color = "var(--vk-accent-emerald)";
+            resultEl.className = "vk-h2-decoder-result success";
+            resultEl.innerHTML = `
+              <div style="font-size:15px; margin-bottom:4px;">🎉 ACCESS GRANTED!</div>
+              <div>Use Secret Promo Code <strong>CIPHER2026</strong> for <strong>15% OFF</strong> on any Chamber!</div>
+            `;
+            resultEl.style.display = "block";
+            localStorage.setItem("vk_unlocked_promo", "CIPHER2026");
+          } else {
+            statusEl.textContent = "ACCESS DENIED — INVALID SEQUENCE";
+            statusEl.style.color = "#ef4444";
+            resultEl.className = "vk-h2-decoder-result error";
+            resultEl.innerHTML = `Incorrect code: <strong>${enteredCode}</strong>. Check clue: [2-0-2-6]`;
+            resultEl.style.display = "block";
+            setTimeout(() => {
+              enteredCode = "";
+              updateSlots();
+            }, 1200);
+          }
+        });
+      }
+
+      // Minimum reservation date to tomorrow
+      const dateInput = document.getElementById("modalDate");
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.min = tomorrow.toISOString().split("T")[0];
+        dateInput.value = tomorrow.toISOString().split("T")[0];
+      }
+
+      // Quick Booking Form inside modal
+      const popupForm = document.getElementById("popupBookingForm");
+      const formContainer = document.getElementById("bookingFormContainer");
+      const successContainer = document.getElementById("bookingSuccessContainer");
+      const closeSuccessBtn = document.getElementById("closeSuccessBookingBtn");
+      const modalOverlay = document.getElementById("bookingModalOverlay");
+
+      if (popupForm) {
+        popupForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const chamber = document.getElementById("modalChamber").value;
+          const date = document.getElementById("modalDate").value;
+          const squad = document.getElementById("modalSquadSize").value;
+
+          if (chamber && date && squad) {
+            localStorage.setItem("vk_quick_booking_h2", JSON.stringify({ chamber, date, squad, timestamp: Date.now() }));
+            formContainer.style.display = "none";
+            successContainer.classList.add("is-active");
+            popupForm.reset();
+          }
+        });
+      }
+
+      if (closeSuccessBtn && modalOverlay) {
+        closeSuccessBtn.addEventListener("click", () => {
+          modalOverlay.classList.remove("is-active");
+          setTimeout(() => {
+            formContainer.style.display = "block";
+            successContainer.classList.remove("is-active");
+          }, 400);
+        });
+      }
+
+      // Newsletter Form
+      const newsletterForm = document.getElementById("footerNewsletterForm");
+      const subscribeModal = document.getElementById("subscribeModalOverlay");
+      if (newsletterForm && subscribeModal) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById("footerSubscriberEmail");
+          if (emailInput && emailInput.value) {
+            subscribeModal.classList.add("is-active");
+            emailInput.value = "";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

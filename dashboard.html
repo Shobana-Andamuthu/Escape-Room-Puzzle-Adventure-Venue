@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Player Command Dashboard for Vault & Key escape room agents. Book chamber slots, inspect room themes, manage reservations, and review past completion times."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Player Command Dashboard | Vault & Key</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="vk-dash-body">
+  <div class="vk-dash-shell">
+    <!-- ============================================================
+         DASHBOARD SIDEBAR
+         ============================================================ -->
+    <aside class="vk-dash-sidebar" id="dashSidebar">
+      <!-- SIDEBAR BRAND -->
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+        <button
+          type="button"
+          class="vk-icon-button vk-dash-toggle-btn"
+          id="btnCloseSidebar"
+          aria-label="Close sidebar"
+          style="display: none;"
+        >
+          <span class="material-symbols-rounded"> close </span>
+        </button>
+      </div>
+
+      <!-- AGENT PROFILE CARD -->
+      <div class="vk-dash-agent-card">
+        <div class="vk-dash-agent-avatar" id="sidebarAgentAvatar">MV</div>
+        <div style="overflow: hidden;">
+          <strong style="display: block; font-size: 14.5px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" id="sidebarAgentName">
+            Agent Marcus Vance
+          </strong>
+          <span style="font-size: 11px; color: var(--vk-primary); font-weight: 800; letter-spacing: 0.05em;" id="sidebarAgentRank">
+            CLEARANCE LEVEL 3
+          </span>
+        </div>
+      </div>
+
+      <!-- NAVIGATION LINKS -->
+      <nav aria-label="Dashboard navigation">
+        <ul class="vk-dash-nav-list">
+          <li class="vk-dash-nav-item">
+            <a href="#dashOverview" class="active" id="navLinkOverview">
+              <span class="material-symbols-rounded"> dashboard </span>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li class="vk-dash-nav-item">
+            <a href="#dashRooms" id="navLinkRooms">
+              <span class="material-symbols-rounded"> meeting_room </span>
+              <span>Browse Chambers</span>
+            </a>
+          </li>
+          <li class="vk-dash-nav-item">
+            <a href="#dashBookingEngine" id="navLinkBooking">
+              <span class="material-symbols-rounded"> event_available </span>
+              <span>Book a Mission</span>
+            </a>
+          </li>
+          <li class="vk-dash-nav-item">
+            <a href="#dashUpcoming" id="navLinkUpcoming">
+              <span class="material-symbols-rounded"> pending_actions </span>
+              <span>Upcoming Bookings</span>
+            </a>
+          </li>
+          <li class="vk-dash-nav-item">
+            <a href="#dashHistory" id="navLinkHistory">
+              <span class="material-symbols-rounded"> history </span>
+              <span>Completion History</span>
+            </a>
+          </li>
+          <li class="vk-dash-nav-item">
+            <a href="#dashProfile" id="navLinkProfile">
+              <span class="material-symbols-rounded"> manage_accounts </span>
+              <span>Player Profile</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- SIDEBAR FOOTER & SYSTEM ACTIONS -->
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--vk-border); padding-top: 20px;">
+        <button
+          type="button"
+          class="vk-button vk-button-outline"
+          id="btnResetDemoData"
+          style="width: 100%; font-size: 12px; justify-content: center; padding: 10px 14px;"
+        >
+          <span class="material-symbols-rounded" style="font-size: 16px;"> restart_alt </span>
+          <span>Reset Simulation State</span>
+        </button>
+
+        <a
+          href="index.html"
+          class="vk-button"
+          style="width: 100%; font-size: 12px; justify-content: center; padding: 10px 14px; background: var(--vk-bg-subtle); color: var(--vk-text-soft);"
+        >
+          <span class="material-symbols-rounded" style="font-size: 16px;"> logout </span>
+          <span>Return to Public Venue</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- BACKDROP FOR MOBILE SIDEBAR -->
+    <div id="dashSidebarBackdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 99;"></div>
+
+    <!-- ============================================================
+         DASHBOARD MAIN CONTENT AREA
+         ============================================================ -->
+    <main class="vk-dash-main">
+      <!-- TOP CONTROL BAR -->
+      <header class="vk-dash-topbar">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <!-- MOBILE SIDEBAR TOGGLE -->
+          <button
+            type="button"
+            class="vk-icon-button vk-dash-toggle-btn"
+            id="btnOpenSidebar"
+            aria-label="Open dashboard navigation"
+          >
+            <span class="material-symbols-rounded"> menu </span>
+          </button>
+          <div>
+            <div style="font-size: 12px; font-weight: 800; color: var(--vk-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">
+              Player Command Center
+            </div>
+            <h1 style="font-size: clamp(20px, 2.8vw, 28px); margin: 0; font-weight: 900; color: var(--vk-text);" id="topWelcomeHeading">
+              Welcome, Agent Marcus Vance
+            </h1>
+          </div>
+        </div>
+
+        <!-- TOP ACTIONS (THEME, RTL, SESSION) -->
+        <div class="vk-dash-top-actions">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <div style="display: flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: var(--vk-radius-pill); background: var(--vk-surface); border: 1px solid var(--vk-border);">
+            <span class="vk-operational-pill" style="padding: 0; background: none; border: none;">
+              <span class="material-symbols-rounded" style="color: var(--vk-accent-emerald); font-size: 14px;"> fiber_manual_record </span>
+              <span style="font-size: 12px;">Mission Ready</span>
+            </span>
+          </div>
+
+          <a href="login.html" class="vk-button vk-button-outline" style="font-size: 12px; padding: 8px 14px;">
+            Log Out
+          </a>
+        </div>
+      </header>
+
+      <!-- ============================================================
+           SECTION 1: DASHBOARD OVERVIEW & WELCOME
+           ============================================================ -->
+      <section id="dashOverview" class="vk-dash-section active">
+        <!-- SIMULATION DATA DISCLAIMER -->
+        <div class="vk-dash-disclaimer-box">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="material-symbols-rounded" style="color: var(--vk-primary); font-size: 24px;"> info </span>
+            <div class="vk-dash-disclaimer-text">
+              <strong>Client-Side Demo Simulation:</strong> Bookings and records shown are stored locally in your browser session. No actual credit card transactions or confirmed physical venue reservations occur.
+            </div>
+          </div>
+          <span class="vk-dash-disclaimer-badge">[Demo Data Active]</span>
+        </div>
+
+        <!-- 4 SUMMARY STAT METRIC CARDS -->
+        <div class="vk-dash-stats-grid">
+          <div class="vk-dash-stat-card">
+            <div class="vk-dash-stat-icon">
+              <span class="material-symbols-rounded"> task_alt </span>
+            </div>
+            <div class="vk-dash-stat-info">
+              <strong id="statCompleted">14</strong>
+              <span>Missions Completed</span>
+            </div>
+          </div>
+
+          <div class="vk-dash-stat-card">
+            <div class="vk-dash-stat-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--vk-accent-emerald);">
+              <span class="material-symbols-rounded"> trending_up </span>
+            </div>
+            <div class="vk-dash-stat-info">
+              <strong id="statEscapeRate">85.7%</strong>
+              <span>Escape Success Rate</span>
+            </div>
+          </div>
+
+          <div class="vk-dash-stat-card">
+            <div class="vk-dash-stat-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--vk-accent-cyan);">
+              <span class="material-symbols-rounded"> timer </span>
+            </div>
+            <div class="vk-dash-stat-info">
+              <strong id="statTotalTime">12h 48m</strong>
+              <span>Total Chamber Time</span>
+            </div>
+          </div>
+
+          <div class="vk-dash-stat-card">
+            <div class="vk-dash-stat-icon" style="background: rgba(245, 158, 11, 0.2); color: var(--vk-primary);">
+              <span class="material-symbols-rounded"> confirmation_number </span>
+            </div>
+            <div class="vk-dash-stat-info">
+              <strong id="statActiveUpcoming">2</strong>
+              <span>Active Reservations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- OVERVIEW COMMAND HUB -->
+        <div class="vk-dash-overview-hub">
+          <!-- NEXT SCHEDULED OPERATION SPOTLIGHT -->
+          <div class="vk-dash-hub-card">
+            <div class="vk-dash-hub-header">
+              <div>
+                <div class="vk-eyebrow" style="margin-bottom: 4px;">
+                  <span class="material-symbols-rounded"> pending_actions </span>
+                  <span>Next Deployment</span>
+                </div>
+                <h3 id="overviewSpotlightTitle">Next Scheduled Operation</h3>
+              </div>
+              <span class="vk-upcoming-badge" id="overviewSpotlightStatus">Confirmed [Demo]</span>
+            </div>
+            <div id="overviewSpotlightBody" style="display: flex; flex-direction: column; gap: 8px;">
+              <!-- Dynamic upcoming booking preview injected here -->
+            </div>
+            <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--vk-border); display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+              <span style="font-size: 12.5px; color: var(--vk-text-soft); font-weight: 600;">Manage or cancel upcoming deployments:</span>
+              <button type="button" class="vk-button vk-button-primary" data-dash-tab="dashUpcoming" style="font-size: 12px; padding: 8px 14px;">
+                <span>View All Bookings</span>
+                <span class="material-symbols-rounded" style="font-size: 16px;"> arrow_forward </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- QUICK MISSION DISPATCH HUB -->
+          <div class="vk-dash-hub-card">
+            <div class="vk-dash-hub-header">
+              <div>
+                <div class="vk-eyebrow" style="margin-bottom: 4px;">
+                  <span class="material-symbols-rounded"> rocket_launch </span>
+                  <span>Direct Controls</span>
+                </div>
+                <h3>Quick Mission Dispatch</h3>
+              </div>
+            </div>
+            <p>Direct navigation shortcuts to chamber catalogs, scheduling engine, and dossier directives.</p>
+            <div class="vk-dash-hub-grid">
+              <button type="button" class="vk-dash-hub-btn" data-dash-tab="dashRooms">
+                <span class="material-symbols-rounded" style="color: var(--vk-primary);"> meeting_room </span>
+                <span>Browse Chambers</span>
+              </button>
+              <button type="button" class="vk-dash-hub-btn" data-dash-tab="dashBookingEngine">
+                <span class="material-symbols-rounded" style="color: var(--vk-accent-cyan);"> event_available </span>
+                <span>Book a Mission</span>
+              </button>
+              <button type="button" class="vk-dash-hub-btn" data-dash-tab="dashUpcoming">
+                <span class="material-symbols-rounded" style="color: var(--vk-accent-emerald);"> pending_actions </span>
+                <span>Active Bookings</span>
+              </button>
+              <button type="button" class="vk-dash-hub-btn" data-dash-tab="dashHistory">
+                <span class="material-symbols-rounded" style="color: #a855f7;"> military_tech </span>
+                <span>Past Mission Logs</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 2: BROWSE ROOM THEMES WITH DISTINCT ROOM CARDS
+           ============================================================ -->
+      <section id="dashRooms" class="vk-dash-section">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <div class="vk-eyebrow" style="margin-bottom: 6px;">
+              <span class="material-symbols-rounded"> explore </span>
+              <span>Chamber Catalog</span>
+            </div>
+            <h2 style="font-size: 22px; font-weight: 900; margin: 0;">Browse Active Mission Chambers</h2>
+          </div>
+
+          <!-- DIFFICULTY FILTER CHIPS -->
+          <div id="dashDiffFilters">
+            <button type="button" class="vk-filter-chip active" data-filter="all">All Chambers</button>
+            <button type="button" class="vk-filter-chip" data-filter="beginner">Beginner</button>
+            <button type="button" class="vk-filter-chip" data-filter="intermediate">Intermediate</button>
+            <button type="button" class="vk-filter-chip" data-filter="expert">Expert</button>
+          </div>
+        </div>
+
+        <div class="vk-dash-rooms-grid" id="dashRoomGrid">
+          <!-- CHAMBER 1: QUANTUM RELAY -->
+          <div class="vk-dash-room-card" data-diff="expert" data-chamber-id="quantum">
+            <div class="vk-dash-room-img">
+              <img
+                src="assets/images/dash_chamber_quantum.jpg"
+                alt="Quantum Relay high tech computing chamber with laser matrices"
+                loading="lazy"
+              />
+              <span class="vk-diff-badge expert">Expert (5/5)</span>
+            </div>
+            <div class="vk-dash-room-body">
+              <h3>Quantum Relay 2099</h3>
+              <p>
+                Stabilize a collapsing subatomic particle collider before electromagnetic breach. Optical prism puzzles.
+              </p>
+              <div class="vk-dash-room-meta">
+                <span><i class="fa-solid fa-users" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 3–6 Agents</span>
+                <span><i class="fa-solid fa-clock" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 60 Mins</span>
+                <strong>$38 / player</strong>
+              </div>
+              <button
+                type="button"
+                class="vk-button vk-button-primary"
+                style="justify-content: center;"
+                data-select-chamber="quantum"
+              >
+                <span>Select Chamber</span>
+                <span class="material-symbols-rounded" style="font-size: 16px;"> chevron_right </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- CHAMBER 2: ALCHEMIST SECRET LAB -->
+          <div class="vk-dash-room-card" data-diff="intermediate" data-chamber-id="alchemist">
+            <div class="vk-dash-room-img">
+              <img
+                src="assets/images/dash_chamber_alchemist.jpg"
+                alt="Ancient alchemist laboratory with potion vials and arcane formulas"
+                loading="lazy"
+              />
+              <span class="vk-diff-badge intermediate">Intermediate (3.5/5)</span>
+            </div>
+            <div class="vk-dash-room-body">
+              <h3>The Alchemist's Secret Lab</h3>
+              <p>
+                Synthesize the elusive philosopher's tincture using balance scales, distillation vessels, and rune ciphers.
+              </p>
+              <div class="vk-dash-room-meta">
+                <span><i class="fa-solid fa-users" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 2–6 Agents</span>
+                <span><i class="fa-solid fa-clock" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 60 Mins</span>
+                <strong>$38 / player</strong>
+              </div>
+              <button
+                type="button"
+                class="vk-button vk-button-primary"
+                style="justify-content: center;"
+                data-select-chamber="alchemist"
+              >
+                <span>Select Chamber</span>
+                <span class="material-symbols-rounded" style="font-size: 16px;"> chevron_right </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- CHAMBER 3: NAUTILUS DEEP DESCENT -->
+          <div class="vk-dash-room-card" data-diff="expert" data-chamber-id="nautilus">
+            <div class="vk-dash-room-img">
+              <img
+                src="assets/images/dash_chamber_nautilus.jpg"
+                alt="Deep underwater submarine bridge with pressure gauges and sonar radar"
+                loading="lazy"
+              />
+              <span class="vk-diff-badge expert">Expert (4.5/5)</span>
+            </div>
+            <div class="vk-dash-room-body">
+              <h3>Nautilus Deep Descent</h3>
+              <p>
+                Trapped 10,000 meters beneath the trench. Restore pneumatic ballasts and decode hydrophone transmissions.
+              </p>
+              <div class="vk-dash-room-meta">
+                <span><i class="fa-solid fa-users" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 4–8 Agents</span>
+                <span><i class="fa-solid fa-clock" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 75 Mins</span>
+                <strong>$42 / player</strong>
+              </div>
+              <button
+                type="button"
+                class="vk-button vk-button-primary"
+                style="justify-content: center;"
+                data-select-chamber="nautilus"
+              >
+                <span>Select Chamber</span>
+                <span class="material-symbols-rounded" style="font-size: 16px;"> chevron_right </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- CHAMBER 4: TOMB OF THE SUN PHARAOH -->
+          <div class="vk-dash-room-card" data-diff="beginner" data-chamber-id="pyramid">
+            <div class="vk-dash-room-img">
+              <img
+                src="assets/images/dash_chamber_pyramid.jpg"
+                alt="Ancient Egyptian stone sarcophagus and sandstone hieroglyphic tablets"
+                loading="lazy"
+              />
+              <span class="vk-diff-badge beginner">Beginner (2/5)</span>
+            </div>
+            <div class="vk-dash-room-body">
+              <h3>Tomb of the Sun Pharaoh</h3>
+              <p>
+                Unseal the golden burial vault using celestial alignment mirrors and hieroglyphic wheel ciphers.
+              </p>
+              <div class="vk-dash-room-meta">
+                <span><i class="fa-solid fa-users" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 2–8 Agents</span>
+                <span><i class="fa-solid fa-clock" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> 60 Mins</span>
+                <strong>$36 / player</strong>
+              </div>
+              <button
+                type="button"
+                class="vk-button vk-button-primary"
+                style="justify-content: center;"
+                data-select-chamber="pyramid"
+              >
+                <span>Select Chamber</span>
+                <span class="material-symbols-rounded" style="font-size: 16px;"> chevron_right </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 3 & 4: BOOKING ENGINE (DATE, GROUP & TIME-SLOT SELECTION)
+           ============================================================ -->
+      <section id="dashBookingEngine" class="vk-dash-section vk-enquiry-card">
+        <div>
+          <div class="vk-eyebrow" style="margin-bottom: 6px;">
+            <span class="material-symbols-rounded"> calendar_month </span>
+            <span>Mission Scheduler</span>
+          </div>
+          <h2 style="font-size: 22px; font-weight: 900; margin: 0 0 6px;">Schedule Your Private Mission Slot</h2>
+          <p style="font-size: 13.5px; color: var(--vk-text-soft); margin: 0;">
+            Select your chamber, group size, and preferred launch time. Slots locked by other operatives are disabled.
+          </p>
+        </div>
+
+        <form id="dashBookingForm" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="vk-form-row">
+            <!-- CHAMBER SELECT -->
+            <div class="vk-field-group">
+              <label for="bookChamberSelect">1. Mission Chamber</label>
+              <select id="bookChamberSelect">
+                <option value="quantum" data-rate="38" selected>Quantum Relay 2099 (Expert · $38/p)</option>
+                <option value="alchemist" data-rate="38">The Alchemist's Secret Lab (Intermediate · $38/p)</option>
+                <option value="nautilus" data-rate="42">Nautilus Deep Descent (Expert · $42/p)</option>
+                <option value="pyramid" data-rate="36">Tomb of the Sun Pharaoh (Beginner · $36/p)</option>
+                <option value="obsidian" data-rate="38">The Obsidian Vault (Stealth Heist · $38/p)</option>
+                <option value="cyberpunk" data-rate="38">Cyberpunk 2088: Neon Protocol (Sci-Fi · $38/p)</option>
+              </select>
+            </div>
+
+            <!-- SQUAD SIZE -->
+            <div class="vk-field-group">
+              <label for="bookSquadSelect">2. Fireteam Headcount</label>
+              <select id="bookSquadSelect">
+                <option value="2">2 Players (Duo Infiltration)</option>
+                <option value="3">3 Players (Tactical Squad)</option>
+                <option value="4" selected>4 Players (Tactical Squad)</option>
+                <option value="5">5 Players (Tactical Squad)</option>
+                <option value="6">6 Players (Tactical Squad)</option>
+                <option value="7">7 Players (Large Strike Team)</option>
+                <option value="8">8 Players (Large Strike Team)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="vk-form-row">
+            <!-- DATE PICKER -->
+            <div class="vk-field-group">
+              <label for="bookDateInput">3. Mission Date</label>
+              <input type="date" id="bookDateInput" required />
+            </div>
+
+            <!-- SQUAD LEAD CALLSIGN -->
+            <div class="vk-field-group">
+              <label for="bookLeaderInput">4. Mission Lead Callsign</label>
+              <input type="text" id="bookLeaderInput" value="Agent Marcus Vance" required />
+            </div>
+          </div>
+
+          <!-- TIME SLOTS GRID -->
+          <div class="vk-field-group">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+              <label>5. Available Launch Time Slots</label>
+              <span id="slotAvailabilityNote" style="font-size: 11.5px; color: var(--vk-text-muted);">
+                * Red strikethrough indicates simulated booked slot
+              </span>
+            </div>
+
+            <div class="vk-slot-grid" id="timeSlotsGrid">
+              <!-- Dynamically populated / interactive buttons -->
+              <button type="button" class="vk-slot-btn" data-time="10:00 AM">10:00 AM</button>
+              <button type="button" class="vk-slot-btn" data-time="11:45 AM">11:45 AM</button>
+              <button type="button" class="vk-slot-btn" data-time="01:30 PM">01:30 PM</button>
+              <button type="button" class="vk-slot-btn selected" data-time="03:15 PM">03:15 PM</button>
+              <button type="button" class="vk-slot-btn" data-time="05:00 PM">05:00 PM</button>
+              <button type="button" class="vk-slot-btn booked" data-time="06:45 PM" disabled title="Slot booked by another squad">06:45 PM</button>
+              <button type="button" class="vk-slot-btn" data-time="08:30 PM">08:30 PM</button>
+              <button type="button" class="vk-slot-btn booked" data-time="10:15 PM" disabled title="Slot booked by another squad">10:15 PM</button>
+            </div>
+            <input type="hidden" id="selectedTimeSlot" value="03:15 PM" />
+          </div>
+
+          <!-- BOOKING CONFIRMATION FEEDBACK -->
+          <div class="vk-form-notice" id="bookingNotice"></div>
+
+          <!-- SUBMIT CTA -->
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div>
+              <div style="font-size: 12px; color: var(--vk-text-muted);">Estimated Squad Rate:</div>
+              <strong style="font-size: 20px; font-family: var(--vk-font-display); color: var(--vk-primary);" id="estimatedBookingCost">
+                $152.00 (4 Agents @ $38/p)
+              </strong>
+            </div>
+
+            <button
+              type="submit"
+              class="vk-button vk-button-primary"
+              id="btnConfirmBooking"
+              style="min-height: 48px; padding-inline: 28px; font-size: 14.5px;"
+            >
+              <span>Lock in Demo Reservation</span>
+              <span class="material-symbols-rounded"> task_alt </span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============================================================
+           SECTION 5: BOOKING CONFIRMATION & UPCOMING BOOKINGS
+           ============================================================ -->
+      <section id="dashUpcoming" class="vk-dash-section">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <div class="vk-eyebrow" style="margin-bottom: 6px;">
+              <span class="material-symbols-rounded"> pending_actions </span>
+              <span>Active Operations</span>
+            </div>
+            <h2 style="font-size: 22px; font-weight: 900; margin: 0;">Upcoming Mission Bookings</h2>
+          </div>
+          <span style="font-size: 12px; color: var(--vk-text-muted);">
+            Manage or cancel pending missions anytime
+          </span>
+        </div>
+
+        <div class="vk-upcoming-list" id="upcomingMissionsList">
+          <!-- Populated dynamically from localStorage -->
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 6: PAST BOOKINGS & COMPLETION-TIME HISTORY
+           ============================================================ -->
+      <section id="dashHistory" class="vk-dash-section">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <div class="vk-eyebrow" style="margin-bottom: 6px;">
+              <span class="material-symbols-rounded"> military_tech </span>
+              <span>Operative Track Record</span>
+            </div>
+            <h2 style="font-size: 22px; font-weight: 900; margin: 0;">Past Missions & Completion Times</h2>
+          </div>
+
+          <button
+            type="button"
+            class="vk-button vk-button-outline"
+            id="btnClearHistory"
+            style="font-size: 11.5px; padding: 6px 12px;"
+          >
+            Clear History Log
+          </button>
+        </div>
+
+        <div class="vk-table-responsive" id="historyTableContainer">
+          <table class="vk-dash-table">
+            <thead>
+              <tr>
+                <th>Chamber Name</th>
+                <th>Difficulty</th>
+                <th>Result</th>
+                <th>Escape Time</th>
+                <th>Hints Used</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 7: PLAYER PROFILE AND PREFERENCES
+           ============================================================ -->
+      <section id="dashProfile" class="vk-dash-section vk-enquiry-card">
+        <div>
+          <div class="vk-eyebrow" style="margin-bottom: 6px;">
+            <span class="material-symbols-rounded"> settings </span>
+            <span>Operative Dossier</span>
+          </div>
+          <h2 style="font-size: 22px; font-weight: 900; margin: 0 0 6px;">Player Profile & Mission Directives</h2>
+          <p style="font-size: 13.5px; color: var(--vk-text-soft); margin: 0;">
+            Customize your Game Master communication preferences, hint calibration mode, and notification channels.
+          </p>
+        </div>
+
+        <form id="dashProfileForm" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="vk-form-row">
+            <div class="vk-field-group">
+              <label for="profCallsign">Operative Callsign</label>
+              <input type="text" id="profCallsign" value="Agent Marcus Vance" required />
+            </div>
+
+            <div class="vk-field-group">
+              <label for="profEmail">Registered Email</label>
+              <input type="email" id="profEmail" value="marcus.vance@cipherteam.demo" required />
+            </div>
+          </div>
+
+          <div class="vk-form-row">
+            <div class="vk-field-group">
+              <label for="profHintLevel">Game Master Hint Protocol</label>
+              <select id="profHintLevel">
+                <option value="standard" selected>Standard (Director monitors and offers clues if squad stalls)</option>
+                <option value="minimalist">Minimalist (Strictly on squad verbal button request)</option>
+                <option value="hardcore">Hardcore Mode (Zero hints permitted under any circumstances)</option>
+              </select>
+            </div>
+
+            <div class="vk-field-group">
+              <label for="profSensory">Sensory & Atmospheric Preference</label>
+              <select id="profSensory">
+                <option value="standard" selected>Full Cinematic (Haze, directional audio, low lighting)</option>
+                <option value="moderate">Moderate Lighting (Elevated ambient brightness)</option>
+                <option value="sensory_friendly">Sensory-Friendly (Zero strobe lights, normalized audio)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 4px;">
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: var(--vk-text); font-size: 13.5px;">
+              <input type="checkbox" id="prefSmsAlerts" checked style="accent-color: var(--vk-primary);" />
+              <span>Receive 24-hour mission arrival reminders via SMS</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: var(--vk-text); font-size: 13.5px;">
+              <input type="checkbox" id="prefDebriefPhotos" checked style="accent-color: var(--vk-primary);" />
+              <span>Automatically dispatch post-mission 4K squad photo to my email</span>
+            </label>
+          </div>
+
+          <div class="vk-form-notice" id="profileNotice"></div>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <button type="submit" class="vk-button vk-button-primary" style="padding: 12px 24px;">
+              <span>Save Preference Directives</span>
+              <span class="material-symbols-rounded"> save </span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- GLOBAL SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- DASHBOARD ENGINE LOGIC -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Mobile Sidebar Controls
+      const btnOpenSidebar = document.getElementById("btnOpenSidebar");
+      const btnCloseSidebar = document.getElementById("btnCloseSidebar");
+      const dashSidebar = document.getElementById("dashSidebar");
+      const backdrop = document.getElementById("dashSidebarBackdrop");
+
+      function openSidebar() {
+        if (dashSidebar && backdrop) {
+          dashSidebar.classList.add("is-open");
+          backdrop.style.display = "block";
+        }
+      }
+
+      function closeSidebar() {
+        if (dashSidebar && backdrop) {
+          dashSidebar.classList.remove("is-open");
+          backdrop.style.display = "none";
+        }
+      }
+
+      if (btnOpenSidebar) btnOpenSidebar.addEventListener("click", openSidebar);
+      if (btnCloseSidebar) btnCloseSidebar.addEventListener("click", closeSidebar);
+      if (backdrop) backdrop.addEventListener("click", closeSidebar);
+
+      // 2. Active Session Data
+      let activeSession = {
+        name: "Agent Marcus Vance",
+        email: "marcus.vance@cipherteam.demo",
+        rank: "CLEARANCE LEVEL 3",
+        callsign: "PHOENIX-01"
+      };
+
+      try {
+        const storedSession = localStorage.getItem("vk_logged_in_agent");
+        if (storedSession) {
+          activeSession = Object.assign(activeSession, JSON.parse(storedSession));
+        }
+      } catch(e) {
+        console.warn("Storage error", e);
+      }
+
+      // Update UI with active profile
+      const topHeading = document.getElementById("topWelcomeHeading");
+      const sidebarName = document.getElementById("sidebarAgentName");
+      const sidebarRank = document.getElementById("sidebarAgentRank");
+      const sidebarAvatar = document.getElementById("sidebarAgentAvatar");
+      const profCallsign = document.getElementById("profCallsign");
+      const profEmail = document.getElementById("profEmail");
+      const bookLeader = document.getElementById("bookLeaderInput");
+
+      if (topHeading) topHeading.textContent = `Welcome, ${activeSession.name}`;
+      if (sidebarName) sidebarName.textContent = activeSession.name;
+      if (sidebarRank) sidebarRank.textContent = activeSession.rank;
+      if (profCallsign) profCallsign.value = activeSession.name;
+      if (profEmail) profEmail.value = activeSession.email;
+      if (bookLeader) bookLeader.value = activeSession.name;
+
+      if (sidebarAvatar && activeSession.name) {
+        const parts = activeSession.name.split(" ");
+        const initials = parts.length > 1 ? (parts[0][0] + parts[1][0]).toUpperCase() : parts[0].slice(0, 2).toUpperCase();
+        sidebarAvatar.textContent = initials;
+      }
+
+      // 3. Default Demo Bookings & History State
+      const DEFAULT_BOOKINGS = [
+        {
+          id: "bk-101",
+          chamberName: "The Obsidian Vault",
+          chamberId: "obsidian",
+          date: "Tomorrow",
+          time: "06:45 PM",
+          squad: 4,
+          rate: 38,
+          status: "CONFIRMED [DEMO]"
+        },
+        {
+          id: "bk-102",
+          chamberName: "Cyberpunk 2088: Neon Protocol",
+          chamberId: "cyberpunk",
+          date: "Next Saturday",
+          time: "03:15 PM",
+          squad: 6,
+          rate: 38,
+          status: "CONFIRMED [DEMO]"
+        }
+      ];
+
+      const DEFAULT_HISTORY = [
+        { chamber: "Da Vinci's Crypt", diff: "Expert", result: "Escaped", time: "51m 42s", hints: "1 Hint", date: "Oct 10, 2026", status: "VICTORY" },
+        { chamber: "Magician's Study", diff: "Beginner", result: "Escaped", time: "44m 18s", hints: "0 Hints", date: "Sep 28, 2026", status: "VICTORY" },
+        { chamber: "Clockwork Asylum", diff: "Intermediate", result: "Escaped", time: "58m 04s", hints: "2 Hints", date: "Aug 14, 2026", status: "VICTORY" },
+        { chamber: "Pharaoh's Tomb", diff: "Intermediate", result: "Timed Out", time: "60m 00s", hints: "3 Hints", date: "Jul 22, 2026", status: "LOCKED" }
+      ];
+
+      function getBookings() {
+        try {
+          const raw = localStorage.getItem("vk_demo_bookings");
+          if (raw) return JSON.parse(raw);
+        } catch(e) {}
+        localStorage.setItem("vk_demo_bookings", JSON.stringify(DEFAULT_BOOKINGS));
+        return DEFAULT_BOOKINGS;
+      }
+
+      function saveBookings(bks) {
+        localStorage.setItem("vk_demo_bookings", JSON.stringify(bks));
+        renderUpcomingBookings();
+        updateStats();
+      }
+
+      function getHistory() {
+        try {
+          const raw = localStorage.getItem("vk_demo_history");
+          if (raw) return JSON.parse(raw);
+        } catch(e) {}
+        localStorage.setItem("vk_demo_history", JSON.stringify(DEFAULT_HISTORY));
+        return DEFAULT_HISTORY;
+      }
+
+      // 4. Render Upcoming Bookings and Overview Spotlight
+      const upcomingContainer = document.getElementById("upcomingMissionsList");
+      const spotlightBody = document.getElementById("overviewSpotlightBody");
+      const spotlightStatus = document.getElementById("overviewSpotlightStatus");
+
+      function renderUpcomingBookings() {
+        const bookings = getBookings();
+
+        // 4a. Update Overview Spotlight Widget
+        if (spotlightBody) {
+          if (bookings.length > 0) {
+            const next = bookings[0];
+            if (spotlightStatus) {
+              spotlightStatus.textContent = next.status || "CONFIRMED [DEMO]";
+              spotlightStatus.style.background = "rgba(16, 185, 129, 0.15)";
+              spotlightStatus.style.color = "var(--vk-accent-emerald)";
+            }
+            spotlightBody.innerHTML = `
+              <div style="display: flex; align-items: center; gap: 14px; margin-top: 4px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(var(--vk-primary-rgb), 0.15); color: var(--vk-primary); display: grid; place-items: center; font-size: 24px; flex-shrink: 0;">
+                  <span class="material-symbols-rounded"> meeting_room </span>
+                </div>
+                <div>
+                  <strong style="font-size: 16px; color: var(--vk-text); display: block; font-weight: 800;">${next.chamberName}</strong>
+                  <div style="font-size: 13px; color: var(--vk-text-soft); display: flex; gap: 14px; flex-wrap: wrap; margin-top: 4px; font-weight: 600;">
+                    <span><i class="fa-solid fa-calendar-day" style="color: var(--vk-primary); margin-inline-end: 4px;"></i> ${next.date}</span>
+                    <span><i class="fa-solid fa-clock" style="color: var(--vk-primary); margin-inline-end: 4px;"></i> ${next.time}</span>
+                    <span><i class="fa-solid fa-users" style="color: var(--vk-primary); margin-inline-end: 4px;"></i> ${next.squad} Players</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          } else {
+            if (spotlightStatus) {
+              spotlightStatus.textContent = "Standby";
+              spotlightStatus.style.background = "rgba(148, 163, 184, 0.15)";
+              spotlightStatus.style.color = "var(--vk-text-muted)";
+            }
+            spotlightBody.innerHTML = `
+              <div style="padding: 10px 0; color: var(--vk-text-soft); font-size: 13.5px; font-weight: 600;">
+                No pending missions currently scheduled. Use the direct buttons below to book a chamber.
+              </div>
+            `;
+          }
+        }
+
+        // 4b. Update Upcoming Tab Container
+        if (!upcomingContainer) return;
+
+        if (bookings.length === 0) {
+          upcomingContainer.innerHTML = `
+            <div class="vk-empty-box">
+              <div class="vk-empty-icon">
+                <span class="material-symbols-rounded"> event_busy </span>
+              </div>
+              <strong style="font-size: 16px; color: var(--vk-text);">No Upcoming Missions Scheduled</strong>
+              <p style="font-size: 13.5px; color: var(--vk-text-soft); max-width: 440px; margin: 0;">
+                You currently have zero active reservations. Choose a chamber from the catalog or booking engine to secure your slot.
+              </p>
+              <button type="button" class="vk-button vk-button-primary" data-dash-tab="dashBookingEngine" style="margin-top: 8px;">
+                Book a Mission Slot
+              </button>
+            </div>
+          `;
+          return;
+        }
+
+        upcomingContainer.innerHTML = bookings.map(b => `
+          <div class="vk-upcoming-card" id="card-${b.id}">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(var(--vk-primary-rgb), 0.15); color: var(--vk-primary); display: grid; place-items: center; font-size: 24px; flex-shrink: 0;">
+                <span class="material-symbols-rounded"> meeting_room </span>
+              </div>
+              <div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;">
+                  <strong style="font-size: 16px; color: var(--vk-text); font-weight: 800;">${b.chamberName}</strong>
+                  <span class="vk-upcoming-badge">
+                    <span class="material-symbols-rounded" style="font-size: 14px;"> verified </span>
+                    ${b.status}
+                  </span>
+                </div>
+                <div class="vk-upcoming-meta">
+                  <span><i class="fa-solid fa-calendar-day" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> ${b.date}</span>
+                  <span><i class="fa-solid fa-clock" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> ${b.time}</span>
+                  <span><i class="fa-solid fa-users" style="margin-inline-end: 6px; color: var(--vk-primary);"></i> ${b.squad} Players</span>
+                  <span><i class="fa-solid fa-dollar-sign" style="margin-inline-end: 4px; color: var(--vk-primary);"></i> $${(b.squad * (b.rate || 38)).toFixed(2)} [Sample]</span>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button
+                type="button"
+                class="vk-button vk-button-outline btn-cancel-booking"
+                data-booking-id="${b.id}"
+                style="color: #ef4444; border-color: rgba(239, 68, 68, 0.4); font-size: 12px; padding: 8px 14px; font-weight: 700;"
+              >
+                <span class="material-symbols-rounded" style="font-size: 16px;"> cancel </span>
+                <span>Cancel Reservation</span>
+              </button>
+            </div>
+          </div>
+        `).join("");
+
+        // Attach cancel handlers
+        document.querySelectorAll(".btn-cancel-booking").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-booking-id");
+            if (confirm("Cancel this demo chamber reservation? The time slot will immediately be released.")) {
+              const current = getBookings().filter(b => b.id !== id);
+              saveBookings(current);
+            }
+          });
+        });
+      }
+
+      // 5. Render History Table
+      const historyTableBody = document.getElementById("historyTableBody");
+      const historyContainer = document.getElementById("historyTableContainer");
+
+      function renderHistory() {
+        if (!historyTableBody) return;
+        const hist = getHistory();
+
+        if (hist.length === 0) {
+          historyContainer.innerHTML = `
+            <div class="vk-empty-box" style="border: none;">
+              <div class="vk-empty-icon">
+                <span class="material-symbols-rounded"> history_toggle_off </span>
+              </div>
+              <strong style="font-size: 15px; color: var(--vk-text);">No Historical Mission Logs</strong>
+              <p style="font-size: 13px; color: var(--vk-text-soft); margin: 0;">
+                All past mission logs have been cleared.
+              </p>
+            </div>
+          `;
+          return;
+        }
+
+        historyTableBody.innerHTML = hist.map(h => `
+          <tr>
+            <td><strong>${h.chamber}</strong></td>
+            <td><span class="vk-demo-badge">${h.diff}</span></td>
+            <td>
+              <span style="color: ${h.result === 'Escaped' ? 'var(--vk-accent-emerald)' : '#ef4444'}; font-weight: 800;">
+                ${h.result}
+              </span>
+            </td>
+            <td><code>${h.time}</code></td>
+            <td>${h.hints}</td>
+            <td>${h.date}</td>
+            <td>
+              <span class="vk-upcoming-badge" style="background: ${h.status === 'VICTORY' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)'}; color: ${h.status === 'VICTORY' ? 'var(--vk-accent-emerald)' : '#ef4444'};">
+                ${h.status}
+              </span>
+            </td>
+          </tr>
+        `).join("");
+      }
+
+      // Clear history button
+      const btnClearHistory = document.getElementById("btnClearHistory");
+      if (btnClearHistory) {
+        btnClearHistory.addEventListener("click", () => {
+          if (confirm("Clear local simulation history records?")) {
+            localStorage.setItem("vk_demo_history", JSON.stringify([]));
+            renderHistory();
+          }
+        });
+      }
+
+      // 6. Update Stats Cards
+      function updateStats() {
+        const bookings = getBookings();
+        const statActive = document.getElementById("statActiveUpcoming");
+        if (statActive) statActive.textContent = bookings.length.toString();
+      }
+
+      // 7. Reset Simulation State Button
+      const btnResetState = document.getElementById("btnResetDemoData");
+      if (btnResetState) {
+        btnResetState.addEventListener("click", () => {
+          if (confirm("Reset simulation data to default initial demo records?")) {
+            localStorage.setItem("vk_demo_bookings", JSON.stringify(DEFAULT_BOOKINGS));
+            localStorage.setItem("vk_demo_history", JSON.stringify(DEFAULT_HISTORY));
+            renderUpcomingBookings();
+            renderHistory();
+            updateStats();
+            alert("Simulation state successfully restored to initial demo records.");
+          }
+        });
+      }
+
+      // 8. Chamber Catalog Filter
+      const filterChips = document.querySelectorAll("#dashDiffFilters button");
+      const roomCards = document.querySelectorAll("#dashRoomGrid .vk-dash-room-card");
+
+      filterChips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          filterChips.forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          const diff = chip.getAttribute("data-filter");
+
+          roomCards.forEach(card => {
+            if (diff === "all" || card.getAttribute("data-diff") === diff) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // 9. Chamber Quick-Select to Booking Engine
+      const bookChamberSelect = document.getElementById("bookChamberSelect");
+      const bookDateInput = document.getElementById("bookDateInput");
+      const bookSquadSelect = document.getElementById("bookSquadSelect");
+      const costDisplay = document.getElementById("estimatedBookingCost");
+
+      // Set tomorrow date default
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      if (bookDateInput) {
+        bookDateInput.value = tomorrow.toISOString().split("T")[0];
+        bookDateInput.min = new Date().toISOString().split("T")[0];
+      }
+
+      function updateEstimatedCost() {
+        if (!bookChamberSelect || !bookSquadSelect || !costDisplay) return;
+        const opt = bookChamberSelect.options[bookChamberSelect.selectedIndex];
+        const rate = parseFloat(opt.getAttribute("data-rate")) || 38;
+        const squad = parseInt(bookSquadSelect.value, 10) || 4;
+        const total = (rate * squad).toFixed(2);
+        costDisplay.textContent = `$${total} (${squad} Agents @ $${rate}/p)`;
+      }
+
+      if (bookChamberSelect) bookChamberSelect.addEventListener("change", updateEstimatedCost);
+      if (bookSquadSelect) bookSquadSelect.addEventListener("change", updateEstimatedCost);
+
+      // Select Chamber button handler: selects chamber AND switches tab to Booking Engine!
+      document.querySelectorAll("[data-select-chamber]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const chamberId = btn.getAttribute("data-select-chamber");
+          if (bookChamberSelect) {
+            bookChamberSelect.value = chamberId;
+            updateEstimatedCost();
+          }
+          switchDashboardTab("dashBookingEngine");
+        });
+      });
+
+      // 10. Time Slots Selection & Prevention of Booked Slots
+      const slotButtons = document.querySelectorAll("#timeSlotsGrid .vk-slot-btn");
+      const hiddenSlotInput = document.getElementById("selectedTimeSlot");
+
+      slotButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          if (btn.disabled || btn.classList.contains("booked")) return;
+          slotButtons.forEach(b => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          const time = btn.getAttribute("data-time");
+          if (hiddenSlotInput) hiddenSlotInput.value = time;
+        });
+      });
+
+      // 11. Booking Form Submission
+      const bookingForm = document.getElementById("dashBookingForm");
+      const bookingNotice = document.getElementById("bookingNotice");
+
+      if (bookingForm) {
+        bookingForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const selectedChamberOpt = bookChamberSelect.options[bookChamberSelect.selectedIndex];
+          const chamberName = selectedChamberOpt.text.split(" (")[0];
+          const chamberId = bookChamberSelect.value;
+          const rate = parseFloat(selectedChamberOpt.getAttribute("data-rate")) || 38;
+          const squad = parseInt(bookSquadSelect.value, 10) || 4;
+          const date = bookDateInput.value;
+          const time = hiddenSlotInput ? hiddenSlotInput.value : "03:15 PM";
+
+          if (!time) {
+            alert("Please select an available mission launch time slot.");
+            return;
+          }
+
+          // Check if slot already booked in demo state
+          const bookings = getBookings();
+          const isSlotTaken = bookings.some(b => b.chamberId === chamberId && b.date === date && b.time === time);
+          if (isSlotTaken) {
+            bookingNotice.className = "vk-form-notice error";
+            bookingNotice.style.display = "block";
+            bookingNotice.textContent = `Time slot ${time} on ${date} is already locked by another squad. Please pick another available window.`;
+            return;
+          }
+
+          // Create new reservation
+          const newBooking = {
+            id: `bk-${Date.now().toString().slice(-4)}`,
+            chamberName: chamberName,
+            chamberId: chamberId,
+            date: date,
+            time: time,
+            squad: squad,
+            rate: rate,
+            status: "CONFIRMED [DEMO]"
+          };
+
+          bookings.unshift(newBooking);
+          saveBookings(bookings);
+
+          // Disable the booked slot button
+          slotButtons.forEach(b => {
+            if (b.getAttribute("data-time") === time) {
+              b.classList.remove("selected");
+              b.classList.add("booked");
+              b.disabled = true;
+              b.title = "Slot locked by your reservation";
+            }
+          });
+
+          // Show confirmation feedback
+          bookingNotice.className = "vk-form-notice success";
+          bookingNotice.style.display = "block";
+          bookingNotice.innerHTML = `
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <span class="material-symbols-rounded"> task_alt </span>
+              <div>
+                <strong>Mission Slot Reserved [Demo State]:</strong> Confirmed for <em>${chamberName}</em> on <strong>${date} at ${time}</strong> (${squad} Agents). Transferring to your Active Bookings dossier...
+              </div>
+            </div>
+          `;
+
+          // Smoothly switch tab to upcoming section after brief feedback
+          setTimeout(() => {
+            switchDashboardTab("dashUpcoming");
+            bookingNotice.style.display = "none";
+          }, 1200);
+        });
+      }
+
+      // 12. Player Preferences Form
+      const profileForm = document.getElementById("dashProfileForm");
+      const profileNotice = document.getElementById("profileNotice");
+
+      if (profileForm) {
+        profileForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const callsign = profCallsign.value.trim();
+          const email = profEmail.value.trim();
+          const hint = document.getElementById("profHintLevel").value;
+          const sensory = document.getElementById("profSensory").value;
+
+          activeSession.name = callsign;
+          activeSession.email = email;
+          localStorage.setItem("vk_logged_in_agent", JSON.stringify(activeSession));
+
+          if (topHeading) topHeading.textContent = `Welcome, ${callsign}`;
+          if (sidebarName) sidebarName.textContent = callsign;
+
+          profileNotice.className = "vk-form-notice success";
+          profileNotice.style.display = "block";
+          profileNotice.innerHTML = `
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <span class="material-symbols-rounded"> check_circle </span>
+              <div>
+                <strong>Preferences Saved [Local State]:</strong> Hint protocol calibrated to <em>${hint.toUpperCase()}</em>. Directives updated in active session.
+              </div>
+            </div>
+          `;
+
+          setTimeout(() => {
+            profileNotice.style.display = "none";
+          }, 4000);
+        });
+      }
+
+      // 13. DEDICATED TAB SWITCHING SYSTEM (SPA PAGE SWITCHER)
+      const navLinks = document.querySelectorAll('.vk-dash-nav-list a[href^="#dash"]');
+      const dashSections = document.querySelectorAll('.vk-dash-section');
+
+      function switchDashboardTab(targetId) {
+        if (!targetId) return;
+        const cleanId = targetId.replace('#', '');
+        const targetSection = document.getElementById(cleanId);
+        if (!targetSection) return;
+
+        // Hide all sections, display the active tab section
+        dashSections.forEach(sec => {
+          if (sec.id === cleanId) {
+            sec.classList.add('active');
+          } else {
+            sec.classList.remove('active');
+          }
+        });
+
+        // Highlight matching sidebar nav link
+        navLinks.forEach(link => {
+          const linkTarget = link.getAttribute('href').replace('#', '');
+          if (linkTarget === cleanId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        // Update URL hash state
+        if (window.location.hash !== `#${cleanId}`) {
+          history.pushState(null, '', `#${cleanId}`);
+        }
+
+        // Close mobile drawer if active
+        closeSidebar();
+
+        // Scroll top of viewport cleanly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Attach click events to sidebar navigation links
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = link.getAttribute('href');
+          switchDashboardTab(href);
+        });
+      });
+
+      // Delegate click for any element with [data-dash-tab]
+      document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-dash-tab]');
+        if (trigger) {
+          e.preventDefault();
+          const tab = trigger.getAttribute('data-dash-tab');
+          switchDashboardTab(tab);
+        }
+      });
+
+      // Handle browser back/forward buttons
+      window.addEventListener('popstate', () => {
+        const hash = window.location.hash;
+        if (hash && document.getElementById(hash.replace('#', ''))) {
+          switchDashboardTab(hash);
+        } else {
+          switchDashboardTab('dashOverview');
+        }
+      });
+
+      // Initial renders
+      renderUpcomingBookings();
+      renderHistory();
+      updateStats();
+      updateEstimatedCost();
+
+      // Check URL hash for initial tab; default to Overview
+      const initialHash = window.location.hash;
+      if (initialHash && document.getElementById(initialHash.replace('#', ''))) {
+        switchDashboardTab(initialHash);
+      } else {
+        switchDashboardTab('dashOverview');
+      }
+    });
+  </script>
+</body>
+</html>

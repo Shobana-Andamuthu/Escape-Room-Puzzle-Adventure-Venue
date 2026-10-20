@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Login or register for the Vault & Key agent portal. Access your player dashboard, track escape times, and manage private chamber bookings."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Agent Access & Portal Login | Vault & Key</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="vk-auth-body">
+  <div class="vk-auth-layout">
+    <!-- AUTH TOP NAVBAR -->
+    <header class="vk-auth-navbar">
+      <div class="vk-container" style="display: flex; align-items: center; justify-content: space-between;">
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <a href="index.html" class="vk-button vk-button-outline" style="font-size: 13px; padding: 8px 16px;">
+            Return to Venue
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- AUTH MAIN CONTENT -->
+    <main class="vk-auth-main">
+      <div class="vk-auth-card">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div class="vk-brand-mark" style="margin: 0 auto 14px; width: 52px; height: 52px; font-size: 26px;">
+            <span class="material-symbols-rounded"> vpn_key </span>
+          </div>
+          <h1 style="font-size: 26px; font-weight: 900; margin-bottom: 6px; color: var(--vk-text);" id="authTitle">
+            Agent Dispatch Access
+          </h1>
+          <p style="font-size: 14px; color: var(--vk-text-soft); line-height: 1.5; margin: 0;" id="authSubtitle">
+            Sign in to access your player command dashboard and mission logs.
+          </p>
+        </div>
+
+        <!-- MODE TABS -->
+        <div class="vk-auth-tabs" role="tablist">
+          <button type="button" class="vk-auth-tab active" id="tabLogin" role="tab" aria-selected="true">
+            Agent Sign In
+          </button>
+          <button type="button" class="vk-auth-tab" id="tabRegister" role="tab" aria-selected="false">
+            New Registration
+          </button>
+        </div>
+
+        <!-- AUTH FORM -->
+        <form id="authForm" novalidate>
+          <!-- CALLSIGN (ONLY IN REGISTER MODE) -->
+          <div class="vk-field-group" id="groupCallsign" style="display: none; margin-bottom: 16px;">
+            <label for="authCallsign">Agent Callsign *</label>
+            <input type="text" id="authCallsign" placeholder="e.g. Agent Phoenix" />
+            <span class="vk-field-error" id="errorCallsign">Please choose an agent callsign (min 3 chars).</span>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="vk-field-group" id="groupEmail" style="margin-bottom: 16px;">
+            <label for="authEmail">Agent Email *</label>
+            <input type="email" id="authEmail" placeholder="agent.name@cipherteam.demo" required />
+            <span class="vk-field-error" id="errorEmail">Please enter a valid email address.</span>
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="vk-field-group" id="groupPassword" style="margin-bottom: 16px;">
+            <label for="authPassword">Cipher Passcode *</label>
+            <div class="vk-password-wrapper">
+              <input type="password" id="authPassword" placeholder="••••••••••••" required />
+              <button
+                type="button"
+                class="vk-password-toggle"
+                id="togglePassword"
+                aria-label="Toggle password visibility"
+              >
+                <span class="material-symbols-rounded"> visibility </span>
+              </button>
+            </div>
+            <span class="vk-field-error" id="errorPassword">Passcode must contain at least 6 characters.</span>
+          </div>
+
+          <!-- CONFIRM PASSWORD (ONLY IN REGISTER MODE) -->
+          <div class="vk-field-group" id="groupConfirmPassword" style="display: none; margin-bottom: 16px;">
+            <label for="authConfirmPassword">Confirm Cipher Passcode *</label>
+            <input type="password" id="authConfirmPassword" placeholder="••••••••••••" />
+            <span class="vk-field-error" id="errorConfirmPassword">Passcodes do not match.</span>
+          </div>
+
+          <!-- REMEMBER & FORGOT ROW (LOGIN ONLY) -->
+          <div id="rowLoginOptions" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; font-size: 13px;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--vk-text-soft);">
+              <input type="checkbox" id="authRemember" checked style="accent-color: var(--vk-primary);" />
+              <span>Remember Device</span>
+            </label>
+            <a href="#" id="linkForgot" style="color: var(--vk-primary); text-decoration: none; font-weight: 700;">Forgot Passcode?</a>
+          </div>
+
+          <!-- FEEDBACK BANNER -->
+          <div class="vk-form-notice" id="authNotice" style="margin-bottom: 16px;"></div>
+
+          <!-- SUBMIT BUTTON -->
+          <button type="submit" class="vk-button vk-button-primary" id="btnAuthSubmit" style="width: 100%; min-height: 50px; font-size: 15px; justify-content: center;">
+            <span id="btnAuthText">Authorize & Enter Command</span>
+            <span class="material-symbols-rounded"> login </span>
+          </button>
+        </form>
+
+        <!-- AUTO-FILL DEMO CREDENTIALS -->
+        <div class="vk-quick-cred-box">
+          <div>
+            <strong style="display: block; font-size: 12.5px; color: var(--vk-text);">Demo Agent Account</strong>
+            <small style="color: var(--vk-text-muted); font-size: 11px;">agent.vance@vaultkey.demo · Level 3</small>
+          </div>
+          <button
+            type="button"
+            class="vk-button vk-button-outline"
+            id="btnAutoFillDemo"
+            style="font-size: 12px; padding: 6px 12px; min-height: 32px;"
+          >
+            Auto-Fill Demo
+          </button>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center;">
+          <span class="vk-sample-disclaimer" style="font-size: 10.5px; line-height: 1.5; display: inline-block;">
+            [Client-Side Demo Authentication Simulation]: No live credentials will be transmitted to third parties. In a production build, this routes through your secure OAuth/auth service.
+          </span>
+        </div>
+      </div>
+    </main>
+
+    <!-- AUTH FOOTER -->
+    <footer style="position: relative; z-index: 2; padding: 18px 0; border-top: 1px solid var(--vk-border); text-align: center; font-size: 12px; color: var(--vk-text-muted);">
+      <div class="vk-container">
+        <span>© 2026 Vault & Key Adventure Venues. Client-side authentication simulation.</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- GLOBAL APPLICATION SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- AUTH FORM LOGIC -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let isLoginMode = true;
+
+      const tabLogin = document.getElementById("tabLogin");
+      const tabRegister = document.getElementById("tabRegister");
+      const authTitle = document.getElementById("authTitle");
+      const authSubtitle = document.getElementById("authSubtitle");
+      const btnAuthText = document.getElementById("btnAuthText");
+      const groupCallsign = document.getElementById("groupCallsign");
+      const groupConfirmPassword = document.getElementById("groupConfirmPassword");
+      const rowLoginOptions = document.getElementById("rowLoginOptions");
+
+      const authForm = document.getElementById("authForm");
+      const emailInput = document.getElementById("authEmail");
+      const passwordInput = document.getElementById("authPassword");
+      const callsignInput = document.getElementById("authCallsign");
+      const confirmPasswordInput = document.getElementById("authConfirmPassword");
+      const togglePasswordBtn = document.getElementById("togglePassword");
+      const btnAutoFill = document.getElementById("btnAutoFillDemo");
+      const authNotice = document.getElementById("authNotice");
+
+      const groupEmail = document.getElementById("groupEmail");
+      const groupPassword = document.getElementById("groupPassword");
+
+      // Mode switching
+      function setMode(login) {
+        isLoginMode = login;
+        if (login) {
+          tabLogin.classList.add("active");
+          tabLogin.setAttribute("aria-selected", "true");
+          tabRegister.classList.remove("active");
+          tabRegister.setAttribute("aria-selected", "false");
+
+          authTitle.textContent = "Agent Dispatch Access";
+          authSubtitle.textContent = "Sign in to access your player command dashboard and mission logs.";
+          btnAuthText.textContent = "Authorize & Enter Command";
+
+          groupCallsign.style.display = "none";
+          groupConfirmPassword.style.display = "none";
+          rowLoginOptions.style.display = "flex";
+        } else {
+          tabRegister.classList.add("active");
+          tabRegister.setAttribute("aria-selected", "true");
+          tabLogin.classList.remove("active");
+          tabLogin.setAttribute("aria-selected", "false");
+
+          authTitle.textContent = "Register New Agent";
+          authSubtitle.textContent = "Create an operative profile to save chamber records and track escape times.";
+          btnAuthText.textContent = "Create Agent Profile & Enter";
+
+          groupCallsign.style.display = "flex";
+          groupConfirmPassword.style.display = "flex";
+          rowLoginOptions.style.display = "none";
+        }
+        authNotice.style.display = "none";
+      }
+
+      tabLogin.addEventListener("click", () => setMode(true));
+      tabRegister.addEventListener("click", () => setMode(false));
+
+      // Password visibility toggle
+      togglePasswordBtn.addEventListener("click", () => {
+        const isPassword = passwordInput.getAttribute("type") === "password";
+        passwordInput.setAttribute("type", isPassword ? "text" : "password");
+        togglePasswordBtn.querySelector(".material-symbols-rounded").textContent = isPassword ? "visibility_off" : "visibility";
+      });
+
+      // Auto-fill demo credentials
+      btnAutoFill.addEventListener("click", () => {
+        setMode(true);
+        emailInput.value = "agent.vance@vaultkey.demo";
+        passwordInput.value = "CipherVault2026!";
+        authNotice.className = "vk-form-notice success";
+        authNotice.style.display = "block";
+        authNotice.innerHTML = `<strong>Demo Credentials Populated:</strong> Click "Authorize & Enter Command" to proceed to your Player Dashboard.`;
+      });
+
+      // Form validation & submission
+      authForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        groupEmail.classList.remove("has-error");
+        groupPassword.classList.remove("has-error");
+        groupCallsign.classList.remove("has-error");
+        groupConfirmPassword.classList.remove("has-error");
+        authNotice.style.display = "none";
+
+        // Validate email
+        const email = emailInput.value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          groupEmail.classList.add("has-error");
+          valid = false;
+        }
+
+        // Validate password
+        const password = passwordInput.value;
+        if (!password || password.length < 6) {
+          groupPassword.classList.add("has-error");
+          valid = false;
+        }
+
+        // Extra validations in register mode
+        if (!isLoginMode) {
+          const callsign = callsignInput.value.trim();
+          if (!callsign || callsign.length < 3) {
+            groupCallsign.classList.add("has-error");
+            valid = false;
+          }
+
+          if (confirmPasswordInput.value !== password) {
+            groupConfirmPassword.classList.add("has-error");
+            valid = false;
+          }
+        }
+
+        if (!valid) return;
+
+        // Store active agent session locally
+        const agentName = isLoginMode ? (email.split("@")[0].replace(".", " ").toUpperCase()) : callsignInput.value.trim();
+        const sessionData = {
+          email: email,
+          name: agentName || "Agent Marcus Vance",
+          rank: "Clearance Level 3",
+          callsign: isLoginMode ? "PHOENIX-01" : callsignInput.value.trim(),
+          loginTime: new Date().toISOString()
+        };
+
+        try {
+          localStorage.setItem("vk_logged_in_agent", JSON.stringify(sessionData));
+        } catch(err) {
+          console.warn("Storage warning:", err);
+        }
+
+        authNotice.className = "vk-form-notice success";
+        authNotice.style.display = "block";
+        authNotice.innerHTML = `
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span class="material-symbols-rounded"> task_alt </span>
+            <div>
+              <strong>${isLoginMode ? 'Access Authorized' : 'Profile Created'} [Simulation]:</strong> Welcome, ${sessionData.name}. Loading command center...
+            </div>
+          </div>
+        `;
+
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>

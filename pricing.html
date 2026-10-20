@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Explore transparent group pricing, per-player rates, and private chamber packages at Vault & Key. Interactive group-size calculator and team adventure bookings."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Pricing & Group Adventures | Vault & Key</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       00. GLOBAL HEADER & FLOATING NAVIGATION
+       ============================================================ -->
+  <header class="vk-header">
+    <div class="vk-container">
+      <div class="vk-header-inner">
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+
+        <!-- DESKTOP NAVBAR -->
+        <nav class="vk-nav" aria-label="Main navigation">
+          <div class="vk-nav-dropdown">
+            <button
+              type="button"
+              class="vk-nav-link vk-nav-dropdown-trigger"
+              data-home-dropdown
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>Home</span>
+              <span class="material-symbols-rounded" style="font-size:18px;"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-nav-dropdown-menu" aria-label="Home variations">
+              <a href="index.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> meeting_room </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 1 — Signature</strong>
+                  <small>Classic Vault Experience</small>
+                </span>
+              </a>
+              <a href="home-2.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> radar </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 2 — Mission Control</strong>
+                  <small>Expressive Quest Operations</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a href="rooms.html" class="vk-nav-link">Rooms & Quests</a>
+          <a href="pricing.html" class="vk-nav-link is-active">Pricing & Groups</a>
+          <a href="about.html" class="vk-nav-link">About</a>
+          <a href="contact.html" class="vk-nav-link">Contact</a>
+          <a href="dashboard.html" class="vk-nav-link">Player Dashboard</a>
+        </nav>
+
+        <!-- HEADER ACTIONS & TOGGLES -->
+        <div class="vk-header-actions">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <a href="login.html" class="vk-nav-link" style="font-weight:700; border: 1px solid var(--vk-border);">Login</a>
+          <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+            Book Quest
+          </button>
+
+          <!-- MOBILE HAMBURGER BUTTON -->
+          <button
+            type="button"
+            class="vk-icon-button vk-menu-toggle"
+            data-menu-toggle
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-rounded"> menu </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE SLIDE-DOWN DRAWER -->
+      <div class="vk-mobile-menu" data-mobile-menu>
+        <div class="vk-mobile-menu-inner">
+          <!-- Mobile Toggles for screens <= 440px -->
+          <div class="vk-mobile-toggles">
+            <button type="button" data-theme-toggle aria-label="Toggle theme">
+              <span class="material-symbols-rounded"> light_mode </span>
+            </button>
+            <button type="button" data-rtl-toggle aria-label="Toggle RTL">
+              <i class="fa-solid fa-right-left"></i>
+            </button>
+          </div>
+
+          <div class="vk-mobile-home">
+            <button
+              type="button"
+              class="vk-mobile-home-trigger"
+              data-mobile-home-toggle
+              aria-expanded="false"
+            >
+              <span>Home Options</span>
+              <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-mobile-home-links">
+              <a href="index.html">Home 1 — Signature</a>
+              <a href="home-2.html">Home 2 — Mission Control</a>
+            </div>
+          </div>
+
+          <a href="rooms.html">Rooms & Quests</a>
+          <a href="pricing.html" class="is-current">Pricing & Groups</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="dashboard.html">Player Dashboard</a>
+
+          <div class="vk-mobile-menu-actions">
+            <a href="login.html" class="vk-button vk-button-outline">Login</a>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Book Your Adventure
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         SECTION 1: PRICING HERO
+         ============================================================ -->
+    <section class="vk-pricing-hero" id="pricingHero">
+      <div class="vk-container">
+        <div class="vk-eyebrow" style="margin-inline: auto; margin-bottom: 20px;">
+          <span class="material-symbols-rounded"> payments </span>
+          <span>Transparent Rates & Group Tiers</span>
+        </div>
+
+        <h1 class="vk-hero-title" style="margin-bottom: 20px;">
+          Honest Pricing for <span class="highlight">Every Fireteam</span>
+        </h1>
+
+        <p class="vk-hero-desc" style="margin-inline: auto; margin-bottom: 26px; max-width: 660px;">
+          Every Vault & Key adventure is strictly 100% private. You never share a room with strangers. Choose your squad size below, explore all-inclusive amenities, or estimate your mission rate in real time.
+        </p>
+
+        <div style="margin-bottom: 30px;">
+          <span class="vk-sample-disclaimer" style="background: rgba(var(--vk-primary-rgb), 0.15); padding: 6px 14px; border-radius: var(--vk-radius-pill); border: 1px solid rgba(var(--vk-primary-rgb), 0.3);">
+            <i class="fa-solid fa-circle-info" style="margin-inline-end: 6px;"></i>
+            Editable Sample Pricing Card — Configurable Venue Demonstration Rates
+          </span>
+        </div>
+
+        <div class="vk-hero-actions" style="justify-content: center;">
+          <a href="#priceEstimator" class="vk-primary-button">
+            <span>Calculate Squad Rate</span>
+            <span class="material-symbols-rounded"> calculate </span>
+          </a>
+          <a href="#pricingTiers" class="vk-secondary-button">
+            <span>View Tier Packages</span>
+            <span class="material-symbols-rounded"> groups </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: PRICING INTRODUCTION & BOOKING GUIDANCE
+         ============================================================ -->
+    <section class="vk-section" id="pricingGuidance" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> verified_user </span>
+            <span>Booking Standards</span>
+          </div>
+          <h2 class="vk-section-title">
+            The Vault & Key <span class="highlight">Booking Promise</span>
+          </h2>
+          <p class="vk-section-desc">
+            No surprise add-ons, no locked doors without emergency egress, and never play with strangers. Here is how our transparent pricing architecture protects your escape room experience.
+          </p>
+        </div>
+
+        <div class="vk-guidance-grid">
+          <!-- CARD 1 -->
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> lock_open </span>
+            </div>
+            <h3>100% Private Chambers</h3>
+            <p>
+              Once you reserve a mission slot, that chamber is completely locked for your squad only. We never backfill open spots with unacquainted guests.
+            </p>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> headset_mic </span>
+            </div>
+            <h3>Dedicated Gamemaster</h3>
+            <p>
+              Your squad receives an assigned Game Director who monitors your progress via high-definition infrared cameras, providing context-aware clues when requested.
+            </p>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> trending_down </span>
+            </div>
+            <h3>Volume Bracket Savings</h3>
+            <p>
+              Larger squads automatically enjoy reduced per-player rates. From compact duos to high-capacity strike teams, your rate scales fairly.
+            </p>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> event_repeat </span>
+            </div>
+            <h3>Flexible Rescheduling</h3>
+            <p>
+              Life happens. Reschedule your mission anytime up to 24 hours prior to launch with zero fees, or exchange for a non-expiring venue quest voucher.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: PRICING CARDS BY GROUP SIZE
+         ============================================================ -->
+    <section class="vk-section" id="pricingTiers" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> badge </span>
+            <span>Squad Tier Packages</span>
+          </div>
+          <h2 class="vk-section-title">
+            Calibrated Packages by <span class="highlight">Fireteam Size</span>
+          </h2>
+          <p class="vk-section-desc">
+            Select your fireteam bracket below. All tiers grant full private chamber access, all props, cipher sheets, and digital debrief souvenirs.
+          </p>
+        </div>
+
+        <div class="vk-pricing-tiers-grid">
+          <!-- TIER 1: DUO INFILTRATION -->
+          <div class="vk-price-card">
+            <div class="vk-group-badge">Compact Pair</div>
+            <h3 style="font-size: 24px; margin-bottom: 4px;">Duo Infiltration</h3>
+            <p style="font-size: 13.5px; color: var(--vk-text-soft); margin-bottom: 12px;">
+              Intimate, high-intensity challenge designed specifically for puzzle pairs, dates, and dynamic duos.
+            </p>
+
+            <div class="vk-price-tag">
+              $46 <small>/ Player</small>
+            </div>
+            <span class="vk-sample-disclaimer">[Sample Rate · $92 Total Private Session]</span>
+
+            <ul class="vk-price-features">
+              <li><i class="fa-solid fa-check"></i> 60-Minute Private Chamber Lockout</li>
+              <li><i class="fa-solid fa-check"></i> Dedicated Live Game Master</li>
+              <li><i class="fa-solid fa-check"></i> Unlimited Contextual Audio Hints</li>
+              <li><i class="fa-solid fa-check"></i> Digital Team Victory & Debrief Photo</li>
+              <li><i class="fa-solid fa-check"></i> Free Lockers for Valuables</li>
+            </ul>
+
+            <button
+              type="button"
+              class="vk-primary-button"
+              style="width: 100%;"
+              data-book-tier="duo"
+              data-tier-size="2"
+            >
+              <span>Book Duo Mission</span>
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+
+          <!-- TIER 2: TACTICAL SQUAD (FEATURED) -->
+          <div class="vk-price-card featured">
+            <div style="position: absolute; top: -14px; inset-inline-start: 50%; transform: translateX(-50%); background: var(--vk-primary); color: #090d16; font-size: 11px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 16px; border-radius: var(--vk-radius-pill); box-shadow: 0 4px 14px var(--vk-primary-glow); z-index: 3;">
+              MOST POPULAR SQUAD
+            </div>
+
+            <div class="vk-group-badge" style="background: var(--vk-primary); color: #090d16;">Optimal Squad</div>
+            <h3 style="font-size: 24px; margin-bottom: 4px;">Tactical Squad</h3>
+            <p style="font-size: 13.5px; color: var(--vk-text-soft); margin-bottom: 12px;">
+              The sweet-spot for escape room mechanics. Perfect distribution of logic, sensory, and lock challenges for 3 to 6 players.
+            </p>
+
+            <div class="vk-price-tag" style="color: var(--vk-primary);">
+              $38 <small>/ Player</small>
+            </div>
+            <span class="vk-sample-disclaimer">[Sample Rate · $114 – $228 Total Session]</span>
+
+            <ul class="vk-price-features">
+              <li><i class="fa-solid fa-check"></i> 60-Minute Private Chamber Lockout</li>
+              <li><i class="fa-solid fa-check"></i> Dedicated Live Game Master</li>
+              <li><i class="fa-solid fa-check"></i> Squad Role Badges & Tactical Clue Cards</li>
+              <li><i class="fa-solid fa-check"></i> High-Res Team Photo + Printed Card</li>
+              <li><i class="fa-solid fa-check"></i> Unlimited Hints & Hints Pacing Tracker</li>
+            </ul>
+
+            <button
+              type="button"
+              class="vk-primary-button"
+              style="width: 100%;"
+              data-book-tier="squad"
+              data-tier-size="4"
+            >
+              <span>Book Tactical Squad</span>
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+
+          <!-- TIER 3: LARGE STRIKE TEAM -->
+          <div class="vk-price-card">
+            <div class="vk-group-badge">High Capacity</div>
+            <h3 style="font-size: 24px; margin-bottom: 4px;">Large Strike Team</h3>
+            <p style="font-size: 13.5px; color: var(--vk-text-soft); margin-bottom: 12px;">
+              Designed for 7 to 10 players. Unlocks multi-room parallel puzzle tracks so all squad members stay continuously immersed.
+            </p>
+
+            <div class="vk-price-tag">
+              $34 <small>/ Player</small>
+            </div>
+            <span class="vk-sample-disclaimer">[Sample Rate · $238 – $340 Total Session]</span>
+
+            <ul class="vk-price-features">
+              <li><i class="fa-solid fa-check"></i> 60–75 Minute Extended Mission Time</li>
+              <li><i class="fa-solid fa-check"></i> Senior Game Director + Audio Facilitator</li>
+              <li><i class="fa-solid fa-check"></i> Multi-Room Split Tracks & Walkie-Talkies</li>
+              <li><i class="fa-solid fa-check"></i> Official Team Escape Certificate</li>
+              <li><i class="fa-solid fa-check"></i> 15-Minute Pre-Briefing Strategy Huddle</li>
+            </ul>
+
+            <button
+              type="button"
+              class="vk-primary-button"
+              style="width: 100%;"
+              data-book-tier="team"
+              data-tier-size="8"
+            >
+              <span>Book Strike Team</span>
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: GROUP-SIZE SELECTOR & PRICE ESTIMATE
+         ============================================================ -->
+    <section class="vk-section" id="priceEstimator" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> calculate </span>
+            <span>Interactive Estimator</span>
+          </div>
+          <h2 class="vk-section-title">
+            Configure Your Mission & <span class="highlight">Estimate Cost</span>
+          </h2>
+          <p class="vk-section-desc">
+            Adjust your room preference, squad size (2–10 players), mission timing, and optional tactical upgrades. Your price updates immediately with transparent demo figures.
+          </p>
+        </div>
+
+        <div class="vk-estimator-card">
+          <div class="vk-estimator-grid">
+            <!-- LEFT FORM CONTROLS -->
+            <div class="vk-estimator-form">
+              <!-- CHAMBER SELECTION -->
+              <div class="vk-estimator-field">
+                <label for="estChamberSelect">1. Choose Escape Room Chamber</label>
+                <select id="estChamberSelect" class="vk-modal-field select" style="width: 100%; padding: 14px 16px; border-radius: var(--vk-radius-md); background: var(--vk-bg-subtle); border: 1px solid var(--vk-border); color: var(--vk-text); font-weight: 600;">
+                  <option value="obsidian" data-base="38" selected>The Obsidian Vault (Stealth Heist · 60m · Base $38)</option>
+                  <option value="cyberpunk" data-base="38">Cyberpunk 2088: Neon Protocol (Sci-Fi · 60m · Base $38)</option>
+                  <option value="davinci" data-base="42">Da Vinci's Hidden Crypt (Ancient Renaissance · 75m · Base $42)</option>
+                  <option value="clockwork" data-base="38">Clockwork Asylum (Psychological Mystery · 60m · Base $38)</option>
+                  <option value="magician" data-base="36">Magician's Secret Study (Illusionist · 60m · Base $36)</option>
+                  <option value="pharaoh" data-base="38">Pharaoh's Cursed Tomb (Archeological · 60m · Base $38)</option>
+                </select>
+              </div>
+
+              <!-- SQUAD SIZE BUTTONS -->
+              <div class="vk-estimator-field">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <label>2. Select Fireteam Headcount</label>
+                  <span id="currentSquadBadge" style="font-size: 12px; font-weight: 800; color: var(--vk-primary);">4 Players (Tactical Squad Tier)</span>
+                </div>
+                <div class="vk-squad-buttons" id="squadButtonContainer" role="radiogroup" aria-label="Select group size">
+                  <button type="button" class="vk-squad-btn" data-size="2" aria-label="2 Players">2</button>
+                  <button type="button" class="vk-squad-btn" data-size="3" aria-label="3 Players">3</button>
+                  <button type="button" class="vk-squad-btn active" data-size="4" aria-label="4 Players">4</button>
+                  <button type="button" class="vk-squad-btn" data-size="5" aria-label="5 Players">5</button>
+                  <button type="button" class="vk-squad-btn" data-size="6" aria-label="6 Players">6</button>
+                  <button type="button" class="vk-squad-btn" data-size="7" aria-label="7 Players">7</button>
+                  <button type="button" class="vk-squad-btn" data-size="8" aria-label="8 Players">8</button>
+                  <button type="button" class="vk-squad-btn" data-size="9" aria-label="9 Players">9</button>
+                  <button type="button" class="vk-squad-btn" data-size="10" aria-label="10 Players">10</button>
+                </div>
+                <small style="color: var(--vk-text-muted); font-size: 12px;">
+                  * 2 Players: Duo tier ($46/player) · 3–6 Players: Squad tier ($38/player) · 7–10 Players: Strike team tier ($34/player)
+                </small>
+              </div>
+
+              <!-- TIME SLOT SELECTION -->
+              <div class="vk-estimator-field">
+                <label>3. Select Mission Timing</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <label class="vk-addon-item" style="cursor: pointer;">
+                    <div class="vk-addon-info">
+                      <input type="radio" name="estTiming" id="timingWeekday" value="weekday" checked />
+                      <div class="vk-addon-title">
+                        <strong>Standard Weekday</strong>
+                        <small>Mon – Thu Missions</small>
+                      </div>
+                    </div>
+                    <span class="vk-addon-price" style="font-size: 12px; color: var(--vk-text-muted);">Standard</span>
+                  </label>
+
+                  <label class="vk-addon-item" style="cursor: pointer;">
+                    <div class="vk-addon-info">
+                      <input type="radio" name="estTiming" id="timingWeekend" value="weekend" />
+                      <div class="vk-addon-title">
+                        <strong>Peak Weekend</strong>
+                        <small>Fri – Sun Missions</small>
+                      </div>
+                    </div>
+                    <span class="vk-addon-price" style="font-size: 12px;">+$4 / player</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- OPTIONAL ADD-ONS -->
+              <div class="vk-estimator-field">
+                <label>4. Optional Mission Enhancements</label>
+                <div class="vk-addons-list">
+                  <label class="vk-addon-item">
+                    <div class="vk-addon-info">
+                      <input type="checkbox" id="addonKey" data-cost="15" />
+                      <div class="vk-addon-title">
+                        <strong>Solid Brass Keepsake Vault Key</strong>
+                        <small>Heavy engraved replica collectible for the team leader</small>
+                      </div>
+                    </div>
+                    <span class="vk-addon-price">+$15</span>
+                  </label>
+
+                  <label class="vk-addon-item">
+                    <div class="vk-addon-info">
+                      <input type="checkbox" id="addonLounge" data-cost="50" />
+                      <div class="vk-addon-title">
+                        <strong>VIP Private Debrief Lounge (45 Mins)</strong>
+                        <small>Dedicated post-game party area with refreshments bar</small>
+                      </div>
+                    </div>
+                    <span class="vk-addon-price">+$50</span>
+                  </label>
+
+                  <label class="vk-addon-item">
+                    <div class="vk-addon-info">
+                      <input type="checkbox" id="addonRecording" data-cost="35" />
+                      <div class="vk-addon-title">
+                        <strong>Go-Pro Helmet Mission Footage</strong>
+                        <small>Edited 4K recap video of your squad's critical moments</small>
+                      </div>
+                    </div>
+                    <span class="vk-addon-price">+$35</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT STICKY OUTPUT CARD -->
+            <div class="vk-estimator-output">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <h3 style="font-size: 18px; margin: 0;">Cost Estimate</h3>
+                <span class="vk-sample-disclaimer" style="margin: 0;">[Sample Calculation]</span>
+              </div>
+
+              <div class="vk-output-row">
+                <span>Selected Chamber:</span>
+                <strong id="outChamberName" style="color: var(--vk-text);">The Obsidian Vault</strong>
+              </div>
+
+              <div class="vk-output-row">
+                <span>Squad Headcount:</span>
+                <strong id="outSquadCount">4 Agents</strong>
+              </div>
+
+              <div class="vk-output-row">
+                <span>Effective Rate:</span>
+                <strong id="outPerPlayer">$38.00 / player</strong>
+              </div>
+
+              <div class="vk-output-row">
+                <span>Chamber Base Total:</span>
+                <strong id="outBaseTotal">$152.00</strong>
+              </div>
+
+              <div class="vk-output-row">
+                <span>Add-ons Subtotal:</span>
+                <strong id="outAddonsTotal">$0.00</strong>
+              </div>
+
+              <div class="vk-output-total">
+                <div>
+                  <strong>Estimated Total</strong>
+                  <div style="font-size: 11px; color: var(--vk-text-muted);">Taxes & amenities included</div>
+                </div>
+                <div class="vk-total-amount" id="outGrandTotal">$152.00</div>
+              </div>
+
+              <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+                <button
+                  type="button"
+                  class="vk-primary-button"
+                  id="btnProceedEstimate"
+                  style="width: 100%; justify-content: center;"
+                >
+                  <span>Proceed with Estimate</span>
+                  <span class="material-symbols-rounded"> check_circle </span>
+                </button>
+                <p style="font-size: 11px; color: var(--vk-text-muted); text-align: center; margin: 0; line-height: 1.5;">
+                  * All figures shown are editable sample demonstration rates. No payment is required until you confirm with Mission Control.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: PRIVATE GROUP & TEAM-BUILDING OPTIONS
+         ============================================================ -->
+    <section class="vk-section" id="privateGroups" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> corporate_fare </span>
+            <span>Private Events & Celebrations</span>
+          </div>
+          <h2 class="vk-section-title">
+            Tailored Experiences for <span class="highlight">Large Groups</span>
+          </h2>
+          <p class="vk-section-desc">
+            Organizing a company offsite, birthday quest, or full facility lockout? We offer synchronized multi-chamber starts, corporate debriefs, and private catering spaces.
+          </p>
+        </div>
+
+        <div class="vk-private-options-grid">
+          <!-- OPTION 1: CORPORATE TEAM BUILDING -->
+          <div class="vk-private-card">
+            <div class="vk-private-body">
+              <div class="vk-private-badge">Corporate Leadership</div>
+              <h3>Team Building & Offsites</h3>
+              <p>
+                Break down communication silos with parallel chamber missions. Squads compete head-to-head on identical or calibrated puzzle tracks with tailored leadership debriefs.
+              </p>
+              <ul class="vk-price-features" style="margin-bottom: 24px;">
+                <li><i class="fa-solid fa-check"></i> 12 to 60+ Concurrent Participants</li>
+                <li><i class="fa-solid fa-check"></i> Synchronized Simultaneous Room Starts</li>
+                <li><i class="fa-solid fa-check"></i> Facilitated Team Dynamics Retrospective</li>
+                <li><i class="fa-solid fa-check"></i> Dedicated Corporate Event Host</li>
+              </ul>
+              <button
+                type="button"
+                class="vk-primary-button"
+                data-inquire-type="corporate"
+                style="margin-top: auto;"
+              >
+                <span>Inquire for Corporate Rates</span>
+                <span class="material-symbols-rounded"> business </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- OPTION 2: BIRTHDAYS & MILESTONES -->
+          <div class="vk-private-card">
+            <div class="vk-private-body">
+              <div class="vk-private-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--vk-accent-emerald);">Celebrations & Parties</div>
+              <h3>Birthday Quests & VIP VIPs</h3>
+              <p>
+                Give the guest of honor a celebration they will talk about for years. Includes custom personalized clues embedded into the chamber and access to the party lounge.
+              </p>
+              <ul class="vk-price-features" style="margin-bottom: 24px;">
+                <li><i class="fa-solid fa-check"></i> 6 to 24 Guests with Flexible Splitting</li>
+                <li><i class="fa-solid fa-check"></i> Personalized Surprise Clue for Celebrant</li>
+                <li><i class="fa-solid fa-check"></i> 45-Minute Post-Game VIP Lounge Access</li>
+                <li><i class="fa-solid fa-check"></i> Complimentary Keepsake Artifact for Celebrant</li>
+              </ul>
+              <button
+                type="button"
+                class="vk-primary-button"
+                data-inquire-type="birthday"
+                style="margin-top: auto;"
+              >
+                <span>Plan Birthday Adventure</span>
+                <span class="material-symbols-rounded"> celebration </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- OPTION 3: FULL VENUE BUYOUT -->
+          <div class="vk-private-card">
+            <div class="vk-private-body">
+              <div class="vk-private-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--vk-primary);">Facility Buyout</div>
+              <h3>Full Facility Lockout</h3>
+              <p>
+                Exclusively reserve all 6 chambers and reception halls for your organization. Ideal for major holiday galas, product reveals, and university competitions.
+              </p>
+              <ul class="vk-price-features" style="margin-bottom: 24px;">
+                <li><i class="fa-solid fa-check"></i> Up to 120 Guests Across Multiple Rotations</li>
+                <li><i class="fa-solid fa-check"></i> Complete Privacy & Custom Brand Theming</li>
+                <li><i class="fa-solid fa-check"></i> Full AV System & Wireless Microphones</li>
+                <li><i class="fa-solid fa-check"></i> Preferred External Catering Coordination</li>
+              </ul>
+              <button
+                type="button"
+                class="vk-primary-button"
+                data-inquire-type="buyout"
+                style="margin-top: auto;"
+              >
+                <span>Request Venue Buyout Quote</span>
+                <span class="material-symbols-rounded"> domain </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: BOOKING FAQS & POLICIES
+         ============================================================ -->
+    <section class="vk-section" id="pricingFaqs" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> quiz </span>
+            <span>Booking Answers</span>
+          </div>
+          <h2 class="vk-section-title">
+            Frequently Asked <span class="highlight">Questions & Policies</span>
+          </h2>
+          <p class="vk-section-desc">
+            Everything you need to know regarding private room bookings, headcount adjustments, rescheduling rules, and arrival briefings.
+          </p>
+        </div>
+
+        <div class="vk-faq-accordion" id="faqAccordion">
+          <!-- FAQ 1 -->
+          <div class="vk-faq-item is-open">
+            <button type="button" class="vk-faq-question" aria-expanded="true">
+              <span>Are your escape rooms private or will we play with strangers?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Every single booking at Vault & Key is strictly private. Once you reserve your preferred time slot, that chamber is locked down solely for your team. You will never be grouped with guests outside your party.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>What happens if our squad headcount changes before game day?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                You can easily add additional players upon arrival up to the maximum capacity of your selected chamber. Extra players simply settle their ticket at check-in. If your group decreases, we adjust your tier rate accordingly.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>What is your cancellation and rescheduling policy?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                You can reschedule your mission with zero penalty fees up to 24 hours prior to launch. If you need to cancel, we provide a non-expiring venue voucher equal to your full payment value for future booking.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>How early does our fireteam need to arrive?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Please arrive promptly 15 minutes before your scheduled start time. This ensures ample time for secure locker storage, waiver sign-offs, and your cinematic mission briefing from the Game Master.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>Are there age requirements for younger agents?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Our chambers are tailored for players aged 10 and older. Participants aged 14 and under must be accompanied inside the chamber by at least one paying adult guardian. We also offer young-solver clue modes for youth parties.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>Is physical stamina or climbing required to solve the rooms?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                No heavy physical exertion or dangerous stunts are involved. Our challenges focus on observation, deduction, communication, and mechanical curiosity. Every chamber features an illuminated safety override push-button for immediate exit if needed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: FINAL BOOKING CTA & FOOTER
+         ============================================================ -->
+    <section class="vk-section" id="pricingCta" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-final-cta-box">
+          <div class="vk-final-cta-content">
+            <div class="vk-eyebrow" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3); margin-bottom: 16px;">
+              <span class="material-symbols-rounded"> verified </span>
+              <span>Reserve with Confidence</span>
+            </div>
+            <h2>Ready to Test Your Squad's Intellect?</h2>
+            <p>
+              Lock in your private chamber now. Select your mission date, fireteam size, and challenge level. Zero payment is required to review availability.
+            </p>
+          </div>
+          <div class="vk-final-cta-action">
+            <button
+              type="button"
+              class="vk-button vk-button-primary"
+              style="font-size: 16px; padding: 16px 36px;"
+              data-modal-open="bookingModalOverlay"
+            >
+              Book Your Chamber Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       GLOBAL 5-COLUMN FOOTER
+       ============================================================ -->
+  <footer class="vk-footer">
+    <div class="vk-footer-main">
+      <div class="vk-container">
+        <div class="vk-footer-grid">
+          <!-- COLUMN 1: BRAND INFO -->
+          <div class="vk-footer-brand">
+            <a href="index.html" class="vk-brand">
+              <div class="vk-brand-mark">
+                <span class="material-symbols-rounded"> key </span>
+              </div>
+              <div class="vk-brand-name">Vault & <span>Key</span></div>
+            </a>
+            <p class="vk-footer-description">
+              Next-generation cinematic escape rooms and physical puzzle gauntlets. Engineered with authentic mechanical props, automated sensors, and deep storylines.
+            </p>
+            <div class="vk-footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="vk-social">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="vk-social">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="vk-social">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="vk-social">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: CHAMBERS & QUESTS -->
+          <div class="vk-footer-column">
+            <h3>Chambers</h3>
+            <a href="rooms.html">Alchemist's Crypt</a>
+            <a href="rooms.html">Cyberpunk Blackout</a>
+            <a href="rooms.html">Pharaoh's Obsidian Tomb</a>
+            <a href="rooms.html">Clockwork Heist</a>
+            <a href="rooms.html">All Difficulty Tiers</a>
+          </div>
+
+          <!-- COLUMN 3: EXPERIENCES -->
+          <div class="vk-footer-column">
+            <h3>Experiences</h3>
+            <a href="pricing.html">Corporate Team Building</a>
+            <a href="pricing.html">Friends & Night Quests</a>
+            <a href="pricing.html">Family Detective Mode</a>
+            <a href="pricing.html">Birthday Packages</a>
+            <a href="dashboard.html">Player Leaderboards</a>
+          </div>
+
+          <!-- COLUMN 4: VENUE & SUPPORT -->
+          <div class="vk-footer-column">
+            <h3>Venue & Help</h3>
+            <a href="about.html">About Vault & Key</a>
+            <a href="contact.html">Venue Location & Map</a>
+            <a href="contact.html">Safety & Sensor Protocols</a>
+            <a href="contact.html">Frequently Asked Questions</a>
+            <a href="dashboard.html">Player Mission Portal</a>
+          </div>
+
+          <!-- COLUMN 5: DISPATCH NEWSLETTER CTA CARD -->
+          <div class="vk-footer-cta">
+            <div class="vk-footer-cta-card">
+              <div class="vk-footer-cta-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <strong>Cipher Dispatch</strong>
+                <p>Receive secret monthly riddle perks.</p>
+              </div>
+            </div>
+            <form id="footerNewsletterForm" style="display: flex; gap: 8px; width: 100%; margin-top: 12px;">
+              <input
+                type="email"
+                id="footerSubscriberEmail"
+                placeholder="Enter detective email"
+                required
+                style="flex: 1; padding: 10px 14px; border-radius: var(--vk-radius-pill); background: var(--vk-bg-subtle); border: 1px solid var(--vk-border); color: var(--vk-text); font-size: 13px; outline: none;"
+              />
+              <button
+                type="submit"
+                class="vk-footer-button"
+                style="border:none; cursor:pointer; white-space: nowrap; padding: 5px 18px; width: auto;"
+              >
+                <span>Enlist</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER BOTTOM BAR -->
+    <div class="vk-footer-bottom">
+      <div class="vk-container">
+        <div class="vk-footer-bottom-inner">
+          <p>© 2026 Vault & Key Adventure Venues Inc. All rights reserved.</p>
+          <div class="vk-footer-bottom-links">
+            <a href="contact.html">Terms & Rules</a>
+            <a href="contact.html">Privacy Policy</a>
+            <a href="about.html">Safety Protocols</a>
+            <a href="contact.html">Site Map</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       GLOBAL MODAL: QUICK BOOKING MODAL OVERLAY
+       ============================================================ -->
+  <div class="vk-modal-overlay" id="bookingModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="vk-modal-card">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+
+      <div id="bookingFormContainer">
+        <h3 class="vk-modal-title" id="modalHeading">Reserve Your Chamber</h3>
+        <p class="vk-modal-subtitle">Configure your private escape adventure. Zero payment required until briefing.</p>
+
+        <form class="vk-modal-form" id="popupBookingForm">
+          <div class="vk-modal-field">
+            <label for="modalChamber">Select Mystery Chamber</label>
+            <select id="modalChamber" required>
+              <option value="obsidian">The Obsidian Vault (Stealth Heist · 60m)</option>
+              <option value="cyberpunk">Cyberpunk 2088: Neon Protocol (Sci-Fi · 60m)</option>
+              <option value="davinci">Da Vinci's Hidden Crypt (Renaissance · 75m)</option>
+              <option value="clockwork">Clockwork Asylum (Psychological · 60m)</option>
+              <option value="magician">Magician's Secret Study (Illusionist · 60m)</option>
+              <option value="pharaoh">Pharaoh's Cursed Tomb (Archeological · 60m)</option>
+              <option value="corporate">Corporate Team Challenge (Multi-Chamber)</option>
+              <option value="birthday">Birthday Quest & VIP Lounge</option>
+              <option value="buyout">Full Facility Lockout (Up to 120 Guests)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="vk-modal-field">
+              <label for="modalDate">Mission Date</label>
+              <input type="date" id="modalDate" required />
+            </div>
+            <div class="vk-modal-field">
+              <label for="modalSquadSize">Squad Size</label>
+              <select id="modalSquadSize" required>
+                <option value="2">2 Players ($46/player)</option>
+                <option value="3">3 Players ($38/player)</option>
+                <option value="4" selected>4 Players ($38/player)</option>
+                <option value="5">5 Players ($38/player)</option>
+                <option value="6">6 Players ($38/player)</option>
+                <option value="7">7 Players ($34/player)</option>
+                <option value="8">8 Players ($34/player)</option>
+                <option value="9">9 Players ($34/player)</option>
+                <option value="10">10 Players ($34/player)</option>
+                <option value="corporate">12+ Players (Event Inquire)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalLeadName">Squad Leader Name</label>
+            <input type="text" id="modalLeadName" placeholder="Agent Jane Doe" required />
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalLeadEmail">Contact Email</label>
+            <input type="email" id="modalLeadEmail" placeholder="agent@mission.com" required />
+          </div>
+
+          <button type="submit" class="vk-modal-submit">
+            Confirm Chamber Lockout
+          </button>
+        </form>
+      </div>
+
+      <div class="vk-success-popup" id="bookingSuccessContainer">
+        <div class="vk-success-icon">
+          <span class="material-symbols-rounded"> task_alt </span>
+        </div>
+        <h4 class="vk-success-title">Mission Slot Reserved!</h4>
+        <p class="vk-success-desc">
+          Your chamber request has been registered in the Vault & Key system. Check your inbox for confirmation details and briefing instructions.
+        </p>
+        <button type="button" class="vk-success-done" id="closeSuccessBookingBtn">
+          Return to Venue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GLOBAL MODAL: NEWSLETTER SUCCESS MODAL
+       ============================================================ -->
+  <div class="vk-modal-overlay" id="subscribeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="subscribeModalTitle">
+    <div class="vk-modal-card" style="text-align: center; max-width: 440px;">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+      <div class="vk-success-icon" style="background: rgba(var(--vk-primary-rgb), 0.2); color: var(--vk-primary);">
+        <span class="material-symbols-rounded"> mark_email_read </span>
+      </div>
+      <h4 class="vk-success-title" id="subscribeModalTitle">Mission Intel Confirmed</h4>
+      <p class="vk-success-desc">
+        Welcome to the inner circle. You will receive priority notifications when new mystery chambers launch and exclusive solver discount ciphers.
+      </p>
+      <button type="button" class="vk-success-done" data-modal-close>
+        Acknowledge
+      </button>
+    </div>
+  </div>
+
+  <!-- GLOBAL APPLICATION SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- PAGE-SPECIFIC INTERACTIVE ESTIMATOR & ACCORDION SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set default tomorrow date on modal date picker
+      const dateInput = document.getElementById("modalDate");
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.value = tomorrow.toISOString().split("T")[0];
+      }
+
+      // ==========================================
+      // 1. INTERACTIVE GROUP SIZE & PRICE CALCULATOR
+      // ==========================================
+      const chamberSelect = document.getElementById("estChamberSelect");
+      const squadButtons = document.querySelectorAll(".vk-squad-btn");
+      const timingWeekday = document.getElementById("timingWeekday");
+      const timingWeekend = document.getElementById("timingWeekend");
+      const addonKey = document.getElementById("addonKey");
+      const addonLounge = document.getElementById("addonLounge");
+      const addonRecording = document.getElementById("addonRecording");
+
+      // Outputs
+      const outChamberName = document.getElementById("outChamberName");
+      const outSquadCount = document.getElementById("outSquadCount");
+      const outPerPlayer = document.getElementById("outPerPlayer");
+      const outBaseTotal = document.getElementById("outBaseTotal");
+      const outAddonsTotal = document.getElementById("outAddonsTotal");
+      const outGrandTotal = document.getElementById("outGrandTotal");
+      const currentSquadBadge = document.getElementById("currentSquadBadge");
+
+      let currentSquadSize = 4;
+
+      function calculateEstimate() {
+        if (!chamberSelect) return;
+
+        const selectedOption = chamberSelect.options[chamberSelect.selectedIndex];
+        const chamberName = selectedOption.text.split(" (")[0];
+        const chamberBase = parseFloat(selectedOption.getAttribute("data-base")) || 38;
+
+        // Base rate scale depending on squad size
+        let perPlayerRate = chamberBase;
+        let tierLabel = "Tactical Squad Tier";
+
+        if (currentSquadSize === 2) {
+          perPlayerRate = chamberBase + 8; // Duo premium: $46 for $38 chamber
+          tierLabel = "Duo Infiltration Tier";
+        } else if (currentSquadSize >= 7) {
+          perPlayerRate = chamberBase - 4; // Large team discount: $34 for $38 chamber
+          tierLabel = "Strike Team Tier";
+        }
+
+        // Weekend surcharge
+        const isWeekend = timingWeekend && timingWeekend.checked;
+        if (isWeekend) {
+          perPlayerRate += 4;
+        }
+
+        // Add-ons total
+        let addonsCost = 0;
+        if (addonKey && addonKey.checked) addonsCost += parseFloat(addonKey.getAttribute("data-cost")) || 15;
+        if (addonLounge && addonLounge.checked) addonsCost += parseFloat(addonLounge.getAttribute("data-cost")) || 50;
+        if (addonRecording && addonRecording.checked) addonsCost += parseFloat(addonRecording.getAttribute("data-cost")) || 35;
+
+        const baseTotal = perPlayerRate * currentSquadSize;
+        const grandTotal = baseTotal + addonsCost;
+
+        // Update UI
+        if (outChamberName) outChamberName.textContent = chamberName;
+        if (outSquadCount) outSquadCount.textContent = `${currentSquadSize} Agents`;
+        if (outPerPlayer) outPerPlayer.textContent = `$${perPlayerRate.toFixed(2)} / player`;
+        if (outBaseTotal) outBaseTotal.textContent = `$${baseTotal.toFixed(2)}`;
+        if (outAddonsTotal) outAddonsTotal.textContent = `$${addonsCost.toFixed(2)}`;
+        if (outGrandTotal) outGrandTotal.textContent = `$${grandTotal.toFixed(2)}`;
+        if (currentSquadBadge) currentSquadBadge.textContent = `${currentSquadSize} Players (${tierLabel}${isWeekend ? ' + Weekend' : ''})`;
+      }
+
+      // Squad button listeners
+      squadButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          squadButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentSquadSize = parseInt(btn.getAttribute("data-size"), 10) || 4;
+          calculateEstimate();
+        });
+      });
+
+      // Change listeners on inputs
+      if (chamberSelect) chamberSelect.addEventListener("change", calculateEstimate);
+      if (timingWeekday) timingWeekday.addEventListener("change", calculateEstimate);
+      if (timingWeekend) timingWeekend.addEventListener("change", calculateEstimate);
+      if (addonKey) addonKey.addEventListener("change", calculateEstimate);
+      if (addonLounge) addonLounge.addEventListener("change", calculateEstimate);
+      if (addonRecording) addonRecording.addEventListener("change", calculateEstimate);
+
+      // Initial calculation
+      calculateEstimate();
+
+      // Proceed with estimate button -> opens modal with pre-fills
+      const btnProceed = document.getElementById("btnProceedEstimate");
+      const modalOverlay = document.getElementById("bookingModalOverlay");
+      const modalChamber = document.getElementById("modalChamber");
+      const modalSquadSize = document.getElementById("modalSquadSize");
+
+      if (btnProceed && modalOverlay) {
+        btnProceed.addEventListener("click", () => {
+          if (modalChamber && chamberSelect) {
+            modalChamber.value = chamberSelect.value;
+          }
+          if (modalSquadSize) {
+            modalSquadSize.value = currentSquadSize.toString();
+          }
+          modalOverlay.classList.add("is-active");
+        });
+      }
+
+      // Tier Cards CTAs (Duo, Squad, Strike Team)
+      document.querySelectorAll("[data-book-tier]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const tier = btn.getAttribute("data-book-tier");
+          const size = btn.getAttribute("data-tier-size") || "4";
+
+          // Sync with calculator
+          currentSquadSize = parseInt(size, 10);
+          squadButtons.forEach(b => {
+            if (b.getAttribute("data-size") === size) {
+              b.classList.add("active");
+            } else {
+              b.classList.remove("active");
+            }
+          });
+          calculateEstimate();
+
+          // Also set modal
+          if (modalSquadSize) {
+            modalSquadSize.value = size;
+          }
+          if (modalOverlay) {
+            modalOverlay.classList.add("is-active");
+          }
+        });
+      });
+
+      // Private Events CTAs (Corporate, Birthday, Buyout)
+      document.querySelectorAll("[data-inquire-type]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const type = btn.getAttribute("data-inquire-type");
+          if (modalChamber) {
+            if (type === "corporate") modalChamber.value = "corporate";
+            else if (type === "birthday") modalChamber.value = "birthday";
+            else if (type === "buyout") modalChamber.value = "buyout";
+          }
+          if (modalSquadSize && type !== "birthday") {
+            modalSquadSize.value = "corporate";
+          }
+          if (modalOverlay) {
+            modalOverlay.classList.add("is-active");
+          }
+        });
+      });
+
+      // ==========================================
+      // 2. INTERACTIVE FAQ ACCORDION
+      // ==========================================
+      const faqItems = document.querySelectorAll(".vk-faq-item");
+      faqItems.forEach(item => {
+        const questionBtn = item.querySelector(".vk-faq-question");
+        if (questionBtn) {
+          questionBtn.addEventListener("click", () => {
+            const isOpen = item.classList.contains("is-open");
+            // Close other items
+            faqItems.forEach(other => {
+              other.classList.remove("is-open");
+              const otherBtn = other.querySelector(".vk-faq-question");
+              if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+            });
+
+            // Toggle clicked item
+            if (!isOpen) {
+              item.classList.add("is-open");
+              questionBtn.setAttribute("aria-expanded", "true");
+            }
+          });
+        }
+      });
+
+      // ==========================================
+      // 3. BOOKING MODAL FORM SUBMISSION
+      // ==========================================
+      const popupForm = document.getElementById("popupBookingForm");
+      const formContainer = document.getElementById("bookingFormContainer");
+      const successContainer = document.getElementById("bookingSuccessContainer");
+      const closeSuccessBtn = document.getElementById("closeSuccessBookingBtn");
+
+      if (popupForm) {
+        popupForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const chamber = document.getElementById("modalChamber").value;
+          const date = document.getElementById("modalDate").value;
+          const squad = document.getElementById("modalSquadSize").value;
+          const name = document.getElementById("modalLeadName").value;
+          const email = document.getElementById("modalLeadEmail").value;
+
+          if (chamber && date && squad) {
+            localStorage.setItem("vk_quick_booking_pricing", JSON.stringify({ chamber, date, squad, name, email, timestamp: Date.now() }));
+            formContainer.style.display = "none";
+            successContainer.classList.add("is-active");
+            popupForm.reset();
+          }
+        });
+      }
+
+      if (closeSuccessBtn && modalOverlay) {
+        closeSuccessBtn.addEventListener("click", () => {
+          modalOverlay.classList.remove("is-active");
+          setTimeout(() => {
+            formContainer.style.display = "block";
+            successContainer.classList.remove("is-active");
+          }, 400);
+        });
+      }
+
+      // ==========================================
+      // 4. NEWSLETTER FORM SUBMISSION
+      // ==========================================
+      const newsletterForm = document.getElementById("footerNewsletterForm");
+      const subscribeModal = document.getElementById("subscribeModalOverlay");
+      if (newsletterForm && subscribeModal) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById("footerSubscriberEmail");
+          if (emailInput && emailInput.value) {
+            subscribeModal.classList.add("is-active");
+            emailInput.value = "";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

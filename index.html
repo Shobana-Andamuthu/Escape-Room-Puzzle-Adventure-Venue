@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Vault & Key is a premier escape room and puzzle adventure venue. Experience next-gen immersive chambers, mechanical ciphers, and high-tech real-world mystery missions."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Vault & Key — Immersive Escape Room & Puzzle Adventure Venue</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       00. GLOBAL HEADER & FLOATING NAVIGATION
+       ============================================================ -->
+  <header class="vk-header">
+    <div class="vk-container">
+      <div class="vk-header-inner">
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+
+        <!-- DESKTOP NAVBAR -->
+        <nav class="vk-nav" aria-label="Main navigation">
+          <!-- HOME DROPDOWN -->
+          <div class="vk-nav-dropdown">
+            <button
+              type="button"
+              class="vk-nav-link vk-nav-dropdown-trigger is-active"
+              data-home-dropdown
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>Home</span>
+              <span class="material-symbols-rounded" style="font-size:18px;"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-nav-dropdown-menu" aria-label="Home variations">
+              <a href="index.html" class="vk-nav-dropdown-item is-current">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> meeting_room </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 1 — Signature</strong>
+                  <small>Classic Vault Experience</small>
+                </span>
+              </a>
+              <a href="home-2.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> radar </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 2 — Mission Control</strong>
+                  <small>Expressive Quest Operations</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a href="rooms.html" class="vk-nav-link">Rooms & Quests</a>
+          <a href="pricing.html" class="vk-nav-link">Pricing & Groups</a>
+          <a href="about.html" class="vk-nav-link">About</a>
+          <a href="contact.html" class="vk-nav-link">Contact</a>
+          <a href="dashboard.html" class="vk-nav-link">Player Dashboard</a>
+        </nav>
+
+        <!-- HEADER ACTIONS & TOGGLES -->
+        <div class="vk-header-actions">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <a href="login.html" class="vk-nav-link" style="font-weight:700; border: 1px solid var(--vk-border);">Login</a>
+          <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+            Book Quest
+          </button>
+
+          <!-- MOBILE HAMBURGER BUTTON -->
+          <button
+            type="button"
+            class="vk-icon-button vk-menu-toggle"
+            data-menu-toggle
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-rounded"> menu </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE SLIDE-DOWN DRAWER -->
+      <div class="vk-mobile-menu" data-mobile-menu>
+        <div class="vk-mobile-menu-inner">
+          <!-- Mobile Toggles for screens <= 440px -->
+          <div class="vk-mobile-toggles">
+            <button type="button" data-theme-toggle aria-label="Toggle theme">
+              <span class="material-symbols-rounded"> light_mode </span>
+            </button>
+            <button type="button" data-rtl-toggle aria-label="Toggle RTL">
+              <i class="fa-solid fa-right-left"></i>
+            </button>
+          </div>
+
+          <div class="vk-mobile-home">
+            <button
+              type="button"
+              class="vk-mobile-home-trigger"
+              data-mobile-home-toggle
+              aria-expanded="false"
+            >
+              <span>Home Options</span>
+              <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-mobile-home-links">
+              <a href="index.html" class="is-current">Home 1 — Signature</a>
+              <a href="home-2.html">Home 2 — Mission Control</a>
+            </div>
+          </div>
+
+          <a href="rooms.html">Rooms & Quests</a>
+          <a href="pricing.html">Pricing & Groups</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="dashboard.html">Player Dashboard</a>
+
+          <div class="vk-mobile-menu-actions">
+            <a href="login.html" class="vk-button vk-button-outline">Login</a>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Book Your Adventure
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PAGE MAIN CONTENT
+       ============================================================ -->
+  <main>
+    <!-- ======================================================
+         SECTION 1: HERO (Cinematic Image, Headline, CTA)
+         ====================================================== -->
+    <section class="vk-hero" id="heroSection">
+      <div class="vk-container">
+        <div class="vk-hero-grid">
+          <!-- HERO LEFT COPY -->
+          <div data-reveal>
+            <div class="vk-eyebrow">
+              <span class="vk-eyebrow-dot"></span>
+              Next-Gen Immersion · Real-Time Adventure
+            </div>
+
+            <h1 class="vk-hero-title">
+              Unlock the Vault.
+              <br />
+              <span class="vk-title-accent">Outsmart the Clock.</span>
+            </h1>
+
+            <p class="vk-hero-desc">
+              Step across the threshold into multi-sensory cinematic escape chambers. Decode archaic ciphers, manipulate mechanical relics, and test your team's wits before the 60-minute countdown strikes zero.
+            </p>
+
+            <div class="vk-hero-actions">
+              <button type="button" class="vk-primary-button" data-modal-open="bookingModalOverlay">
+                Book Your Adventure
+                <span class="material-symbols-rounded"> arrow_forward </span>
+              </button>
+
+              <a href="#howItWorks" class="vk-secondary-button">
+                <span class="material-symbols-rounded"> play_circle </span>
+                How It Works
+              </a>
+            </div>
+
+            <!-- TRUST & PLAYER PROOF -->
+            <div class="vk-trust-block">
+              <div class="vk-avatars">
+                <img
+                  class="vk-avatar"
+                  src="assets/images/avatar_1.jpg"
+                  alt="Verified Adventurer"
+                  loading="lazy"
+                />
+                <img
+                  class="vk-avatar"
+                  src="assets/images/avatar_2.jpg"
+                  alt="Verified Adventurer"
+                  loading="lazy"
+                />
+                <img
+                  class="vk-avatar"
+                  src="assets/images/avatar_3.jpg"
+                  alt="Verified Adventurer"
+                  loading="lazy"
+                />
+                <img
+                  class="vk-avatar"
+                  src="assets/images/avatar_4.jpg"
+                  alt="Verified Adventurer"
+                  loading="lazy"
+                />
+              </div>
+              <div class="vk-trust-text">
+                <strong>Loved by 14,000+ Quest Seekers</strong>
+                4.95 / 5 Average Verified Escape Rating
+              </div>
+            </div>
+          </div>
+
+          <!-- HERO RIGHT 3D VISUAL SHOWCASE -->
+          <div class="vk-hero-visual" data-reveal>
+            <!-- FLOATING BADGE -->
+            <div class="vk-floating-card top-left">
+              <div class="vk-floating-icon">
+                <span class="material-symbols-rounded"> timer </span>
+              </div>
+              <div>
+                <strong>Chamber Armed</strong>
+                <small style="color:var(--vk-text-soft); font-size:12px; display:block;">Live 60:00 Countdown</small>
+              </div>
+            </div>
+
+            <div class="vk-floating-card bottom-right">
+              <div class="vk-floating-icon">
+                <span class="material-symbols-rounded"> verified_user </span>
+              </div>
+              <div>
+                <strong>Escape Rate</strong>
+                <small style="color:var(--vk-accent-emerald); font-weight:800; font-size:12px; display:block;">34% Solved Clean</small>
+              </div>
+            </div>
+
+            <div class="vk-image-card">
+              <img
+                src="assets/images/hero_3d_card.jpg"
+                alt="Victorian Mechanical Clockwork Vault Puzzle"
+              />
+              <div class="vk-image-overlay">
+                <small>Chamber Spotlight</small>
+                <strong>The Alchemist's Secret Vault</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 2: FEATURED ESCAPE-ROOM THEME CARDS
+         ====================================================== -->
+    <section class="vk-section" id="themesSection">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Atmospheric Realms</div>
+          <h2 class="vk-section-title">Four Distinct Worlds. Zero Passive Observers.</h2>
+          <p class="vk-section-desc">
+            Each realm features custom set architecture, tactile prop engineering, adaptive lighting, and original soundtracks designed to immerse your squad.
+          </p>
+        </div>
+
+        <div class="vk-themes-grid">
+          <!-- THEME 1 -->
+          <article class="vk-theme-card" data-reveal style="--theme-color: #8b5cf6;">
+            <div class="vk-theme-icon-box">
+              <span class="material-symbols-rounded"> science </span>
+            </div>
+            <h3>Alchemical Occult</h3>
+            <p>
+              Ancient stone crypts, apothecary potion vials, celestial alignments, and forbidden manuscripts hidden beneath gothic arches.
+            </p>
+            <div class="vk-theme-meta">
+              <span>Sensory Focus: Tactile & Logic</span>
+              <span>Immersion: 96%</span>
+            </div>
+          </article>
+
+          <!-- THEME 2 -->
+          <article class="vk-theme-card" data-reveal style="--theme-color: #06b6d4;">
+            <div class="vk-theme-icon-box">
+              <span class="material-symbols-rounded"> terminal </span>
+            </div>
+            <h3>Cyberpunk Heist</h3>
+            <p>
+              High-security corporate megacorp towers, neon server racks, optical laser tripwires, and encrypted terminals awaiting brute-force hacks.
+            </p>
+            <div class="vk-theme-meta">
+              <span>Sensory Focus: Tech & Speed</span>
+              <span>Immersion: 98%</span>
+            </div>
+          </article>
+
+          <!-- THEME 3 -->
+          <article class="vk-theme-card" data-reveal style="--theme-color: #f59e0b;">
+            <div class="vk-theme-icon-box">
+              <span class="material-symbols-rounded"> temple_hindu </span>
+            </div>
+            <h3>Pharaoh's Tomb</h3>
+            <p>
+              Sandstone burial chambers, magnetic hieroglyphic sliders, weight-sensitive pedestals, and ancient curse warding mechanisms.
+            </p>
+            <div class="vk-theme-meta">
+              <span>Sensory Focus: Spatial & Artifacts</span>
+              <span>Immersion: 94%</span>
+            </div>
+          </article>
+
+          <!-- THEME 4 -->
+          <article class="vk-theme-card" data-reveal style="--theme-color: #10b981;">
+            <div class="vk-theme-icon-box">
+              <span class="material-symbols-rounded"> settings_suggest </span>
+            </div>
+            <h3>Clockwork Subterfuge</h3>
+            <p>
+              Victorian gentleman's secret library, brass gear cryptex cylinders, hidden bookshelf levers, and pneumatic message tubes.
+            </p>
+            <div class="vk-theme-meta">
+              <span>Sensory Focus: Mechanical Cogs</span>
+              <span>Immersion: 95%</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 3: POPULAR ROOMS BY DIFFICULTY
+         ====================================================== -->
+    <section class="vk-section" id="popularRooms" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Curated Challenges</div>
+          <h2 class="vk-section-title">Popular Chambers by Difficulty</h2>
+          <p class="vk-section-desc">
+            Choose your challenge level. Whether you are first-time escapers or battle-tested puzzle masters, our chambers push your team's synergy.
+          </p>
+        </div>
+
+        <div class="vk-rooms-grid">
+          <!-- ROOM 1: MODERATE -->
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img
+                src="assets/images/room_crypt.jpg"
+                alt="The Alchemist's Lost Crypt Chamber"
+                loading="lazy"
+              />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> shield </span>
+                Tier 2 · Moderate
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Gothic Mystery</span>
+                <span class="vk-room-rate">68% Escape Rate</span>
+              </div>
+              <h3>The Alchemist's Lost Crypt</h3>
+              <p>
+                Uncover the philosopher's stone before the inquisitor reaches your dungeon. Balance chemical symbols and rotate ancient stone seals.
+              </p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>From</small>
+                  <strong>$34 / Player</strong>
+                </div>
+                <button type="button" class="vk-room-circle-btn" data-modal-open="bookingModalOverlay" aria-label="Book this room">
+                  <span class="material-symbols-rounded"> arrow_forward </span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROOM 2: ADVANCED -->
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img
+                src="assets/images/room_cyberpunk.jpg"
+                alt="Cyberpunk Blackout 2099 Chamber"
+                loading="lazy"
+              />
+              <span class="vk-difficulty-pill" style="--diff-color: #06b6d4;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Advanced
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Sci-Fi Heist</span>
+                <span class="vk-room-rate">52% Escape Rate</span>
+              </div>
+              <h3>Cyberpunk Blackout 2099</h3>
+              <p>
+                Infiltrate the automated vault of Arasaka Megacorp. Bypass optical laser defense grids and override the AI core before lockdown.
+              </p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>From</small>
+                  <strong>$38 / Player</strong>
+                </div>
+                <button type="button" class="vk-room-circle-btn" data-modal-open="bookingModalOverlay" aria-label="Book this room">
+                  <span class="material-symbols-rounded"> arrow_forward </span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROOM 3: HARD -->
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img
+                src="assets/images/room_pharaoh.jpg"
+                alt="Pharaoh's Obsidian Tomb Chamber"
+                loading="lazy"
+              />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> warning </span>
+                Tier 4 · Hard
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Archaeological Thriller</span>
+                <span class="vk-room-rate">34% Escape Rate</span>
+              </div>
+              <h3>Pharaoh's Obsidian Tomb</h3>
+              <p>
+                Decipher astronomical star maps inside a four-millennia-old burial chamber. Balance golden weights and break the ancient ward.
+              </p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>From</small>
+                  <strong>$42 / Player</strong>
+                </div>
+                <button type="button" class="vk-room-circle-btn" data-modal-open="bookingModalOverlay" aria-label="Book this room">
+                  <span class="material-symbols-rounded"> arrow_forward </span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROOM 4: MASTER -->
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img
+                src="assets/images/room_clockwork.jpg"
+                alt="The Victorian Clockwork Heist Chamber"
+                loading="lazy"
+              />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> skull </span>
+                Tier 5 · Master
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Steampunk Espionage</span>
+                <span class="vk-room-rate">19% Escape Rate</span>
+              </div>
+              <h3>The Clockwork Heist</h3>
+              <p>
+                Conquer this high-stakes mechanical gauntlet. Align interlocking brass gears, reverse pendulum timers, and crack the vault lock.
+              </p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–10 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 90 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>From</small>
+                  <strong>$46 / Player</strong>
+                </div>
+                <button type="button" class="vk-room-circle-btn" data-modal-open="bookingModalOverlay" aria-label="Book this room">
+                  <span class="material-symbols-rounded"> arrow_forward </span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 4: HOW THE EXPERIENCE WORKS (3 Steps)
+         ====================================================== -->
+    <section class="vk-section vk-process" id="howItWorks">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Simplicity in Motion</div>
+          <h2 class="vk-section-title">Three Steps to Break the Vault</h2>
+          <p class="vk-section-desc">
+            No previous escape experience is required. From initial mission briefing to the final lock release, your dedicated Game Master supports your squad.
+          </p>
+        </div>
+
+        <div class="vk-process-grid">
+          <!-- STEP 1 -->
+          <article class="vk-process-card" data-reveal>
+            <div class="vk-process-top">
+              <div class="vk-process-number">01</div>
+              <div class="vk-process-icon">
+                <i class="fa-solid fa-users-viewfinder"></i>
+              </div>
+            </div>
+            <h3>Assemble Squad & Chamber</h3>
+            <p>
+              Choose your genre, select your difficulty tier, and reserve your private time slot in under 60 seconds with instant digital confirmation.
+            </p>
+          </article>
+
+          <!-- STEP 2 -->
+          <article class="vk-process-card" data-reveal>
+            <div class="vk-process-top">
+              <div class="vk-process-number">02</div>
+              <div class="vk-process-icon">
+                <i class="fa-solid fa-door-open"></i>
+              </div>
+            </div>
+            <h3>Enter & Crack Ciphers</h3>
+            <p>
+              Receive your cinematic audio-visual briefing, cross the threshold, and immerse yourselves in multi-room physical and sensor-based riddles.
+            </p>
+          </article>
+
+          <!-- STEP 3 -->
+          <article class="vk-process-card" data-reveal>
+            <div class="vk-process-top">
+              <div class="vk-process-number">03</div>
+              <div class="vk-process-icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+            </div>
+            <h3>Triumph & Wall of Legends</h3>
+            <p>
+              Synchronize final unlock sequences, escape before time expires, review your team breakdown stats, and capture victory team photographs.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 5: FEATURED PUZZLES & IMMERSIVE ENVIRONMENTS
+         ====================================================== -->
+    <section class="vk-section" id="featuredPuzzles">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Prop Architecture</div>
+          <h2 class="vk-section-title">Tactile Relics, Lasers & Hidden Mechanisms</h2>
+          <p class="vk-section-desc">
+            We reject plastic padlocks and laminated paper clues. Every device in Vault & Key is custom fabricated with industrial metals, real electronics, and magnetic locks.
+          </p>
+        </div>
+
+        <div class="vk-showcase-grid">
+          <!-- PUZZLE SHOWCASE 1 -->
+          <div class="vk-showcase-card" data-reveal>
+            <div class="vk-showcase-image">
+              <img
+                src="assets/images/puzzle_cryptex.jpg"
+                alt="Mechanical Solid Brass Cryptex Cylinder"
+                loading="lazy"
+              />
+              <span class="vk-showcase-tag">Mechanical Engineering</span>
+            </div>
+            <div class="vk-showcase-body">
+              <h3>Solid Brass Cryptex & Magnetic Tumblers</h3>
+              <p>
+                Inspired by Renaissance engineering, our heavy brass cryptex devices require tactile dial alignment and acoustic resonance listening to release internal secret scrolls.
+              </p>
+              <ul class="vk-showcase-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> Machined aircraft-grade brass cylinders with authentic weight</li>
+                <li><i class="fa-solid fa-circle-check"></i> Zero cheap numeric keypads — purely tactile sensory feedback</li>
+                <li><i class="fa-solid fa-circle-check"></i> Concealed pneumatic chambers and spring-loaded reveals</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- PUZZLE SHOWCASE 2 -->
+          <div class="vk-showcase-card" data-reveal>
+            <div class="vk-showcase-image">
+              <img
+                src="assets/images/puzzle_laser.jpg"
+                alt="Laser Optical Relay and Cybernetic Sensors"
+                loading="lazy"
+              />
+              <span class="vk-showcase-tag">Optoelectronic Sensors</span>
+            </div>
+            <div class="vk-showcase-body">
+              <h3>Laser Optical Relays & RFID Sequences</h3>
+              <p>
+                In our futuristic cyberpunk operations, teams must align adjustable optical prisms to bounce ruby laser beams into receptive sensor nodes, triggering automated vault bay doors.
+              </p>
+              <ul class="vk-showcase-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> Multi-node prism routing requiring 3-player synchronization</li>
+                <li><i class="fa-solid fa-circle-check"></i> Microcontroller-controlled dynamic RGB lighting state shifts</li>
+                <li><i class="fa-solid fa-circle-check"></i> RFID keycard frequency matching and audio spectrum analyzers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 6: GROUP ADVENTURES (Friends, Families, Corporate)
+         ====================================================== -->
+    <section class="vk-section" id="groupAdventures" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Squad Formations</div>
+          <h2 class="vk-section-title">Built for Squads of Every Caliber</h2>
+          <p class="vk-section-desc">
+            Whether celebrating an adrenaline-fueled birthday, training a high-performance engineering unit, or enjoying a family outing, we calibrate the experience for your group.
+          </p>
+        </div>
+
+        <div class="vk-groups-grid">
+          <!-- GROUP 1: FRIENDS -->
+          <article class="vk-group-card" data-reveal>
+            <div class="vk-group-img">
+              <img
+                src="assets/images/group_friends.jpg"
+                alt="Friends celebrating victory in escape room"
+                loading="lazy"
+              />
+            </div>
+            <div class="vk-group-content">
+              <span class="vk-group-badge">Adrenaline & Thrills</span>
+              <h3>Friends & Celebrations</h3>
+              <p>
+                The ultimate night-out challenge. Compete against the clock, snap victory photos with vintage props, and race head-to-head in our dual identical chambers.
+              </p>
+              <ul class="vk-group-perks">
+                <li><i class="fa-solid fa-check"></i> 2 to 10 players per chamber</li>
+                <li><i class="fa-solid fa-check"></i> Competitive dual-room head-to-head mode</li>
+                <li><i class="fa-solid fa-check"></i> Free commemorative victory digital photos</li>
+              </ul>
+              <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay" style="width:100%; margin-top:auto;">
+                Book Squad Quest
+              </button>
+            </div>
+          </article>
+
+          <!-- GROUP 2: CORPORATE -->
+          <article class="vk-group-card" data-reveal>
+            <div class="vk-group-img">
+              <img
+                src="assets/images/group_corporate.jpg"
+                alt="Corporate team collaborating on puzzle blueprint"
+                loading="lazy"
+              />
+            </div>
+            <div class="vk-group-content">
+              <span class="vk-group-badge">Leadership & Synergy</span>
+              <h3>Corporate Team Building</h3>
+              <p>
+                Break down organizational silos. Our scenarios test natural leadership, cross-functional communication, and calm decision-making under timed constraints.
+              </p>
+              <ul class="vk-group-perks">
+                <li><i class="fa-solid fa-check"></i> Accommodates up to 60 players simultaneously</li>
+                <li><i class="fa-solid fa-check"></i> Private conference lounge for debriefing</li>
+                <li><i class="fa-solid fa-check"></i> Custom catering and beverage packages</li>
+              </ul>
+              <a href="pricing.html" class="vk-button vk-button-primary" style="width:100%; margin-top:auto;">
+                Explore Corporate Plans
+              </a>
+            </div>
+          </article>
+
+          <!-- GROUP 3: FAMILIES -->
+          <article class="vk-group-card" data-reveal>
+            <div class="vk-group-img">
+              <img
+                src="assets/images/group_family.jpg"
+                alt="Family solving puzzle chest together"
+                loading="lazy"
+              />
+            </div>
+            <div class="vk-group-content">
+              <span class="vk-group-badge">All Ages Accessible</span>
+              <h3>Families & Young Detectives</h3>
+              <p>
+                Engaging logic challenges where young minds shine alongside parents and grandparents. Non-fright modes available with adaptive clue scaffolding.
+              </p>
+              <ul class="vk-group-perks">
+                <li><i class="fa-solid fa-check"></i> Suitable for detectives aged 8 and up</li>
+                <li><i class="fa-solid fa-check"></i> Adjustable lighting & sound volume options</li>
+                <li><i class="fa-solid fa-check"></i> Birthday party host packages with cake lounge</li>
+              </ul>
+              <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay" style="width:100%; margin-top:auto;">
+                Book Family Mission
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 7: CUSTOMER REVIEW CARDS
+         ====================================================== -->
+    <section class="vk-section" id="customerReviews">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Field Dispatches</div>
+          <h2 class="vk-section-title">Tested by Real Adventurers</h2>
+          <p class="vk-section-desc">
+            Read debriefs from detectives, software engineers, birthday squads, and corporate teams who attempted our chambers.
+          </p>
+        </div>
+
+        <div class="vk-reviews-wrapper">
+          <!-- SPOTLIGHT TESTIMONIAL BOX -->
+          <div class="vk-testimonial-box" data-reveal>
+            <div class="vk-stars">★★★★★</div>
+            <blockquote class="vk-testimonial-quote">
+              “The set design in Cyberpunk Blackout was mind-blowing. The laser puzzles felt like a Hollywood blockbuster set, not a gimmick. We escaped with just 42 seconds left on the clock!”
+            </blockquote>
+            <div class="vk-testimonial-meta">
+              <div class="vk-testimonial-author">
+                <img
+                  src="assets/images/review_avatar_1.jpg"
+                  alt="Ananya Sharma"
+                />
+                <div>
+                  <strong>Ananya Sharma & The Netrunners</strong>
+                  <span>Verified Escapers · Escaped in 59:18</span>
+                </div>
+              </div>
+              <div class="vk-escape-badge">
+                <span class="material-symbols-rounded" style="font-size:16px;"> lock_open </span>
+                Escaped with 00:42 Remaining
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 SUPPORTING REVIEW CARDS -->
+          <div class="vk-reviews-grid">
+            <article class="vk-review-card" data-reveal>
+              <div class="vk-stars">★★★★★</div>
+              <p>
+                “Our corporate engineering team was humbled and thrilled. The Clockwork room forced us to truly collaborate instead of working in silos. Best off-site we've ever booked.”
+              </p>
+              <div class="vk-testimonial-author">
+                <img
+                  src="assets/images/review_avatar_2.jpg"
+                  alt="Marcus Vance"
+                />
+                <div>
+                  <strong>Marcus Vance</strong>
+                  <span>VP of Engineering · TechCorp (Team of 18)</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="vk-review-card" data-reveal>
+              <div class="vk-stars">★★★★★</div>
+              <p>
+                “Celebrated my 30th birthday in The Alchemist's Crypt. The mechanical props and secret doors blew our minds! Our Game Master timed hints perfectly without spoiling the fun.”
+              </p>
+              <div class="vk-testimonial-author">
+                <img
+                  src="assets/images/review_avatar_3.jpg"
+                  alt="Priya Patel"
+                />
+                <div>
+                  <strong>Priya Patel</strong>
+                  <span>Squad Captain · Escaped with 04:15 Remaining</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 8: FINAL BOOKING CTA & FOOTER
+         ====================================================== -->
+    <section class="vk-section" id="bookingCta" style="padding-top: 0;">
+      <div class="vk-container">
+        <div class="vk-final-cta-box" data-reveal>
+          <div class="vk-final-cta-content">
+            <h2>The Clock is Ticking. Are You Ready?</h2>
+            <p>
+              Gather your team of 2 to 10 players. Select your chamber, enter the vault, and claim your place on our Wall of Legends. Spaces fill quickly on weekends.
+            </p>
+          </div>
+          <div class="vk-final-cta-action">
+            <button type="button" class="vk-primary-button" data-modal-open="bookingModalOverlay">
+              Reserve Your Vault Session
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================
+       GLOBAL QUICK BOOKING MODAL POPUP
+       ====================================================== -->
+  <div class="vk-modal-overlay" id="bookingModalOverlay">
+    <div class="vk-modal-card">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+
+      <!-- BOOKING FORM STATE -->
+      <div id="bookingFormContainer">
+        <h2 class="vk-modal-title">Reserve a Chamber</h2>
+        <p class="vk-modal-subtitle">Pick your quest, lock in your squad slot, and prepare for immersion.</p>
+
+        <form class="vk-modal-form" id="popupBookingForm">
+          <div class="vk-modal-field">
+            <label for="modalChamber">Select Escape Chamber</label>
+            <select id="modalChamber" required>
+              <option value="">Choose your quest...</option>
+              <option value="crypt">The Alchemist's Lost Crypt (Tier 2)</option>
+              <option value="cyberpunk">Cyberpunk Blackout 2099 (Tier 3)</option>
+              <option value="pharaoh">Pharaoh's Obsidian Tomb (Tier 4)</option>
+              <option value="clockwork">The Clockwork Syndicate Heist (Tier 5)</option>
+            </select>
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalDate">Mission Date</label>
+            <input type="date" id="modalDate" required />
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalSquadSize">Squad Size (Players)</label>
+            <select id="modalSquadSize" required>
+              <option value="2">2 Players (Duo Infiltration)</option>
+              <option value="4" selected>4 Players (Recommended Squad)</option>
+              <option value="6">6 Players (Full Investigation Unit)</option>
+              <option value="8">8 Players (Maximum Tactical Unit)</option>
+              <option value="10+">10+ Players (Corporate / Dual Room)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="vk-modal-submit">Confirm Mission Reservation</button>
+        </form>
+      </div>
+
+      <!-- SUCCESS CONFIRMATION STATE -->
+      <div class="vk-success-popup" id="bookingSuccessContainer">
+        <div class="vk-success-icon">
+          <span class="material-symbols-rounded"> verified </span>
+        </div>
+        <h3 class="vk-success-title">Mission Locked In!</h3>
+        <p class="vk-success-desc">
+          Your vault reservation has been secured. A confidential mission briefing document and entry code have been dispatched to your email.
+        </p>
+        <button type="button" class="vk-success-done" id="closeSuccessBookingBtn">Ready for Mission</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       SUBSCRIBE SUCCESS MODAL POPUP
+       ====================================================== -->
+  <div class="vk-modal-overlay" id="subscribeModalOverlay">
+    <div class="vk-modal-card" style="text-align: center; max-width: 420px;">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+      <div class="vk-success-icon" style="margin: 0 auto 16px;">
+        <span class="material-symbols-rounded"> mark_email_read </span>
+      </div>
+      <h3 class="vk-success-title">Cipher Dispatch Enlisted!</h3>
+      <p class="vk-success-desc">
+        You are now on the confidential VIP dispatch list. Secret room releases, seasonal puzzle ciphers, and exclusive discounts will land in your inbox.
+      </p>
+      <button type="button" class="vk-success-done" data-modal-close style="width: 100%;">Understood</button>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       GLOBAL FOOTER (5-Column Layout Matching Reference)
+       ====================================================== -->
+  <footer class="vk-footer">
+    <div class="vk-footer-main">
+      <div class="vk-container">
+        <div class="vk-footer-grid">
+          <!-- COLUMN 1: BRAND INFO -->
+          <div class="vk-footer-brand">
+            <a href="index.html" class="vk-brand">
+              <div class="vk-brand-mark">
+                <span class="material-symbols-rounded"> key </span>
+              </div>
+              <div class="vk-brand-name">Vault & <span>Key</span></div>
+            </a>
+            <p class="vk-footer-description">
+              Next-generation cinematic escape rooms and physical puzzle gauntlets. Engineered with authentic mechanical props, automated sensors, and deep storylines.
+            </p>
+            <div class="vk-footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="vk-social">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="vk-social">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="vk-social">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="vk-social">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: CHAMBERS & QUESTS -->
+          <div class="vk-footer-column">
+            <h3>Chambers</h3>
+            <a href="rooms.html">Alchemist's Crypt</a>
+            <a href="rooms.html">Cyberpunk Blackout</a>
+            <a href="rooms.html">Pharaoh's Obsidian Tomb</a>
+            <a href="rooms.html">Clockwork Heist</a>
+            <a href="rooms.html">All Difficulty Tiers</a>
+          </div>
+
+          <!-- COLUMN 3: EXPERIENCES -->
+          <div class="vk-footer-column">
+            <h3>Experiences</h3>
+            <a href="pricing.html">Corporate Team Building</a>
+            <a href="pricing.html">Friends & Night Quests</a>
+            <a href="pricing.html">Family Detective Mode</a>
+            <a href="pricing.html">Birthday Packages</a>
+            <a href="dashboard.html">Player Leaderboards</a>
+          </div>
+
+          <!-- COLUMN 4: VENUE & SUPPORT -->
+          <div class="vk-footer-column">
+            <h3>Venue & Help</h3>
+            <a href="about.html">About Vault & Key</a>
+            <a href="contact.html">Venue Location & Map</a>
+            <a href="contact.html">Safety & Sensor Protocols</a>
+            <a href="contact.html">Frequently Asked Questions</a>
+            <a href="dashboard.html">Player Mission Portal</a>
+          </div>
+
+          <!-- COLUMN 5: DISPATCH NEWSLETTER CTA CARD -->
+          <div class="vk-footer-cta">
+            <div class="vk-footer-cta-card">
+              <div class="vk-footer-cta-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <strong>Cipher Dispatch</strong>
+                <p>Receive secret monthly riddle perks.</p>
+              </div>
+            </div>
+            <form id="footerNewsletterForm" style="display: flex; gap: 8px; width: 100%; margin-top: 12px;">
+              <input
+                type="email"
+                id="footerSubscriberEmail"
+                placeholder="Enter detective email"
+                required
+                style="flex: 1; padding: 10px 14px; border-radius: var(--vk-radius-pill); background: var(--vk-bg-subtle); border: 1px solid var(--vk-border); color: var(--vk-text); font-size: 13px; outline: none;"
+              />
+              <button
+                type="submit"
+                class="vk-footer-button"
+                style="border:none; cursor:pointer; white-space: nowrap; padding: 5px 18px; width: auto;"
+              >
+                <span>Enlist</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER BOTTOM BAR -->
+    <div class="vk-footer-bottom">
+      <div class="vk-container">
+        <div class="vk-footer-bottom-inner">
+          <p>© 2026 Vault & Key Adventure Venues Inc. All rights reserved.</p>
+          <div class="vk-footer-bottom-links">
+            <a href="contact.html">Terms & Rules</a>
+            <a href="contact.html">Privacy Policy</a>
+            <a href="contact.html">Booking Guarantee</a>
+          </div>
+          <div>Engineered for real-world mystery.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GLOBAL SCRIPT -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- HOME 1 SPECIFIC INTERACTIONS SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set minimum reservation date to tomorrow
+      const dateInput = document.getElementById("modalDate");
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.min = tomorrow.toISOString().split("T")[0];
+        dateInput.value = tomorrow.toISOString().split("T")[0];
+      }
+
+      // Handle Quick Booking Form submission inside modal
+      const popupForm = document.getElementById("popupBookingForm");
+      const formContainer = document.getElementById("bookingFormContainer");
+      const successContainer = document.getElementById("bookingSuccessContainer");
+      const closeSuccessBtn = document.getElementById("closeSuccessBookingBtn");
+      const modalOverlay = document.getElementById("bookingModalOverlay");
+
+      if (popupForm) {
+        popupForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const chamber = document.getElementById("modalChamber").value;
+          const date = document.getElementById("modalDate").value;
+          const squad = document.getElementById("modalSquadSize").value;
+
+          if (chamber && date && squad) {
+            localStorage.setItem("vk_quick_booking", JSON.stringify({ chamber, date, squad, timestamp: Date.now() }));
+            formContainer.style.display = "none";
+            successContainer.classList.add("is-active");
+            popupForm.reset();
+          }
+        });
+      }
+
+      if (closeSuccessBtn && modalOverlay) {
+        closeSuccessBtn.addEventListener("click", () => {
+          modalOverlay.classList.remove("is-active");
+          setTimeout(() => {
+            formContainer.style.display = "block";
+            successContainer.classList.remove("is-active");
+          }, 400);
+        });
+      }
+
+      // Handle Footer Newsletter Form submission
+      const newsletterForm = document.getElementById("footerNewsletterForm");
+      const subscribeModal = document.getElementById("subscribeModalOverlay");
+      if (newsletterForm && subscribeModal) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById("footerSubscriberEmail");
+          if (emailInput && emailInput.value) {
+            subscribeModal.classList.add("is-active");
+            emailInput.value = "";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

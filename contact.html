@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Contact Vault & Key Mission Control for private room enquiries, corporate offsites, birthday bookings, and venue accessibility assistance."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Contact & Mission Dispatch | Vault & Key</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       00. GLOBAL HEADER & FLOATING NAVIGATION
+       ============================================================ -->
+  <header class="vk-header">
+    <div class="vk-container">
+      <div class="vk-header-inner">
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+
+        <!-- DESKTOP NAVBAR -->
+        <nav class="vk-nav" aria-label="Main navigation">
+          <div class="vk-nav-dropdown">
+            <button
+              type="button"
+              class="vk-nav-link vk-nav-dropdown-trigger"
+              data-home-dropdown
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>Home</span>
+              <span class="material-symbols-rounded" style="font-size:18px;"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-nav-dropdown-menu" aria-label="Home variations">
+              <a href="index.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> meeting_room </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 1 — Signature</strong>
+                  <small>Classic Vault Experience</small>
+                </span>
+              </a>
+              <a href="home-2.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> radar </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 2 — Mission Control</strong>
+                  <small>Expressive Quest Operations</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a href="rooms.html" class="vk-nav-link">Rooms & Quests</a>
+          <a href="pricing.html" class="vk-nav-link">Pricing & Groups</a>
+          <a href="about.html" class="vk-nav-link">About</a>
+          <a href="contact.html" class="vk-nav-link is-active">Contact</a>
+          <a href="dashboard.html" class="vk-nav-link">Player Dashboard</a>
+        </nav>
+
+        <!-- HEADER ACTIONS & TOGGLES -->
+        <div class="vk-header-actions">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <a href="login.html" class="vk-nav-link" style="font-weight:700; border: 1px solid var(--vk-border);">Login</a>
+          <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+            Book Quest
+          </button>
+
+          <!-- MOBILE HAMBURGER BUTTON -->
+          <button
+            type="button"
+            class="vk-icon-button vk-menu-toggle"
+            data-menu-toggle
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-rounded"> menu </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE SLIDE-DOWN DRAWER -->
+      <div class="vk-mobile-menu" data-mobile-menu>
+        <div class="vk-mobile-menu-inner">
+          <div class="vk-mobile-toggles">
+            <button type="button" data-theme-toggle aria-label="Toggle theme">
+              <span class="material-symbols-rounded"> light_mode </span>
+            </button>
+            <button type="button" data-rtl-toggle aria-label="Toggle RTL">
+              <i class="fa-solid fa-right-left"></i>
+            </button>
+          </div>
+
+          <div class="vk-mobile-home">
+            <button
+              type="button"
+              class="vk-mobile-home-trigger"
+              data-mobile-home-toggle
+              aria-expanded="false"
+            >
+              <span>Home Options</span>
+              <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-mobile-home-links">
+              <a href="index.html">Home 1 — Signature</a>
+              <a href="home-2.html">Home 2 — Mission Control</a>
+            </div>
+          </div>
+
+          <a href="rooms.html">Rooms & Quests</a>
+          <a href="pricing.html">Pricing & Groups</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="is-current">Contact</a>
+          <a href="dashboard.html">Player Dashboard</a>
+
+          <div class="vk-mobile-menu-actions">
+            <a href="login.html" class="vk-button vk-button-outline">Login</a>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Book Your Adventure
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         SECTION 1: CONTACT HERO
+         ============================================================ -->
+    <section class="vk-contact-hero" id="contactHero">
+      <div class="vk-container">
+        <div class="vk-eyebrow" style="margin-inline: auto; margin-bottom: 20px;">
+          <span class="material-symbols-rounded"> support_agent </span>
+          <span>Mission Control Dispatch</span>
+        </div>
+
+        <h1 class="vk-hero-title" style="margin-bottom: 20px;">
+          Get in Touch with <span class="highlight">Mission Control</span>
+        </h1>
+
+        <p class="vk-hero-desc" style="margin-inline: auto; margin-bottom: 26px; max-width: 660px;">
+          Have questions regarding chamber bookings, multi-room corporate offsites, birthday packages, or accessibility requests? Our operations team is on standby to assist your squad.
+        </p>
+
+        <div style="margin-bottom: 30px;">
+          <span class="vk-sample-disclaimer" style="background: rgba(var(--vk-primary-rgb), 0.15); padding: 6px 14px; border-radius: var(--vk-radius-pill); border: 1px solid rgba(var(--vk-primary-rgb), 0.3);">
+            <i class="fa-solid fa-circle-info" style="margin-inline-end: 6px;"></i>
+            Editable Venue Dispatch Channels — Client-Side Sample Enquiry Simulation
+          </span>
+        </div>
+
+        <div class="vk-hero-actions" style="justify-content: center;">
+          <a href="#enquiryFormSection" class="vk-primary-button">
+            <span>Send Direct Enquiry</span>
+            <span class="material-symbols-rounded"> send </span>
+          </a>
+          <a href="#contactInfo" class="vk-secondary-button">
+            <span>Location & Hours</span>
+            <span class="material-symbols-rounded"> location_on </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: CONTACT INTRODUCTION
+         ============================================================ -->
+    <section class="vk-section" id="contactIntro" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> connect_without_contact </span>
+            <span>Communication Protocol</span>
+          </div>
+          <h2 class="vk-section-title">
+            Direct Lines to <span class="highlight">Venue Dispatch</span>
+          </h2>
+          <p class="vk-section-desc">
+            We respond promptly to all quest inquiries. During operational hours, messages submitted via our dispatch desk receive answers within approximately two hours.
+          </p>
+        </div>
+
+        <div class="vk-guidance-grid">
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> schedule </span>
+            </div>
+            <h3>Fast Response Times</h3>
+            <p>
+              Inquiries submitted during operational days are reviewed swiftly by our on-duty Mission Directors.
+            </p>
+          </div>
+
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> groups </span>
+            </div>
+            <h3>Event Specialists</h3>
+            <p>
+              Planning a group over 12 players? Our event coordinators can organize parallel room starts and custom clues.
+            </p>
+          </div>
+
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> lock_clock </span>
+            </div>
+            <h3>Direct Phone Support</h3>
+            <p>
+              Urgent day-of queries regarding arrival delays or parking can be directed to our front desk line.
+            </p>
+          </div>
+
+          <div class="vk-guidance-card">
+            <div class="vk-guidance-icon">
+              <span class="material-symbols-rounded"> accessibility_new </span>
+            </div>
+            <h3>Accessibility Queries</h3>
+            <p>
+              We accommodate step-free access and sensory adjustments upon request for all our game chambers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 & 4: CONTACT INFORMATION & ENQUIRY FORM
+         ============================================================ -->
+    <section class="vk-section" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-contact-main-grid">
+          <!-- SECTION 3: CONTACT INFORMATION -->
+          <div id="contactInfo" class="vk-contact-cards-stack">
+            <div>
+              <div class="vk-eyebrow" style="margin-bottom: 12px;">
+                <span class="material-symbols-rounded"> place </span>
+                <span>Headquarters</span>
+              </div>
+              <h2 class="vk-section-title" style="font-size: clamp(24px, 3vw, 34px); margin-bottom: 18px;">
+                Find Our <span class="highlight">Sanctum</span>
+              </h2>
+            </div>
+
+            <!-- CARD: PHYSICAL ADDRESS -->
+            <div class="vk-contact-info-card">
+              <div class="vk-contact-info-icon">
+                <span class="material-symbols-rounded"> location_on </span>
+              </div>
+              <div class="vk-contact-info-content">
+                <h3>Venue Location</h3>
+                <p>404 Cipher Street, Victorian Vaults District</p>
+                <p>Metro Center, MC 94103 <small style="color: var(--vk-primary); font-weight: 700;">[Sample Address]</small></p>
+                <small style="color: var(--vk-text-muted); display: block; margin-top: 4px;">2 blocks from Central Metro Station · Dedicated Parking Onsite</small>
+              </div>
+            </div>
+
+            <!-- CARD: PHONE DISPATCH -->
+            <div class="vk-contact-info-card">
+              <div class="vk-contact-info-icon">
+                <span class="material-symbols-rounded"> call </span>
+              </div>
+              <div class="vk-contact-info-content">
+                <h3>Direct Phone Line</h3>
+                <a href="tel:+15558285869">+1 (555) 828-5869 (828-VAULT)</a>
+                <span class="vk-sample-disclaimer" style="margin-top: 4px;">[Sample Telephone]</span>
+                <small style="color: var(--vk-text-muted); display: block; margin-top: 4px;">Direct connection to front desk game directors</small>
+              </div>
+            </div>
+
+            <!-- CARD: EMAIL DISPATCH -->
+            <div class="vk-contact-info-card">
+              <div class="vk-contact-info-icon">
+                <span class="material-symbols-rounded"> mail </span>
+              </div>
+              <div class="vk-contact-info-content">
+                <h3>Encrypted Dispatch Email</h3>
+                <a href="mailto:dispatch@vaultandkey-escapes.demo">dispatch@vaultandkey-escapes.demo</a>
+                <span class="vk-sample-disclaimer" style="margin-top: 4px;">[Sample Email]</span>
+                <small style="color: var(--vk-text-muted); display: block; margin-top: 4px;">Average response time: under 2 operational hours</small>
+              </div>
+            </div>
+
+            <!-- CARD: HOURS OF OPERATION -->
+            <div class="vk-contact-info-card">
+              <div class="vk-contact-info-icon">
+                <span class="material-symbols-rounded"> schedule </span>
+              </div>
+              <div class="vk-contact-info-content">
+                <h3>Operational Hours</h3>
+                <p><strong>Mon – Thu:</strong> 12:00 PM – 10:00 PM</p>
+                <p><strong>Fri – Sun:</strong> 10:00 AM – Midnight</p>
+                <small style="color: var(--vk-accent-emerald); font-weight: 700;">All 6 Chambers Operating Daily</small>
+              </div>
+            </div>
+
+            <!-- VENUE ACCESS & LOCATION SCHEMATIC (PROFESSIONAL VECTOR CARD) -->
+            <div class="vk-venue-map-card" style="padding: 24px; background: var(--vk-surface); border: 1px solid var(--vk-border); border-radius: var(--vk-radius-xl); box-shadow: var(--vk-shadow-sm);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--vk-border);">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <div style="width: 38px; height: 38px; border-radius: var(--vk-radius-md); background: rgba(var(--vk-primary-rgb), 0.15); color: var(--vk-primary); display: grid; place-items: center;">
+                    <span class="material-symbols-rounded"> location_on </span>
+                  </div>
+                  <div>
+                    <strong style="display: block; font-size: 15px; color: var(--vk-text);">District Headquarters</strong>
+                    <small style="color: var(--vk-text-muted); font-size: 12px;">742 Evergreen Vaultway, Suite 400</small>
+                  </div>
+                </div>
+                <span class="vk-operational-pill">
+                  <span class="material-symbols-rounded" style="font-size: 14px;"> check_circle </span>
+                  Chambers Live
+                </span>
+              </div>
+
+              <!-- TRANSIT & ACCESS BADGES -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+                <div style="padding: 10px 12px; background: var(--vk-bg-subtle); border-radius: var(--vk-radius-sm); border: 1px solid var(--vk-border);">
+                  <div style="font-size: 11px; font-weight: 800; color: var(--vk-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+                    <i class="fa-solid fa-train-subway" style="margin-inline-end: 4px;"></i> Metro Rail
+                  </div>
+                  <span style="font-size: 12.5px; color: var(--vk-text); font-weight: 600;">Central Station (Exit 4)</span>
+                </div>
+                <div style="padding: 10px 12px; background: var(--vk-bg-subtle); border-radius: var(--vk-radius-sm); border: 1px solid var(--vk-border);">
+                  <div style="font-size: 11px; font-weight: 800; color: var(--vk-accent-cyan); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+                    <i class="fa-solid fa-square-parking" style="margin-inline-end: 4px;"></i> Guest Parking
+                  </div>
+                  <span style="font-size: 12.5px; color: var(--vk-text); font-weight: 600;">Validated Underground P2</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; background: rgba(var(--vk-primary-rgb), 0.08); border-radius: var(--vk-radius-sm); border: 1px dashed rgba(var(--vk-primary-rgb), 0.35);">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="material-symbols-rounded" style="color: var(--vk-primary); font-size: 18px;"> navigation </span>
+                  <span style="font-size: 12px; font-weight: 700; color: var(--vk-text);">GPS: 40.7128° N, 74.0060° W</span>
+                </div>
+                <a href="https://maps.google.com" target="_blank" rel="noopener" class="vk-button vk-button-outline" style="font-size: 11px; padding: 6px 12px; border-radius: var(--vk-radius-pill);">
+                  Open Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: ENQUIRY FORM -->
+          <div id="enquiryFormSection" class="vk-enquiry-card">
+            <div style="margin-bottom: 24px;">
+              <div class="vk-eyebrow" style="margin-bottom: 10px;">
+                <span class="material-symbols-rounded"> edit_note </span>
+                <span>Send Transmission</span>
+              </div>
+              <h2 style="font-size: clamp(24px, 3vw, 32px); margin-bottom: 8px;">
+                Mission & Event <span class="highlight">Enquiry Form</span>
+              </h2>
+              <p style="font-size: 14px; color: var(--vk-text-soft); line-height: 1.6;">
+                Fill out the transmission fields below. Your request will be validated client-side and registered in our local dispatch demo log.
+              </p>
+            </div>
+
+            <form id="mainEnquiryForm" class="vk-enquiry-form" novalidate>
+              <!-- ENQUIRY TYPE SELECTION -->
+              <div class="vk-field-group">
+                <label>1. Select Enquiry Classification</label>
+                <div class="vk-enquiry-type-chips">
+                  <div>
+                    <input type="radio" name="enquiryType" id="typeGeneral" value="general" class="vk-chip-radio" checked style="display: none;" />
+                    <label for="typeGeneral" class="vk-chip-label">General Query</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="enquiryType" id="typeCorporate" value="corporate" class="vk-chip-radio" style="display: none;" />
+                    <label for="typeCorporate" class="vk-chip-label">Corporate Team</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="enquiryType" id="typeBirthday" value="birthday" class="vk-chip-radio" style="display: none;" />
+                    <label for="typeBirthday" class="vk-chip-label">Birthday / Party</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="enquiryType" id="typeBuyout" value="buyout" class="vk-chip-radio" style="display: none;" />
+                    <label for="typeBuyout" class="vk-chip-label">Venue Buyout</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NAME & EMAIL -->
+              <div class="vk-form-row">
+                <div class="vk-field-group" id="groupName">
+                  <label for="enquiryName">Full Name *</label>
+                  <input type="text" id="enquiryName" placeholder="Agent Jane Doe" required />
+                  <span class="vk-field-error" id="errorName">Please provide your agent name.</span>
+                </div>
+
+                <div class="vk-field-group" id="groupEmail">
+                  <label for="enquiryEmail">Email Address *</label>
+                  <input type="email" id="enquiryEmail" placeholder="agent@network.com" required />
+                  <span class="vk-field-error" id="errorEmail">Please enter a valid email address.</span>
+                </div>
+              </div>
+
+              <!-- SQUAD SIZE & PREFERRED DATE -->
+              <div class="vk-form-row">
+                <div class="vk-field-group" id="groupSquad">
+                  <label for="enquirySquadSize">Estimated Squad Size</label>
+                  <select id="enquirySquadSize">
+                    <option value="2">2 Players (Duo Infiltration)</option>
+                    <option value="3-6" selected>3 – 6 Players (Tactical Squad)</option>
+                    <option value="7-10">7 – 10 Players (Large Strike Team)</option>
+                    <option value="12-24">12 – 24 Players (Multi-Chamber Event)</option>
+                    <option value="25-60">25 – 60 Players (Corporate Tournament)</option>
+                    <option value="60+">60+ Players (Full Facility Lockout)</option>
+                  </select>
+                </div>
+
+                <div class="vk-field-group" id="groupDate">
+                  <label for="enquiryDate">Preferred Mission Date</label>
+                  <input type="date" id="enquiryDate" />
+                  <span class="vk-field-error" id="errorDate">Please select a valid future date.</span>
+                </div>
+              </div>
+
+              <!-- MESSAGE TEXTAREA -->
+              <div class="vk-field-group" id="groupMessage">
+                <label for="enquiryMessage">Mission Briefing / Detailed Request *</label>
+                <textarea
+                  id="enquiryMessage"
+                  placeholder="Provide context regarding your group's requirements, preferred chambers, special accommodations, or timing preferences..."
+                  required
+                ></textarea>
+                <span class="vk-field-error" id="errorMessage">Please provide details regarding your inquiry (minimum 10 characters).</span>
+              </div>
+
+              <!-- CLIENT-SIDE FEEDBACK BANNER -->
+              <div class="vk-form-notice" id="enquiryNotice"></div>
+
+              <!-- SUBMIT BUTTON -->
+              <button type="submit" class="vk-button vk-button-primary" id="btnSubmitEnquiry" style="min-height: 52px; font-size: 15px;">
+                <span>Transmit Enquiry to Dispatch</span>
+                <span class="material-symbols-rounded"> send </span>
+              </button>
+
+              <small style="font-size: 11.5px; color: var(--vk-text-muted); text-align: center; line-height: 1.5;">
+                * Demonstration Enquiry Form: Submissions are verified client-side and saved to local state. In production, this integrates with your secure backend mail router.
+              </small>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: GROUP AND EVENT ENQUIRY OPTIONS
+         ============================================================ -->
+    <section class="vk-section" id="groupEnquiryOptions" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> domain </span>
+            <span>Specialized Inquiries</span>
+          </div>
+          <h2 class="vk-section-title">
+            Tailored Coordination for <span class="highlight">Events & Gatherings</span>
+          </h2>
+          <p class="vk-section-desc">
+            Need specialized event arrangements? Select one of our dedicated consultation paths below to auto-configure your enquiry.
+          </p>
+        </div>
+
+        <!-- EVENT CONCIERGE EXECUTIVE BANNER (100% PROFESSIONAL VECTOR CARD) -->
+        <div style="padding: 32px clamp(20px, 3.5vw, 36px); background: linear-gradient(135deg, var(--vk-surface) 0%, var(--vk-bg-subtle) 100%); border: 1px solid var(--vk-border); border-radius: var(--vk-radius-xl); margin-bottom: 36px; box-shadow: var(--vk-shadow-sm);">
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 28px; align-items: center;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                <span class="vk-group-badge" style="margin: 0;">Dedicated Event Concierge</span>
+                <span class="vk-operational-pill" style="font-size: 11px;">Private Facilitation</span>
+              </div>
+              <h3 style="font-size: clamp(20px, 2.2vw, 26px); margin: 0 0 10px; font-weight: 800; color: var(--vk-text);">
+                Direct Corporate & VIP Event Coordination
+              </h3>
+              <p style="font-size: 14px; color: var(--vk-text-soft); line-height: 1.65; margin: 0;">
+                Our dedicated event directors coordinate customized mission staggered starts, catering setup in private briefing lounges, and tailored clue inserts for team milestones and corporate tournaments.
+              </p>
+            </div>
+
+            <!-- KEY EVENT PILLARS -->
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--vk-surface); border: 1px solid var(--vk-border); border-radius: var(--vk-radius-md);">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: rgba(var(--vk-primary-rgb), 0.15); color: var(--vk-primary); display: grid; place-items: center; flex-shrink: 0;">
+                  <span class="material-symbols-rounded" style="font-size: 18px;"> groups </span>
+                </div>
+                <div>
+                  <strong style="font-size: 13px; display: block; color: var(--vk-text);">12 to 120+ Players</strong>
+                  <span style="font-size: 11.5px; color: var(--vk-text-muted);">Simultaneous multi-chamber start locks</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--vk-surface); border: 1px solid var(--vk-border); border-radius: var(--vk-radius-md);">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: rgba(6, 182, 212, 0.15); color: var(--vk-accent-cyan); display: grid; place-items: center; flex-shrink: 0;">
+                  <span class="material-symbols-rounded" style="font-size: 18px;"> meeting_room </span>
+                </div>
+                <div>
+                  <strong style="font-size: 13px; display: block; color: var(--vk-text);">Private Briefing Lounge</strong>
+                  <span style="font-size: 11.5px; color: var(--vk-text-muted);">Includes AV presentation & catering tables</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--vk-surface); border: 1px solid var(--vk-border); border-radius: var(--vk-radius-md);">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); color: var(--vk-accent-emerald); display: grid; place-items: center; flex-shrink: 0;">
+                  <span class="material-symbols-rounded" style="font-size: 18px;"> support_agent </span>
+                </div>
+                <div>
+                  <strong style="font-size: 13px; display: block; color: var(--vk-text);">Dedicated Mission Director</strong>
+                  <span style="font-size: 11.5px; color: var(--vk-text-muted);">End-to-end facilitation and score debriefs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vk-event-options-grid">
+          <!-- OPTION 1 -->
+          <div class="vk-event-option-card">
+            <div class="vk-event-option-icon">
+              <span class="material-symbols-rounded"> corporate_fare </span>
+            </div>
+            <h3>Corporate Tournaments</h3>
+            <p>
+              Simultaneous chamber starts for 12 to 60+ players, coordinated timers, team dynamics debriefs, and private presentation lounges.
+            </p>
+            <button
+              type="button"
+              class="vk-primary-button"
+              data-set-enquiry="corporate"
+              style="margin-top: auto;"
+            >
+              <span>Inquire Corporate Event</span>
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+
+          <!-- OPTION 2 -->
+          <div class="vk-event-option-card">
+            <div class="vk-event-option-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--vk-accent-emerald);">
+              <span class="material-symbols-rounded"> celebration </span>
+            </div>
+            <h3>Birthdays & VIP Parties</h3>
+            <p>
+              Custom clue customization honoring the guest of honor, private 45-minute post-game lounge access, and commemorative vault gifts.
+            </p>
+            <button
+              type="button"
+              class="vk-primary-button"
+              data-set-enquiry="birthday"
+              style="margin-top: auto;"
+            >
+              <span>Inquire Birthday Package</span>
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+
+          <!-- OPTION 3 -->
+          <div class="vk-event-option-card">
+            <div class="vk-event-option-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--vk-accent-cyan);">
+              <span class="material-symbols-rounded"> meeting_room </span>
+            </div>
+            <h3>Full Facility Lockout</h3>
+            <p>
+              Complete exclusivity over all 6 chambers and reception halls for up to 120 guests, complete with AV audio systems and catering space.
+            </p>
+            <button
+              type="button"
+              class="vk-primary-button"
+              data-set-enquiry="buyout"
+              style="margin-top: auto;"
+            >
+              <span>Inquire Venue Lockout</span>
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: VISITOR FAQS & PRACTICAL INFORMATION
+         ============================================================ -->
+    <section class="vk-section" id="visitorFaqs" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> live_help </span>
+            <span>Practical Information</span>
+          </div>
+          <h2 class="vk-section-title">
+            Visitor Arrival & <span class="highlight">Practical FAQs</span>
+          </h2>
+          <p class="vk-section-desc">
+            Helpful guidance to ensure your squad enjoys a seamless, punctual, and comfortable mission experience.
+          </p>
+        </div>
+
+        <div class="vk-faq-accordion" id="contactFaqAccordion">
+          <!-- FAQ 1 -->
+          <div class="vk-faq-item is-open">
+            <button type="button" class="vk-faq-question" aria-expanded="true">
+              <span>Where should our squad park upon arrival?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                We offer complimentary validated parking at the Metro Vault Garage directly opposite our entrance on Cipher Street. Simply bring your parking ticket to the front reception desk for validation upon check-in.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>Are secure lockers provided for personal items and phones?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Yes. Complimentary electronic passcode lockers are provided in our mission preparation lounge. All coats, backpacks, and personal electronic devices can be safely locked prior to chamber entry.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>Can we bring outside catering or celebratory cake?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Food and beverages are permitted inside our private VIP Debrief Lounges for birthday and corporate bookings. To protect electronic props and delicate mechanisms, food and drinks are strictly prohibited inside the escape chambers.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>What clothing is recommended for escape room participants?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Comfortable casual wear and closed-toe flat shoes are ideal. You may need to kneel, reach into compartments, or examine clues under tables, but no vigorous athletics or climbing are required.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>What happens if teammates are stuck in traffic?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Please call our dispatch desk immediately. To ensure that teams scheduled after yours are not delayed, mission clocks must begin on schedule. However, late-arriving members may join your chamber once briefed by the Game Master.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="vk-faq-item">
+            <button type="button" class="vk-faq-question" aria-expanded="false">
+              <span>Is the venue wheelchair accessible?</span>
+              <div class="vk-faq-icon">
+                <span class="material-symbols-rounded"> expand_more </span>
+              </div>
+            </button>
+            <div class="vk-faq-answer">
+              <p>
+                Yes. Our facility features street-level step-free access, wide corridors, and accessible restrooms. Chambers including The Obsidian Vault and Cyberpunk 2088 are designed with wheelchair-friendly navigation and reachable puzzle consoles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: GLOBAL FOOTER
+         ============================================================ -->
+    <section id="contactFooterSection">
+      <!-- Section wrapper for Contact footer identifier -->
+    </section>
+  </main>
+
+  <!-- ============================================================
+       GLOBAL 5-COLUMN FOOTER
+       ============================================================ -->
+  <footer class="vk-footer">
+    <div class="vk-footer-main">
+      <div class="vk-container">
+        <div class="vk-footer-grid">
+          <!-- COLUMN 1: BRAND INFO -->
+          <div class="vk-footer-brand">
+            <a href="index.html" class="vk-brand">
+              <div class="vk-brand-mark">
+                <span class="material-symbols-rounded"> key </span>
+              </div>
+              <div class="vk-brand-name">Vault & <span>Key</span></div>
+            </a>
+            <p class="vk-footer-description">
+              Next-generation cinematic escape rooms and physical puzzle gauntlets. Engineered with authentic mechanical props, automated sensors, and deep storylines.
+            </p>
+            <div class="vk-footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="vk-social">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="vk-social">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="vk-social">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="vk-social">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: CHAMBERS & QUESTS -->
+          <div class="vk-footer-column">
+            <h3>Chambers</h3>
+            <a href="rooms.html">Alchemist's Crypt</a>
+            <a href="rooms.html">Cyberpunk Blackout</a>
+            <a href="rooms.html">Pharaoh's Obsidian Tomb</a>
+            <a href="rooms.html">Clockwork Heist</a>
+            <a href="rooms.html">All Difficulty Tiers</a>
+          </div>
+
+          <!-- COLUMN 3: EXPERIENCES -->
+          <div class="vk-footer-column">
+            <h3>Experiences</h3>
+            <a href="pricing.html">Corporate Team Building</a>
+            <a href="pricing.html">Friends & Night Quests</a>
+            <a href="pricing.html">Family Detective Mode</a>
+            <a href="pricing.html">Birthday Packages</a>
+            <a href="dashboard.html">Player Leaderboards</a>
+          </div>
+
+          <!-- COLUMN 4: VENUE & SUPPORT -->
+          <div class="vk-footer-column">
+            <h3>Venue & Help</h3>
+            <a href="about.html">About Vault & Key</a>
+            <a href="contact.html">Venue Location & Map</a>
+            <a href="contact.html">Safety & Sensor Protocols</a>
+            <a href="contact.html">Frequently Asked Questions</a>
+            <a href="dashboard.html">Player Mission Portal</a>
+          </div>
+
+          <!-- COLUMN 5: DISPATCH NEWSLETTER CTA CARD -->
+          <div class="vk-footer-cta">
+            <div class="vk-footer-cta-card">
+              <div class="vk-footer-cta-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <strong>Cipher Dispatch</strong>
+                <p>Receive secret monthly riddle perks.</p>
+              </div>
+            </div>
+            <form id="footerNewsletterForm" style="display: flex; gap: 8px; width: 100%; margin-top: 12px;">
+              <input
+                type="email"
+                id="footerSubscriberEmail"
+                placeholder="Enter detective email"
+                required
+                style="flex: 1; padding: 10px 14px; border-radius: var(--vk-radius-pill); background: var(--vk-bg-subtle); border: 1px solid var(--vk-border); color: var(--vk-text); font-size: 13px; outline: none;"
+              />
+              <button
+                type="submit"
+                class="vk-footer-button"
+                style="border:none; cursor:pointer; white-space: nowrap; padding: 5px 18px; width: auto;"
+              >
+                <span>Enlist</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER BOTTOM BAR -->
+    <div class="vk-footer-bottom">
+      <div class="vk-container">
+        <div class="vk-footer-bottom-inner">
+          <p>© 2026 Vault & Key Adventure Venues Inc. All rights reserved.</p>
+          <div class="vk-footer-bottom-links">
+            <a href="contact.html">Terms & Rules</a>
+            <a href="contact.html">Privacy Policy</a>
+            <a href="about.html">Safety Protocols</a>
+            <a href="contact.html">Site Map</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       GLOBAL MODAL: QUICK BOOKING MODAL OVERLAY
+       ============================================================ -->
+  <div class="vk-modal-overlay" id="bookingModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="vk-modal-card">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+
+      <div id="bookingFormContainer">
+        <h3 class="vk-modal-title" id="modalHeading">Reserve Your Chamber</h3>
+        <p class="vk-modal-subtitle">Configure your private escape adventure. Zero payment required until briefing.</p>
+
+        <form class="vk-modal-form" id="popupBookingForm">
+          <div class="vk-modal-field">
+            <label for="modalChamber">Select Mystery Chamber</label>
+            <select id="modalChamber" required>
+              <option value="obsidian">The Obsidian Vault (Stealth Heist · 60m)</option>
+              <option value="cyberpunk">Cyberpunk 2088: Neon Protocol (Sci-Fi · 60m)</option>
+              <option value="davinci">Da Vinci's Hidden Crypt (Renaissance · 75m)</option>
+              <option value="clockwork">Clockwork Asylum (Psychological · 60m)</option>
+              <option value="magician">Magician's Secret Study (Illusionist · 60m)</option>
+              <option value="pharaoh">Pharaoh's Cursed Tomb (Archeological · 60m)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="vk-modal-field">
+              <label for="modalDate">Mission Date</label>
+              <input type="date" id="modalDate" required />
+            </div>
+            <div class="vk-modal-field">
+              <label for="modalSquadSize">Squad Size</label>
+              <select id="modalSquadSize" required>
+                <option value="2">2 Players ($46/player)</option>
+                <option value="3">3 Players ($38/player)</option>
+                <option value="4" selected>4 Players ($38/player)</option>
+                <option value="5">5 Players ($38/player)</option>
+                <option value="6">6 Players ($38/player)</option>
+                <option value="7">7 Players ($34/player)</option>
+                <option value="8">8 Players ($34/player)</option>
+                <option value="9">9 Players ($34/player)</option>
+                <option value="10">10 Players ($34/player)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalLeadName">Squad Leader Name</label>
+            <input type="text" id="modalLeadName" placeholder="Agent Jane Doe" required />
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalLeadEmail">Contact Email</label>
+            <input type="email" id="modalLeadEmail" placeholder="agent@mission.com" required />
+          </div>
+
+          <button type="submit" class="vk-modal-submit">
+            Confirm Chamber Lockout
+          </button>
+        </form>
+      </div>
+
+      <div class="vk-success-popup" id="bookingSuccessContainer">
+        <div class="vk-success-icon">
+          <span class="material-symbols-rounded"> task_alt </span>
+        </div>
+        <h4 class="vk-success-title">Mission Slot Reserved!</h4>
+        <p class="vk-success-desc">
+          Your chamber request has been registered in the Vault & Key system. Check your inbox for confirmation details and briefing instructions.
+        </p>
+        <button type="button" class="vk-success-done" id="closeSuccessBookingBtn">
+          Return to Venue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GLOBAL MODAL: NEWSLETTER SUCCESS MODAL
+       ============================================================ -->
+  <div class="vk-modal-overlay" id="subscribeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="subscribeModalTitle">
+    <div class="vk-modal-card" style="text-align: center; max-width: 440px;">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+      <div class="vk-success-icon" style="background: rgba(var(--vk-primary-rgb), 0.2); color: var(--vk-primary);">
+        <span class="material-symbols-rounded"> mark_email_read </span>
+      </div>
+      <h4 class="vk-success-title" id="subscribeModalTitle">Mission Intel Confirmed</h4>
+      <p class="vk-success-desc">
+        Welcome to the inner circle. You will receive priority notifications when new mystery chambers launch and exclusive solver discount ciphers.
+      </p>
+      <button type="button" class="vk-success-done" data-modal-close>
+        Acknowledge
+      </button>
+    </div>
+  </div>
+
+  <!-- GLOBAL APPLICATION SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- PAGE-SPECIFIC ENQUIRY VALIDATION & ACCORDION SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set default tomorrow date
+      const dateInput = document.getElementById("enquiryDate");
+      const modalDate = document.getElementById("modalDate");
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const tomorrowStr = tomorrow.toISOString().split("T")[0];
+      if (dateInput) dateInput.value = tomorrowStr;
+      if (modalDate) modalDate.value = tomorrowStr;
+
+      // ==========================================
+      // 1. CLIENT-SIDE ENQUIRY FORM LOGIC
+      // ==========================================
+      const enquiryForm = document.getElementById("mainEnquiryForm");
+      const nameInput = document.getElementById("enquiryName");
+      const emailInput = document.getElementById("enquiryEmail");
+      const squadSelect = document.getElementById("enquirySquadSize");
+      const messageInput = document.getElementById("enquiryMessage");
+      const noticeBox = document.getElementById("enquiryNotice");
+      const btnSubmit = document.getElementById("btnSubmitEnquiry");
+
+      const groupName = document.getElementById("groupName");
+      const groupEmail = document.getElementById("groupEmail");
+      const groupMessage = document.getElementById("groupMessage");
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      if (enquiryForm) {
+        enquiryForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          let isValid = true;
+
+          // Reset error states
+          groupName.classList.remove("has-error");
+          groupEmail.classList.remove("has-error");
+          groupMessage.classList.remove("has-error");
+          noticeBox.className = "vk-form-notice";
+          noticeBox.style.display = "none";
+
+          // Validate Name
+          if (!nameInput.value.trim()) {
+            groupName.classList.add("has-error");
+            isValid = false;
+          }
+
+          // Validate Email
+          if (!validateEmail(emailInput.value.trim())) {
+            groupEmail.classList.add("has-error");
+            isValid = false;
+          }
+
+          // Validate Message
+          if (!messageInput.value.trim() || messageInput.value.trim().length < 10) {
+            groupMessage.classList.add("has-error");
+            isValid = false;
+          }
+
+          if (!isValid) {
+            noticeBox.className = "vk-form-notice error";
+            noticeBox.innerHTML = `<strong>Attention Required:</strong> Please complete all required fields with valid details before transmitting.`;
+            return;
+          }
+
+          // Get selected enquiry classification
+          const checkedType = document.querySelector('input[name="enquiryType"]:checked');
+          const typeValue = checkedType ? checkedType.value : "general";
+
+          // Record client-side demonstration enquiry
+          const enquiryData = {
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            type: typeValue,
+            squadSize: squadSelect ? squadSelect.value : "3-6",
+            date: dateInput ? dateInput.value : tomorrowStr,
+            message: messageInput.value.trim(),
+            timestamp: new Date().toISOString()
+          };
+
+          try {
+            localStorage.setItem("vk_client_demo_enquiry", JSON.stringify(enquiryData));
+          } catch(err) {
+            console.warn("Storage warning:", err);
+          }
+
+          // Display honest client-side confirmation feedback
+          noticeBox.className = "vk-form-notice success";
+          noticeBox.innerHTML = `
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <span class="material-symbols-rounded" style="font-size: 20px;"> check_circle </span>
+              <div>
+                <strong>Demo Enquiry Recorded Locally [Simulation]:</strong>
+                <div style="font-size: 13px; margin-top: 4px;">
+                  Thank you, <strong>${enquiryData.name}</strong>. In an active production environment, your <em>${enquiryData.type.toUpperCase()}</em> inquiry would route directly to venue dispatch. We have validated all fields and saved this transmission to your client-side test session.
+                </div>
+              </div>
+            </div>
+          `;
+
+          // Reset inputs
+          enquiryForm.reset();
+          if (dateInput) dateInput.value = tomorrowStr;
+          btnSubmit.innerHTML = `<span>Transmission Logged</span> <span class="material-symbols-rounded"> task_alt </span>`;
+          btnSubmit.style.background = "var(--vk-accent-emerald)";
+          btnSubmit.style.color = "#090d16";
+
+          setTimeout(() => {
+            btnSubmit.innerHTML = `<span>Transmit Another Enquiry</span> <span class="material-symbols-rounded"> send </span>`;
+            btnSubmit.style.background = "";
+            btnSubmit.style.color = "";
+          }, 5000);
+        });
+      }
+
+      // Group Option Cards CTA listeners -> sets radio chip & scrolls to form
+      document.querySelectorAll("[data-set-enquiry]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const type = btn.getAttribute("data-set-enquiry");
+          const radio = document.querySelector(`input[name="enquiryType"][value="${type}"]`);
+          if (radio) {
+            radio.checked = true;
+          }
+          const formCard = document.getElementById("enquiryFormSection");
+          if (formCard) {
+            formCard.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // ==========================================
+      // 2. VISITOR FAQS ACCORDION
+      // ==========================================
+      const faqItems = document.querySelectorAll("#contactFaqAccordion .vk-faq-item");
+      faqItems.forEach(item => {
+        const questionBtn = item.querySelector(".vk-faq-question");
+        if (questionBtn) {
+          questionBtn.addEventListener("click", () => {
+            const isOpen = item.classList.contains("is-open");
+            faqItems.forEach(other => {
+              other.classList.remove("is-open");
+              const otherBtn = other.querySelector(".vk-faq-question");
+              if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isOpen) {
+              item.classList.add("is-open");
+              questionBtn.setAttribute("aria-expanded", "true");
+            }
+          });
+        }
+      });
+
+      // ==========================================
+      // 3. BOOKING MODAL FORM SUBMISSION
+      // ==========================================
+      const popupForm = document.getElementById("popupBookingForm");
+      const formContainer = document.getElementById("bookingFormContainer");
+      const successContainer = document.getElementById("bookingSuccessContainer");
+      const closeSuccessBtn = document.getElementById("closeSuccessBookingBtn");
+      const modalOverlay = document.getElementById("bookingModalOverlay");
+
+      if (popupForm) {
+        popupForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const chamber = document.getElementById("modalChamber").value;
+          const date = document.getElementById("modalDate").value;
+          const squad = document.getElementById("modalSquadSize").value;
+          const name = document.getElementById("modalLeadName").value;
+          const email = document.getElementById("modalLeadEmail").value;
+
+          if (chamber && date && squad) {
+            localStorage.setItem("vk_quick_booking_contact", JSON.stringify({ chamber, date, squad, name, email, timestamp: Date.now() }));
+            formContainer.style.display = "none";
+            successContainer.classList.add("is-active");
+            popupForm.reset();
+          }
+        });
+      }
+
+      if (closeSuccessBtn && modalOverlay) {
+        closeSuccessBtn.addEventListener("click", () => {
+          modalOverlay.classList.remove("is-active");
+          setTimeout(() => {
+            formContainer.style.display = "block";
+            successContainer.classList.remove("is-active");
+          }, 400);
+        });
+      }
+
+      // Newsletter
+      const newsletterForm = document.getElementById("footerNewsletterForm");
+      const subscribeModal = document.getElementById("subscribeModalOverlay");
+      if (newsletterForm && subscribeModal) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById("footerSubscriberEmail");
+          if (emailInput && emailInput.value) {
+            subscribeModal.classList.add("is-active");
+            emailInput.value = "";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Discover the craft, story, and safety philosophy behind Vault & Key escape rooms. Explore our bespoke mechanical puzzles, dedicated game directors, and group adventures."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>About Our Venue & Craft | Vault & Key</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       00. GLOBAL HEADER & FLOATING NAVIGATION
+       ============================================================ -->
+  <header class="vk-header">
+    <div class="vk-container">
+      <div class="vk-header-inner">
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+
+        <!-- DESKTOP NAVBAR -->
+        <nav class="vk-nav" aria-label="Main navigation">
+          <div class="vk-nav-dropdown">
+            <button
+              type="button"
+              class="vk-nav-link vk-nav-dropdown-trigger"
+              data-home-dropdown
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>Home</span>
+              <span class="material-symbols-rounded" style="font-size:18px;"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-nav-dropdown-menu" aria-label="Home variations">
+              <a href="index.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> meeting_room </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 1 — Signature</strong>
+                  <small>Classic Vault Experience</small>
+                </span>
+              </a>
+              <a href="home-2.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> radar </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 2 — Mission Control</strong>
+                  <small>Expressive Quest Operations</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a href="rooms.html" class="vk-nav-link">Rooms & Quests</a>
+          <a href="pricing.html" class="vk-nav-link">Pricing & Groups</a>
+          <a href="about.html" class="vk-nav-link is-active">About</a>
+          <a href="contact.html" class="vk-nav-link">Contact</a>
+          <a href="dashboard.html" class="vk-nav-link">Player Dashboard</a>
+        </nav>
+
+        <!-- HEADER ACTIONS & TOGGLES -->
+        <div class="vk-header-actions">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <a href="login.html" class="vk-nav-link" style="font-weight:700; border: 1px solid var(--vk-border);">Login</a>
+          <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+            Book Quest
+          </button>
+
+          <!-- MOBILE HAMBURGER BUTTON -->
+          <button
+            type="button"
+            class="vk-icon-button vk-menu-toggle"
+            data-menu-toggle
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-rounded"> menu </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE SLIDE-DOWN DRAWER -->
+      <div class="vk-mobile-menu" data-mobile-menu>
+        <div class="vk-mobile-menu-inner">
+          <div class="vk-mobile-toggles">
+            <button type="button" data-theme-toggle aria-label="Toggle theme">
+              <span class="material-symbols-rounded"> light_mode </span>
+            </button>
+            <button type="button" data-rtl-toggle aria-label="Toggle RTL">
+              <i class="fa-solid fa-right-left"></i>
+            </button>
+          </div>
+
+          <div class="vk-mobile-home">
+            <button
+              type="button"
+              class="vk-mobile-home-trigger"
+              data-mobile-home-toggle
+              aria-expanded="false"
+            >
+              <span>Home Options</span>
+              <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-mobile-home-links">
+              <a href="index.html">Home 1 — Signature</a>
+              <a href="home-2.html">Home 2 — Mission Control</a>
+            </div>
+          </div>
+
+          <a href="rooms.html">Rooms & Quests</a>
+          <a href="pricing.html">Pricing & Groups</a>
+          <a href="about.html" class="is-current">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="dashboard.html">Player Dashboard</a>
+
+          <div class="vk-mobile-menu-actions">
+            <a href="login.html" class="vk-button vk-button-outline">Login</a>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Book Your Adventure
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         SECTION 1: ABOUT HERO
+         ============================================================ -->
+    <section class="vk-about-hero" id="aboutHero">
+      <div class="vk-container">
+        <div class="vk-eyebrow" style="margin-inline: auto; margin-bottom: 20px;">
+          <span class="material-symbols-rounded"> auto_awesome </span>
+          <span>The Art of Escape Experience</span>
+        </div>
+
+        <h1 class="vk-hero-title" style="margin-bottom: 20px;">
+          Crafting Real-World Mystery & <span class="highlight">Puzzle Engineering</span>
+        </h1>
+
+        <p class="vk-hero-desc" style="margin-inline: auto; margin-bottom: 26px; max-width: 680px;">
+          Vault & Key was conceived to bridge the thrill of cinematic storytelling with authentic physical puzzle craftsmanship. Step behind our locked vault doors to discover how our chambers are engineered.
+        </p>
+
+        <div style="margin-bottom: 30px;">
+          <span class="vk-sample-disclaimer" style="background: rgba(var(--vk-primary-rgb), 0.15); padding: 6px 14px; border-radius: var(--vk-radius-pill); border: 1px solid rgba(var(--vk-primary-rgb), 0.3);">
+            <i class="fa-solid fa-circle-info" style="margin-inline-end: 6px;"></i>
+            Editable Venue Profile — Sample Narrative Demonstrating Atmospheric Escape Design
+          </span>
+        </div>
+
+        <div class="vk-hero-actions" style="justify-content: center;">
+          <a href="#adventureStory" class="vk-primary-button">
+            <span>Explore Our Concept</span>
+            <span class="material-symbols-rounded"> history_edu </span>
+          </a>
+          <a href="#safetyInfo" class="vk-secondary-button">
+            <span>Safety & Visitor Standards</span>
+            <span class="material-symbols-rounded"> verified_user </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: VENUE INTRODUCTION
+         ============================================================ -->
+    <section class="vk-section" id="venueIntro" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> architecture </span>
+            <span>Design Philosophy</span>
+          </div>
+          <h2 class="vk-section-title">
+            Tactile Engineering Meets <span class="highlight">Cinematic Immersion</span>
+          </h2>
+          <p class="vk-section-desc">
+            We reject plastic padlocks and digital shortcuts. Every chamber at Vault & Key is designed to deliver a genuine sense of tactile discovery and collective intellectual triumph.
+          </p>
+        </div>
+
+        <div class="vk-pillar-grid">
+          <!-- PILLAR 1 -->
+          <div class="vk-pillar-card">
+            <div class="vk-pillar-icon">
+              <span class="material-symbols-rounded"> construction </span>
+            </div>
+            <h3>Handcrafted Mechanisms</h3>
+            <p>
+              From custom brass cryptexes to hydraulic pressure plates, our puzzles are machined in-house to ensure high-fidelity physical feedback you can feel and hear.
+            </p>
+          </div>
+
+          <!-- PILLAR 2 -->
+          <div class="vk-pillar-card">
+            <div class="vk-pillar-icon">
+              <span class="material-symbols-rounded"> visibility </span>
+            </div>
+            <h3>Zero Screen Immersion</h3>
+            <p>
+              We eliminate handheld tablet gimmicks. Clues are woven directly into authentic period props, engraved wall stonework, and interactive electronic conduits.
+            </p>
+          </div>
+
+          <!-- PILLAR 3 -->
+          <div class="vk-pillar-card">
+            <div class="vk-pillar-icon">
+              <span class="material-symbols-rounded"> support_agent </span>
+            </div>
+            <h3>Attentive Game Directors</h3>
+            <p>
+              Your dedicated Game Master monitors your team via discreet infrared lenses, offering contextual hints only when requested so your breakthroughs remain your own.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: THE ADVENTURE CONCEPT & STORY
+         ============================================================ -->
+    <section class="vk-section" id="adventureStory" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-story-grid">
+          <!-- STORY COPY -->
+          <div>
+            <div class="vk-eyebrow">
+              <span class="material-symbols-rounded"> menu_book </span>
+              <span>The Lore of the Vault [Sample Archive]</span>
+            </div>
+
+            <h2 class="vk-section-title" style="margin-bottom: 20px;">
+              From Hidden Subterranean Archives to <span class="highlight">Elite Fireteam Trials</span>
+            </h2>
+
+            <p style="color: var(--vk-text-soft); font-size: 15px; line-height: 1.7; margin-bottom: 18px;">
+              Legend holds that deep beneath the city's historic foundation lay the clandestine archives of the <em>Order of the Brass Key</em>—an ancient collective of inventors, cartographers, and cryptologists dedicated to safeguarding the world's most intricate mechanical secrets.
+            </p>
+
+            <p style="color: var(--vk-text-soft); font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
+              Vault & Key was constructed around these subterranean chambers. Today, we invite inquisitive minds, daring friends, and collaborative teams to pit their collective wits against calibrated trials of logic, observation, and spatial awareness.
+            </p>
+
+            <!-- EDITABLE SAMPLE NOTICE -->
+            <div style="padding: 16px 20px; border-radius: var(--vk-radius-md); background: rgba(var(--vk-primary-rgb), 0.1); border: 1px solid rgba(var(--vk-primary-rgb), 0.25); margin-bottom: 28px;">
+              <small style="color: var(--vk-primary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">
+                Editable Sample Content Note
+              </small>
+              <p style="font-size: 13px; color: var(--vk-text-soft); margin: 0; line-height: 1.5;">
+                This lore serves as an evocative demonstration. When deploying for your specific venue, replace this section with your business founding story or retain it as your fictional narrative premise.
+              </p>
+            </div>
+
+            <div class="vk-story-stats">
+              <div>
+                <strong style="font-size: 24px; font-family: var(--vk-font-display); color: var(--vk-primary); display: block;">6</strong>
+                <span style="font-size: 12px; color: var(--vk-text-muted); font-weight: 700;">Unique Chambers</span>
+              </div>
+              <div>
+                <strong style="font-size: 24px; font-family: var(--vk-font-display); color: var(--vk-primary); display: block;">60–75m</strong>
+                <span style="font-size: 12px; color: var(--vk-text-muted); font-weight: 700;">Mission Duration</span>
+              </div>
+              <div>
+                <strong style="font-size: 24px; font-family: var(--vk-font-display); color: var(--vk-primary); display: block;">100%</strong>
+                <span style="font-size: 12px; color: var(--vk-text-muted); font-weight: 700;">Private Lockouts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STORY VISUAL -->
+          <div class="vk-story-visual">
+            <img
+              src="assets/images/about_story.jpg"
+              alt="Bronze statue of Lady Justice holding mechanical balance scales for cryptological weight puzzles"
+              loading="lazy"
+            />
+            <div class="vk-story-badge">
+              <span class="material-symbols-rounded"> balance </span>
+              <span>Tactile Mechanism Trials</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: IMMERSIVE ROOM SHOWCASE
+         ============================================================ -->
+    <section class="vk-section" id="roomShowcase" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> layers </span>
+            <span>Chamber Craftsmanship</span>
+          </div>
+          <h2 class="vk-section-title">
+            A Closer Look Behind the <span class="highlight">Sensory Chambers</span>
+          </h2>
+          <p class="vk-section-desc">
+            Explore how our creative set designers construct believable physical realities across antique mysteries, cybernetic futures, and secret studies.
+          </p>
+        </div>
+
+        <div class="vk-about-showcase-grid">
+          <!-- TILE 1 -->
+          <div class="vk-about-tile">
+            <div class="vk-about-tile-img">
+              <img
+                src="assets/images/about_showcase_1.jpg"
+                alt="Intricately styled historical room interior with wooden cabinetry and warm ambient light"
+                loading="lazy"
+              />
+            </div>
+            <div class="vk-about-tile-body">
+              <div class="vk-group-badge" style="margin-bottom: 12px;">Antique Scenography</div>
+              <h3>Renaissance Stonework & Secret Tomes</h3>
+              <p>
+                Hand-distressed stone textures, genuine antique furniture, and magnetic secret panels turn our historical chambers into living time capsules.
+              </p>
+              <ul class="vk-price-features">
+                <li><i class="fa-solid fa-check"></i> Concealed Electromagnetic Latches</li>
+                <li><i class="fa-solid fa-check"></i> Real Reconstructed Cipher Cylinders</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- TILE 2 -->
+          <div class="vk-about-tile">
+            <div class="vk-about-tile-img">
+              <img
+                src="assets/images/about_showcase_2.jpg"
+                alt="Futuristic neon lit laser corridor with high-tech reflections"
+                loading="lazy"
+              />
+            </div>
+            <div class="vk-about-tile-body">
+              <div class="vk-group-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--vk-accent-cyan); margin-bottom: 12px;">Cybernetic Systems</div>
+              <h3>Laser Relays & Biometric Consoles</h3>
+              <p>
+                Custom micro-controllers and optical prisms power our sci-fi quests, reacting instantaneously when players redirect photonic streams.
+              </p>
+              <ul class="vk-price-features">
+                <li><i class="fa-solid fa-check"></i> Interactive UV-Responsive Wall Circuits</li>
+                <li><i class="fa-solid fa-check"></i> Acoustic Frequency Decoders</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- TILE 3 -->
+          <div class="vk-about-tile">
+            <div class="vk-about-tile-img">
+              <img
+                src="assets/images/about_showcase_3.jpg"
+                alt="Mysterious medieval architectural hall and secret lock chamber"
+                loading="lazy"
+              />
+            </div>
+            <div class="vk-about-tile-body">
+              <div class="vk-group-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--vk-accent-emerald); margin-bottom: 12px;">Acoustic Pacing</div>
+              <h3>Surround Soundscapes & Environmental Haze</h3>
+              <p>
+                Multi-channel directional audio and subtle haze effects heighten the stakes without overwhelming the team's ability to communicate.
+              </p>
+              <ul class="vk-price-features">
+                <li><i class="fa-solid fa-check"></i> Discrete Spatial Audio Speakers</li>
+                <li><i class="fa-solid fa-check"></i> Calibrated Sensory Atmospheric Cues</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: SAFETY & VISITOR EXPERIENCE INFORMATION
+         ============================================================ -->
+    <section class="vk-section" id="safetyInfo" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-header" style="text-align: center; max-width: 760px; margin-inline: auto; margin-bottom: 48px;">
+          <div class="vk-eyebrow" style="margin-inline: auto;">
+            <span class="material-symbols-rounded"> health_and_safety </span>
+            <span>Safety & Comfort Protocols</span>
+          </div>
+          <h2 class="vk-section-title">
+            Visitor Safety & <span class="highlight">Operational Integrity</span>
+          </h2>
+          <p class="vk-section-desc">
+            Immersion should never come at the expense of comfort or well-being. Here is how our venue safeguards every guest throughout their visit.
+          </p>
+          <div style="margin-top: 12px;">
+            <span class="vk-sample-disclaimer">
+              [Configurable Sample Safety Standards — Editable Venue Reference]
+            </span>
+          </div>
+        </div>
+
+        <div class="vk-safety-grid">
+          <!-- CARD 1 -->
+          <div class="vk-safety-card">
+            <div class="vk-safety-top">
+              <div class="vk-safety-icon">
+                <span class="material-symbols-rounded"> emergency </span>
+              </div>
+              <span class="vk-safety-status">Always Active</span>
+            </div>
+            <h3>100% Illuminated Egress Overrides</h3>
+            <p>
+              You are never truly trapped. Every chamber door is fitted with a luminescent mechanical push-bar for immediate manual exit with zero delay.
+            </p>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="vk-safety-card">
+            <div class="vk-safety-top">
+              <div class="vk-safety-icon">
+                <span class="material-symbols-rounded"> videocam </span>
+              </div>
+              <span class="vk-safety-status">Full Session</span>
+            </div>
+            <h3>Dedicated Infrared Monitoring</h3>
+            <p>
+              Gamemasters track your progress through discrete high-resolution IR cameras with instant two-way public address microphones for safety check-ins.
+            </p>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="vk-safety-card">
+            <div class="vk-safety-top">
+              <div class="vk-safety-icon">
+                <span class="material-symbols-rounded"> air </span>
+              </div>
+              <span class="vk-safety-status">Continuous Flow</span>
+            </div>
+            <h3>High-Flow HEPA Air Filtration</h3>
+            <p>
+              All chambers feature independent commercial ventilation with multi-stage HEPA filtration, ensuring fresh air circulation and cool temperatures.
+            </p>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="vk-safety-card">
+            <div class="vk-safety-top">
+              <div class="vk-safety-icon">
+                <span class="material-symbols-rounded"> accessible </span>
+              </div>
+              <span class="vk-safety-status">Accessible</span>
+            </div>
+            <h3>Step-Free Accessibility</h3>
+            <p>
+              Common lounges and key quest chambers offer step-free entry. Challenges are designed to be accessible without dangerous climbing or crawling.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: GROUPS, CELEBRATIONS & TEAM EXPERIENCES
+         ============================================================ -->
+    <section class="vk-section" id="groupExperiences" style="background: var(--vk-bg);">
+      <div class="vk-container">
+        <div class="vk-story-grid">
+          <!-- VISUAL ON LEFT FOR DIVERSITY -->
+          <div class="vk-story-visual">
+            <img
+              src="assets/images/about_groups.jpg"
+              alt="Group of friends and colleagues celebrating inside the escape venue lounge"
+              loading="lazy"
+            />
+            <div class="vk-story-badge">
+              <span class="material-symbols-rounded"> groups </span>
+              <span>Collaborative Fireteams</span>
+            </div>
+          </div>
+
+          <!-- CONTENT ON RIGHT -->
+          <div>
+            <div class="vk-eyebrow">
+              <span class="material-symbols-rounded"> celebration </span>
+              <span>Shared Adventures</span>
+            </div>
+
+            <h2 class="vk-section-title" style="margin-bottom: 20px;">
+              Designed for Teams, Friends & <span class="highlight">Unforgettable Milestones</span>
+            </h2>
+
+            <p style="color: var(--vk-text-soft); font-size: 15px; line-height: 1.7; margin-bottom: 18px;">
+              Whether you are organizing a corporate offsite, a birthday celebration, or a high-stakes weekend with seasoned puzzle solvers, our multi-track puzzle chambers bring people together.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px;">
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(var(--vk-primary-rgb), 0.15); color: var(--vk-primary); display: grid; place-items: center; font-size: 18px; flex-shrink: 0;">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div>
+                  <strong style="font-size: 15px; display: block; margin-bottom: 2px;">Corporate Leadership & Synergy</strong>
+                  <span style="font-size: 13.5px; color: var(--vk-text-soft);">Parallel room starts with optional leadership retrospectives and collaboration metrics.</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(16, 185, 129, 0.15); color: var(--vk-accent-emerald); display: grid; place-items: center; font-size: 18px; flex-shrink: 0;">
+                  <i class="fa-solid fa-cake-candles"></i>
+                </div>
+                <div>
+                  <strong style="font-size: 15px; display: block; margin-bottom: 2px;">Birthdays & Milestone Quests</strong>
+                  <span style="font-size: 13.5px; color: var(--vk-text-soft);">Personalized custom clue integration featuring the guest of honor and post-game lounge time.</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(6, 182, 212, 0.15); color: var(--vk-accent-cyan); display: grid; place-items: center; font-size: 18px; flex-shrink: 0;">
+                  <i class="fa-solid fa-user-group"></i>
+                </div>
+                <div>
+                  <strong style="font-size: 15px; display: block; margin-bottom: 2px;">Family & Youth Quests</strong>
+                  <span style="font-size: 13.5px; color: var(--vk-text-soft);">Calibrated hint pacing and multi-tiered puzzles so younger agents remain fully engaged.</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="pricing.html#privateGroups" class="vk-primary-button">
+              <span>View Group & Event Packages</span>
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: BOOKING CTA & FOOTER
+         ============================================================ -->
+    <section class="vk-section" id="aboutCta" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-final-cta-box" style="background-image: url('assets/images/about_hero.jpg');">
+          <div class="vk-final-cta-content">
+            <div class="vk-eyebrow" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3); margin-bottom: 16px;">
+              <span class="material-symbols-rounded"> key </span>
+              <span>Reserve Your Next Quest</span>
+            </div>
+            <h2>Step Into the Vault & Conquer the Challenge</h2>
+            <p>
+              Experience hand-crafted escape rooms engineered for teamwork, deduction, and unforgettable discoveries. All bookings are 100% private.
+            </p>
+          </div>
+          <div class="vk-final-cta-action">
+            <button
+              type="button"
+              class="vk-button vk-button-primary"
+              style="font-size: 16px; padding: 16px 36px;"
+              data-modal-open="bookingModalOverlay"
+            >
+              Book Your Chamber Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       GLOBAL 5-COLUMN FOOTER
+       ============================================================ -->
+  <footer class="vk-footer">
+    <div class="vk-footer-main">
+      <div class="vk-container">
+        <div class="vk-footer-grid">
+          <!-- COLUMN 1: BRAND INFO -->
+          <div class="vk-footer-brand">
+            <a href="index.html" class="vk-brand">
+              <div class="vk-brand-mark">
+                <span class="material-symbols-rounded"> key </span>
+              </div>
+              <div class="vk-brand-name">Vault & <span>Key</span></div>
+            </a>
+            <p class="vk-footer-description">
+              Next-generation cinematic escape rooms and physical puzzle gauntlets. Engineered with authentic mechanical props, automated sensors, and deep storylines.
+            </p>
+            <div class="vk-footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="vk-social">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="vk-social">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="vk-social">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="vk-social">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: CHAMBERS & QUESTS -->
+          <div class="vk-footer-column">
+            <h3>Chambers</h3>
+            <a href="rooms.html">Alchemist's Crypt</a>
+            <a href="rooms.html">Cyberpunk Blackout</a>
+            <a href="rooms.html">Pharaoh's Obsidian Tomb</a>
+            <a href="rooms.html">Clockwork Heist</a>
+            <a href="rooms.html">All Difficulty Tiers</a>
+          </div>
+
+          <!-- COLUMN 3: EXPERIENCES -->
+          <div class="vk-footer-column">
+            <h3>Experiences</h3>
+            <a href="pricing.html">Corporate Team Building</a>
+            <a href="pricing.html">Friends & Night Quests</a>
+            <a href="pricing.html">Family Detective Mode</a>
+            <a href="pricing.html">Birthday Packages</a>
+            <a href="dashboard.html">Player Leaderboards</a>
+          </div>
+
+          <!-- COLUMN 4: VENUE & SUPPORT -->
+          <div class="vk-footer-column">
+            <h3>Venue & Help</h3>
+            <a href="about.html">About Vault & Key</a>
+            <a href="contact.html">Venue Location & Map</a>
+            <a href="contact.html">Safety & Sensor Protocols</a>
+            <a href="contact.html">Frequently Asked Questions</a>
+            <a href="dashboard.html">Player Mission Portal</a>
+          </div>
+
+          <!-- COLUMN 5: DISPATCH NEWSLETTER CTA CARD -->
+          <div class="vk-footer-cta">
+            <div class="vk-footer-cta-card">
+              <div class="vk-footer-cta-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <strong>Cipher Dispatch</strong>
+                <p>Receive secret monthly riddle perks.</p>
+              </div>
+            </div>
+            <form id="footerNewsletterForm" style="display: flex; gap: 8px; width: 100%; margin-top: 12px;">
+              <input
+                type="email"
+                id="footerSubscriberEmail"
+                placeholder="Enter detective email"
+                required
+                style="flex: 1; padding: 10px 14px; border-radius: var(--vk-radius-pill); background: var(--vk-bg-subtle); border: 1px solid var(--vk-border); color: var(--vk-text); font-size: 13px; outline: none;"
+              />
+              <button
+                type="submit"
+                class="vk-footer-button"
+                style="border:none; cursor:pointer; white-space: nowrap; padding: 5px 18px; width: auto;"
+              >
+                <span>Enlist</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER BOTTOM BAR -->
+    <div class="vk-footer-bottom">
+      <div class="vk-container">
+        <div class="vk-footer-bottom-inner">
+          <p>© 2026 Vault & Key Adventure Venues Inc. All rights reserved.</p>
+          <div class="vk-footer-bottom-links">
+            <a href="contact.html">Terms & Rules</a>
+            <a href="contact.html">Privacy Policy</a>
+            <a href="about.html">Safety Protocols</a>
+            <a href="contact.html">Site Map</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       GLOBAL MODAL: QUICK BOOKING MODAL OVERLAY
+       ============================================================ -->
+  <div class="vk-modal-overlay" id="bookingModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="vk-modal-card">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+
+      <div id="bookingFormContainer">
+        <h3 class="vk-modal-title" id="modalHeading">Reserve Your Chamber</h3>
+        <p class="vk-modal-subtitle">Configure your private escape adventure. Zero payment required until briefing.</p>
+
+        <form class="vk-modal-form" id="popupBookingForm">
+          <div class="vk-modal-field">
+            <label for="modalChamber">Select Mystery Chamber</label>
+            <select id="modalChamber" required>
+              <option value="obsidian">The Obsidian Vault (Stealth Heist · 60m)</option>
+              <option value="cyberpunk">Cyberpunk 2088: Neon Protocol (Sci-Fi · 60m)</option>
+              <option value="davinci">Da Vinci's Hidden Crypt (Renaissance · 75m)</option>
+              <option value="clockwork">Clockwork Asylum (Psychological · 60m)</option>
+              <option value="magician">Magician's Secret Study (Illusionist · 60m)</option>
+              <option value="pharaoh">Pharaoh's Cursed Tomb (Archeological · 60m)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="vk-modal-field">
+              <label for="modalDate">Mission Date</label>
+              <input type="date" id="modalDate" required />
+            </div>
+            <div class="vk-modal-field">
+              <label for="modalSquadSize">Squad Size</label>
+              <select id="modalSquadSize" required>
+                <option value="2">2 Players ($46/player)</option>
+                <option value="3">3 Players ($38/player)</option>
+                <option value="4" selected>4 Players ($38/player)</option>
+                <option value="5">5 Players ($38/player)</option>
+                <option value="6">6 Players ($38/player)</option>
+                <option value="7">7 Players ($34/player)</option>
+                <option value="8">8 Players ($34/player)</option>
+                <option value="9">9 Players ($34/player)</option>
+                <option value="10">10 Players ($34/player)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalLeadName">Squad Leader Name</label>
+            <input type="text" id="modalLeadName" placeholder="Agent Jane Doe" required />
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalLeadEmail">Contact Email</label>
+            <input type="email" id="modalLeadEmail" placeholder="agent@mission.com" required />
+          </div>
+
+          <button type="submit" class="vk-modal-submit">
+            Confirm Chamber Lockout
+          </button>
+        </form>
+      </div>
+
+      <div class="vk-success-popup" id="bookingSuccessContainer">
+        <div class="vk-success-icon">
+          <span class="material-symbols-rounded"> task_alt </span>
+        </div>
+        <h4 class="vk-success-title">Mission Slot Reserved!</h4>
+        <p class="vk-success-desc">
+          Your chamber request has been registered in the Vault & Key system. Check your inbox for confirmation details and briefing instructions.
+        </p>
+        <button type="button" class="vk-success-done" id="closeSuccessBookingBtn">
+          Return to Venue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GLOBAL MODAL: NEWSLETTER SUCCESS MODAL
+       ============================================================ -->
+  <div class="vk-modal-overlay" id="subscribeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="subscribeModalTitle">
+    <div class="vk-modal-card" style="text-align: center; max-width: 440px;">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+      <div class="vk-success-icon" style="background: rgba(var(--vk-primary-rgb), 0.2); color: var(--vk-primary);">
+        <span class="material-symbols-rounded"> mark_email_read </span>
+      </div>
+      <h4 class="vk-success-title" id="subscribeModalTitle">Mission Intel Confirmed</h4>
+      <p class="vk-success-desc">
+        Welcome to the inner circle. You will receive priority notifications when new mystery chambers launch and exclusive solver discount ciphers.
+      </p>
+      <button type="button" class="vk-success-done" data-modal-close>
+        Acknowledge
+      </button>
+    </div>
+  </div>
+
+  <!-- GLOBAL SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- PAGE LOGIC -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dateInput = document.getElementById("modalDate");
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.value = tomorrow.toISOString().split("T")[0];
+      }
+
+      // Booking modal form handling
+      const popupForm = document.getElementById("popupBookingForm");
+      const formContainer = document.getElementById("bookingFormContainer");
+      const successContainer = document.getElementById("bookingSuccessContainer");
+      const closeSuccessBtn = document.getElementById("closeSuccessBookingBtn");
+      const modalOverlay = document.getElementById("bookingModalOverlay");
+
+      if (popupForm) {
+        popupForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const chamber = document.getElementById("modalChamber").value;
+          const date = document.getElementById("modalDate").value;
+          const squad = document.getElementById("modalSquadSize").value;
+          const name = document.getElementById("modalLeadName").value;
+          const email = document.getElementById("modalLeadEmail").value;
+
+          if (chamber && date && squad) {
+            localStorage.setItem("vk_quick_booking_about", JSON.stringify({ chamber, date, squad, name, email, timestamp: Date.now() }));
+            formContainer.style.display = "none";
+            successContainer.classList.add("is-active");
+            popupForm.reset();
+          }
+        });
+      }
+
+      if (closeSuccessBtn && modalOverlay) {
+        closeSuccessBtn.addEventListener("click", () => {
+          modalOverlay.classList.remove("is-active");
+          setTimeout(() => {
+            formContainer.style.display = "block";
+            successContainer.classList.remove("is-active");
+          }, 400);
+        });
+      }
+
+      // Newsletter
+      const newsletterForm = document.getElementById("footerNewsletterForm");
+      const subscribeModal = document.getElementById("subscribeModalOverlay");
+      if (newsletterForm && subscribeModal) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById("footerSubscriberEmail");
+          if (emailInput && emailInput.value) {
+            subscribeModal.classList.add("is-active");
+            emailInput.value = "";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

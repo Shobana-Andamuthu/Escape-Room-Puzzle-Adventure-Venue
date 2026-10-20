@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Explore all escape room chambers at Vault & Key. Filter by difficulty: Beginner, Intermediate, and Advanced Expert. Book your private real-world puzzle adventure today."
+  />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Chambers & Quests Catalog | Vault & Key</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       00. GLOBAL HEADER & FLOATING NAVIGATION
+       ============================================================ -->
+  <header class="vk-header">
+    <div class="vk-container">
+      <div class="vk-header-inner">
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="vk-brand" aria-label="Vault & Key Home">
+          <div class="vk-brand-mark">
+            <span class="material-symbols-rounded"> key </span>
+          </div>
+          <div class="vk-brand-name">Vault & <span>Key</span></div>
+        </a>
+
+        <!-- DESKTOP NAVBAR -->
+        <nav class="vk-nav" aria-label="Main navigation">
+          <div class="vk-nav-dropdown">
+            <button
+              type="button"
+              class="vk-nav-link vk-nav-dropdown-trigger"
+              data-home-dropdown
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>Home</span>
+              <span class="material-symbols-rounded" style="font-size:18px;"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-nav-dropdown-menu" aria-label="Home variations">
+              <a href="index.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> meeting_room </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 1 — Signature</strong>
+                  <small>Classic Vault Experience</small>
+                </span>
+              </a>
+              <a href="home-2.html" class="vk-nav-dropdown-item">
+                <div class="vk-dropdown-icon">
+                  <span class="material-symbols-rounded"> radar </span>
+                </div>
+                <span class="vk-dropdown-content">
+                  <strong>Home 2 — Mission Control</strong>
+                  <small>Expressive Quest Operations</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a href="rooms.html" class="vk-nav-link is-active">Rooms & Quests</a>
+          <a href="pricing.html" class="vk-nav-link">Pricing & Groups</a>
+          <a href="about.html" class="vk-nav-link">About</a>
+          <a href="contact.html" class="vk-nav-link">Contact</a>
+          <a href="dashboard.html" class="vk-nav-link">Player Dashboard</a>
+        </nav>
+
+        <!-- HEADER ACTIONS & TOGGLES -->
+        <div class="vk-header-actions">
+          <button
+            type="button"
+            class="vk-icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+            title="Toggle Light / Dark"
+          >
+            <span class="material-symbols-rounded"> light_mode </span>
+          </button>
+
+          <button
+            type="button"
+            class="vk-direction-toggle"
+            data-rtl-toggle
+            aria-label="Toggle LTR / RTL"
+            aria-pressed="false"
+            title="Toggle LTR / RTL"
+          >
+            <i class="fa-solid fa-right-left" style="font-size: 14px;"></i>
+          </button>
+
+          <a href="login.html" class="vk-nav-link" style="font-weight:700; border: 1px solid var(--vk-border);">Login</a>
+          <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+            Book Quest
+          </button>
+
+          <!-- MOBILE HAMBURGER BUTTON -->
+          <button
+            type="button"
+            class="vk-icon-button vk-menu-toggle"
+            data-menu-toggle
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-rounded"> menu </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE SLIDE-DOWN DRAWER -->
+      <div class="vk-mobile-menu" data-mobile-menu>
+        <div class="vk-mobile-menu-inner">
+          <div class="vk-mobile-toggles">
+            <button type="button" data-theme-toggle aria-label="Toggle theme">
+              <span class="material-symbols-rounded"> light_mode </span>
+            </button>
+            <button type="button" data-rtl-toggle aria-label="Toggle RTL">
+              <i class="fa-solid fa-right-left"></i>
+            </button>
+          </div>
+
+          <div class="vk-mobile-home">
+            <button
+              type="button"
+              class="vk-mobile-home-trigger"
+              data-mobile-home-toggle
+              aria-expanded="false"
+            >
+              <span>Home Options</span>
+              <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+            </button>
+
+            <div class="vk-mobile-home-links">
+              <a href="index.html">Home 1 — Signature</a>
+              <a href="home-2.html">Home 2 — Mission Control</a>
+            </div>
+          </div>
+
+          <a href="rooms.html" class="is-current">Rooms & Quests</a>
+          <a href="pricing.html">Pricing & Groups</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="dashboard.html">Player Dashboard</a>
+
+          <div class="vk-mobile-menu-actions">
+            <a href="login.html" class="vk-button vk-button-outline">Login</a>
+            <button type="button" class="vk-button vk-button-primary" data-modal-open="bookingModalOverlay">
+              Book Your Adventure
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PAGE MAIN CONTENT
+       ============================================================ -->
+  <main>
+    <!-- ======================================================
+         SECTION 1: ROOMS HERO
+         ====================================================== -->
+    <section class="vk-rooms-hero" id="roomsHero">
+      <div class="vk-container">
+        <div data-reveal>
+          <div class="vk-eyebrow">
+            <span class="vk-eyebrow-dot"></span>
+            12 Themed Realms · Fully Sensory Chambers
+          </div>
+
+          <h1 class="vk-hero-title">
+            Choose Your Challenge.
+            <br />
+            <span class="vk-title-accent">Test Your Wits.</span>
+          </h1>
+
+          <p class="vk-hero-desc" style="margin-inline: auto;">
+            From lighthearted Victorian detective mysteries to heart-pounding nuclear countdowns, explore our full catalog of movie-grade physical escape room adventures.
+          </p>
+
+          <div class="vk-hero-actions" style="justify-content: center;">
+            <a href="#roomsCatalog" class="vk-primary-button">
+              Browse All Chambers
+              <span class="material-symbols-rounded"> arrow_downward </span>
+            </a>
+            <a href="#beginnerRooms" class="vk-secondary-button">
+              <span class="material-symbols-rounded"> filter_list </span>
+              Beginner-Friendly
+            </a>
+          </div>
+
+          <!-- STATS TICKER BAR -->
+          <div class="vk-stats-ticker">
+            <div class="vk-ticker-item">
+              <strong>12</strong>
+              <small>Active Chambers</small>
+            </div>
+            <div class="vk-ticker-item">
+              <strong>60–90m</strong>
+              <small>Mission Windows</small>
+            </div>
+            <div class="vk-ticker-item">
+              <strong>2–10</strong>
+              <small>Squad Sizes</small>
+            </div>
+            <div class="vk-ticker-item">
+              <strong>100%</strong>
+              <small>Private Experiences</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 2: INTRODUCTION TO AVAILABLE ADVENTURES
+         ====================================================== -->
+    <section class="vk-section" id="adventuresIntro">
+      <div class="vk-container">
+        <div class="vk-intro-card" data-reveal>
+          <div class="vk-intro-grid">
+            <div class="vk-intro-copy">
+              <div class="vk-section-eyebrow">Immersive Philosophy</div>
+              <h3>Engineering Mystery Without Compromise</h3>
+              <p>
+                At Vault & Key, we believe true adrenaline comes from tactile interaction, not touchscreens. Every puzzle box, secret passageway, and laser matrix in our venue is engineered by master craftsmen and electronic architects.
+              </p>
+              <p>
+                All bookings are 100% private. You will never be paired with strangers. Your dedicated Game Master monitors your squad remotely via hidden microphones and cameras to provide timely, immersion-preserving hints whenever needed.
+              </p>
+            </div>
+
+            <div class="vk-intro-features">
+              <div class="vk-intro-feature-pill">
+                <i class="fa-solid fa-lock"></i>
+                <span>100% Private Always</span>
+              </div>
+              <div class="vk-intro-feature-pill">
+                <i class="fa-solid fa-gears"></i>
+                <span>Tactile Metal Props</span>
+              </div>
+              <div class="vk-intro-feature-pill">
+                <i class="fa-solid fa-volume-high"></i>
+                <span>Spatial Soundscapes</span>
+              </div>
+              <div class="vk-intro-feature-pill">
+                <i class="fa-solid fa-shield-heart"></i>
+                <span>Non-Fright Modes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 3: ROOM CARDS ORGANIZED BY DIFFICULTY (Interactive Catalog)
+         ====================================================== -->
+    <section class="vk-section" id="roomsCatalog" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Interactive Filter</div>
+          <h2 class="vk-section-title">All Available Escape Chambers</h2>
+          <p class="vk-section-desc">
+            Filter our chambers by challenge level or scroll down to explore each tier in depth.
+          </p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="vk-filter-bar" data-reveal>
+          <button type="button" class="vk-filter-btn active" data-difficulty="all">
+            <span class="material-symbols-rounded" style="font-size:18px;"> apps </span>
+            <span>All Chambers (12)</span>
+          </button>
+          <button type="button" class="vk-filter-btn" data-difficulty="beginner">
+            <span class="material-symbols-rounded" style="font-size:18px;"> star </span>
+            <span>Beginner (Tier 1–2)</span>
+          </button>
+          <button type="button" class="vk-filter-btn" data-difficulty="intermediate">
+            <span class="material-symbols-rounded" style="font-size:18px;"> bolt </span>
+            <span>Intermediate (Tier 3)</span>
+          </button>
+          <button type="button" class="vk-filter-btn" data-difficulty="expert">
+            <span class="material-symbols-rounded" style="font-size:18px;"> skull </span>
+            <span>Advanced &amp; Expert (Tier 4–5)</span>
+          </button>
+        </div>
+
+        <!-- FULL CATALOG GRID (12 CHAMBERS · 4 PER FILTER ROW) -->
+        <div class="vk-rooms-grid" id="catalogGrid">
+          <!-- THE LOST TOYMAKER'S WORKSHOP (BEGINNER) -->
+          <article class="vk-room-card" data-diff="beginner" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_toymaker_new.jpg" alt="The Lost Toymaker's Workshop" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 1 · Beginner
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Whimsical Mystery</span>
+                <span class="vk-room-rate">74% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>The Lost Toymaker's Workshop</h3>
+              <p>Wind-up automata, musical ciphers, and hidden wooden compartments. Perfect for first-time detectives, family squads, and casual puzzle sleuths.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$32 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="toymaker" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- THE MAGICIAN'S DRESSING ROOM (BEGINNER) -->
+          <article class="vk-room-card" data-diff="beginner" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_magician_new.jpg" alt="The Magician's Dressing Room" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 2 · Beginner
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Stage Illusion</span>
+                <span class="vk-room-rate">66% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>The Magician's Dressing Room</h3>
+              <p>The grand illusionist vanished right before his final trick. Unravel false mirrors, velvet lockboxes, secret drawers, and enchanted stage props.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$34 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="magician" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- THE ALCHEMIST'S SECRET CRYPT (BEGINNER) -->
+          <article class="vk-room-card" data-diff="beginner" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_crypt_new.jpg" alt="The Alchemist's Secret Crypt" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 2 · Beginner
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Medieval Mystery</span>
+                <span class="vk-room-rate">68% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>The Alchemist's Secret Crypt</h3>
+              <p>Enter the underground laboratory of a legendary medieval scholar. Transmute potion vials, align runic seals, and unlock the philosopher's vault.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$34 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="crypt" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CLOCKWORK GRAND STATION (BEGINNER) -->
+          <article class="vk-room-card" data-diff="beginner" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_clockwork_new.jpg" alt="Clockwork Grand Station" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 1 · Beginner
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Steampunk Mystery</span>
+                <span class="vk-room-rate">72% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Clockwork Grand Station</h3>
+              <p>Trapped inside a Victorian railway tower where giant brass clockwork mechanisms tick down. Calibrate steam valves and align interlocking gears.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$32 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="clockwork" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CURSE OF BLACKBEARD'S GALLEON (INTERMEDIATE) -->
+          <article class="vk-room-card" data-diff="intermediate" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_pirate_new.jpg" alt="Curse of Blackbeard's Galleon" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">High Seas Adventure</span>
+                <span class="vk-room-rate">48% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Curse of Blackbeard's Galleon</h3>
+              <p>Locked in the brig of a sinking flagship. Align celestial navigation sextants, decode gunpowder barrels, and claim the golden cursed compass.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$38 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="pirate" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- SHERLOCK'S BAKER STREET STUDY (INTERMEDIATE) -->
+          <article class="vk-room-card" data-diff="intermediate" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_sherlock_new.jpg" alt="Sherlock's Baker Street Study" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Victorian Detective</span>
+                <span class="vk-room-rate">44% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Sherlock's Baker Street Study</h3>
+              <p>Moriarty has planted a chemical detonator in 221B Baker Street. Decipher violin acoustics, chemical microscope slides, and tobacco ash cryptograms.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–7 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$38 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="sherlock" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHERNOBYL REACTOR MELTDOWN (INTERMEDIATE) -->
+          <article class="vk-room-card" data-diff="intermediate" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_chernobyl_new.jpg" alt="Chernobyl Reactor Meltdown" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Industrial Thriller</span>
+                <span class="vk-room-rate">38% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Chernobyl Reactor Meltdown</h3>
+              <p>Soviet control room alarm bells are blaring. Balance cooling rod water pressures, patch circuit relays, and scram the nuclear core before breach.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$42 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="chernobyl" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUBMARINE ABYSS 404 (INTERMEDIATE) -->
+          <article class="vk-room-card" data-diff="intermediate" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_submarine_new.jpg" alt="Submarine Abyss 404" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Deep Sea Immersion</span>
+                <span class="vk-room-rate">40% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Submarine Abyss 404</h3>
+              <p>Trapped 3,000 fathoms below sea level. Balance manual pneumatic ballast valves, decode acoustic sonar pulses, and engage auxiliary propulsion.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–7 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$40 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="submarine" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- THE ZODIAC SANATORIUM (EXPERT) -->
+          <article class="vk-room-card" data-diff="expert" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_sanatorium_new.jpg" alt="The Zodiac Sanatorium" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> warning </span>
+                Tier 4 · Advanced
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Psychological Horror</span>
+                <span class="vk-room-rate">24% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>The Zodiac Sanatorium</h3>
+              <p>An abandoned psychiatric ward where an enigmatic serial cryptographer left his final manifesto. Decipher bloodied tile equations and clinical journals.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$44 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="sanatorium" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- AREA 51 CONTAINMENT BREACH (EXPERT) -->
+          <article class="vk-room-card" data-diff="expert" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_area51_new.jpg" alt="Area 51 Containment Breach" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> skull </span>
+                Tier 4 · Expert
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Sci-Fi Biohazard</span>
+                <span class="vk-room-rate">21% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Area 51 Containment Breach</h3>
+              <p>Extraterrestrial bio-specimen has severed cryogenic containment. Decipher extraterrestrial frequency symbols and seal the reinforced blast doors.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$44 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="area51" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- FEDERAL RESERVE GOLD HEIST (EXPERT) -->
+          <article class="vk-room-card" data-diff="expert" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_goldheist_new.jpg" alt="Federal Reserve Gold Heist" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> skull </span>
+                Tier 4 · Expert
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Tactical Heist Matrix</span>
+                <span class="vk-room-rate">19% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Federal Reserve Gold Heist</h3>
+              <p>Infiltrate a subterranean bullion depository. Disable volumetric infrared lasers, bypass thermal sensors, and crack the electromagnetic vault lock.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$46 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="bank" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- DA VINCI'S INVERTED CATACOMB (EXPERT) -->
+          <article class="vk-room-card" data-diff="expert" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_davinci_new.jpg" alt="Da Vinci's Inverted Catacomb" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> skull </span>
+                Tier 5 · Mastermind
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Renaissance Cryptography</span>
+                <span class="vk-room-rate">14% Escape Rate <span class="vk-demo-badge">Demo Stat</span></span>
+              </div>
+              <h3>Da Vinci's Inverted Catacomb</h3>
+              <p>Our ultimate challenge. Reverse mirror writing, weighted celestial pulleys, multi-ring cryptex cylinders, and interlocking Renaissance clockwork.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–10 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 90 Minutes</span>
+              </div>
+              <div class="vk-room-footer">
+                <div class="vk-room-price">
+                  <small>Price</small>
+                  <strong>$48 / Player</strong>
+                </div>
+                <button type="button" class="vk-button vk-button-primary" data-book-room="davinci" style="padding: 8px 18px; font-size: 13px;">
+                  Book Chamber
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 4: BEGINNER-FRIENDLY ROOMS (4 CHAMBERS)
+         ====================================================== -->
+    <section class="vk-difficulty-section" id="beginnerRooms">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Tier 1 & Tier 2</div>
+          <h2 class="vk-section-title">Beginner-Friendly Chambers</h2>
+          <p class="vk-section-desc">
+            Perfect for first-timers, casual sleuths, family outings with teenagers, and birthday squads.
+          </p>
+        </div>
+
+        <!-- HELPER TIP BANNER -->
+        <div class="vk-tip-banner" data-reveal style="--tip-bg: rgba(16, 185, 129, 0.1); --tip-border: rgba(16, 185, 129, 0.3); --tip-color: #10b981;">
+          <i class="fa-solid fa-lightbulb"></i>
+          <div>
+            <strong>Why Start in Beginner Chambers?</strong>
+            These experiences feature linear puzzle structures where one clue clearly unlocks the next step. Our Game Master provides gentle guidance hints as needed without any penalty. Zero jumpscares.
+          </div>
+        </div>
+
+        <div class="vk-rooms-grid">
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_toymaker_new.jpg" alt="The Lost Toymaker's Workshop" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 1 · Beginner · 74% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Whimsical Mystery</span>
+                <span class="vk-room-rate">60 Minutes</span>
+              </div>
+              <h3>The Lost Toymaker's Workshop</h3>
+              <p>Explore an enchanting Bavarian workshop where antique clockwork music boxes hold the key to uncovering the master craftsman's golden blueprint.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $32/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="toymaker" style="width: 100%;">
+                Book This Beginner Room
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_magician_new.jpg" alt="The Magician's Dressing Room" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 2 · Beginner · 66% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Stage Illusion</span>
+                <span class="vk-room-rate">60 Minutes</span>
+              </div>
+              <h3>The Magician's Dressing Room</h3>
+              <p>Step behind the velvet curtain into a world of classic illusions, locked birdcages, secret wand drawers, and hidden trapdoors.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $34/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="magician" style="width: 100%;">
+                Book This Beginner Room
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_crypt_new.jpg" alt="The Alchemist's Secret Crypt" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 2 · Beginner · 68% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Medieval Mystery</span>
+                <span class="vk-room-rate">60 Minutes</span>
+              </div>
+              <h3>The Alchemist's Secret Crypt</h3>
+              <p>Decipher ancient parchment scrolls, balance botanical herb scales, and solve the riddle of the medieval alchemical crucible.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $34/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="crypt" style="width: 100%;">
+                Book This Beginner Room
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_clockwork_new.jpg" alt="Clockwork Grand Station" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #10b981;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> star </span>
+                Tier 1 · Beginner · 72% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Steampunk Mystery</span>
+                <span class="vk-room-rate">60 Minutes</span>
+              </div>
+              <h3>Clockwork Grand Station</h3>
+              <p>Synchronize steam gauges, rotate massive brass pendulum cogs, and restore locomotive track switches before departure.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 2–6 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $32/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="clockwork" style="width: 100%;">
+                Book This Beginner Room
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 5: INTERMEDIATE CHALLENGE ROOMS (4 CHAMBERS)
+         ====================================================== -->
+    <section class="vk-difficulty-section" id="intermediateRooms" style="background: var(--vk-bg-subtle);">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Tier 3</div>
+          <h2 class="vk-section-title">Intermediate Challenge Rooms</h2>
+          <p class="vk-section-desc">
+            Designed for seasoned escapers, corporate colleagues, and squads seeking parallel multi-threaded puzzles.
+          </p>
+        </div>
+
+        <div class="vk-tip-banner" data-reveal style="--tip-bg: rgba(245, 158, 11, 0.1); --tip-border: rgba(245, 158, 11, 0.3); --tip-color: #f59e0b;">
+          <i class="fa-solid fa-compass"></i>
+          <div>
+            <strong>Intermediate Strategy Tip:</strong>
+            These chambers feature branching paths where 2 to 3 puzzles can be solved at the same time. Divide your squad into specialized sub-teams (e.g. Codebreakers, Mechanists, and Searchers) for maximum efficiency.
+          </div>
+        </div>
+
+        <div class="vk-rooms-grid">
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_pirate_new.jpg" alt="Curse of Blackbeard's Galleon" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate · 48% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">High Seas Adventure</span>
+                <span class="vk-room-rate">60 Minutes</span>
+              </div>
+              <h3>Curse of Blackbeard's Galleon</h3>
+              <p>Solve nautical compass maps, balance rum keg scales, and find the secret brig escape key before rising seawater seals the cargo hatch.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $38/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="pirate" style="width: 100%;">
+                Book Galleon Chamber
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_sherlock_new.jpg" alt="Sherlock's Baker Street Study" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate · 44% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Victorian Detective</span>
+                <span class="vk-room-rate">60 Minutes</span>
+              </div>
+              <h3>Sherlock's Baker Street Study</h3>
+              <p>Moriarty's chemical bomb is primed to detonate. Examine microscope slides, decode classical sheet music, and defuse the explosive.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–7 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $38/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="sherlock" style="width: 100%;">
+                Book Sherlock Study
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_chernobyl_new.jpg" alt="Chernobyl Reactor Meltdown" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate · 38% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Industrial Thriller</span>
+                <span class="vk-room-rate">75 Minutes</span>
+              </div>
+              <h3>Chernobyl Reactor Meltdown</h3>
+              <p>Analog Soviet dials, flashing amber sirens, and Geiger counter audio. Reconnect backup generators and trigger emergency cooling rods.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $42/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="chernobyl" style="width: 100%;">
+                Book Reactor Chamber
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_submarine_new.jpg" alt="Submarine Abyss 404" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #f59e0b;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> bolt </span>
+                Tier 3 · Intermediate · 40% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Deep Sea Immersion</span>
+                <span class="vk-room-rate">60 Minutes</span>
+              </div>
+              <h3>Submarine Abyss 404</h3>
+              <p>Restore battery banks under emergency red lighting, decipher acoustic hydrophone sonar pings, and seal the flooded torpedo room.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 3–7 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 60 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $40/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="submarine" style="width: 100%;">
+                Book Submarine Chamber
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 6: ADVANCED AND EXPERT ROOMS (4 CHAMBERS)
+         ====================================================== -->
+    <section class="vk-difficulty-section" id="expertRooms">
+      <div class="vk-container">
+        <div class="vk-section-heading" data-reveal>
+          <div class="vk-section-eyebrow">Tier 4 & Tier 5</div>
+          <h2 class="vk-section-title">Advanced & Expert Gauntlets</h2>
+          <p class="vk-section-desc">
+            Our most demanding rooms. Non-linear cryptography, complex electronics, and harsh countdowns.
+          </p>
+        </div>
+
+        <div class="vk-tip-banner" data-reveal style="--tip-bg: rgba(239, 68, 68, 0.1); --tip-border: rgba(239, 68, 68, 0.35); --tip-color: #ef4444;">
+          <i class="fa-solid fa-skull"></i>
+          <div>
+            <strong>Expert Warning:</strong>
+            These chambers have sub-25% escape rates. Puzzles require abstract thinking, spatial memory, and physical electronic wiring. Game Master hints will only be provided upon unanimous squad request.
+          </div>
+        </div>
+
+        <div class="vk-rooms-grid">
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_sanatorium_new.jpg" alt="The Zodiac Sanatorium" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> warning </span>
+                Tier 4 · Advanced · 24% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Psychological Horror</span>
+                <span class="vk-room-rate">75 Minutes</span>
+              </div>
+              <h3>The Zodiac Sanatorium</h3>
+              <p>Decipher mathematical ciphers typed on vintage Underwood typewriters and match psychiatric records to unlock padded observation chambers.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $44/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="sanatorium" style="width: 100%;">
+                Attempt Sanatorium
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_area51_new.jpg" alt="Area 51 Containment Breach" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> skull </span>
+                Tier 4 · Expert · 21% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Sci-Fi Biohazard</span>
+                <span class="vk-room-rate">75 Minutes</span>
+              </div>
+              <h3>Area 51 Containment Breach</h3>
+              <p>Reboot alien cryogenic chambers using sound frequency matching, infrared prism alignment, and cryogenic decontamination override locks.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $44/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="area51" style="width: 100%;">
+                Attempt Area 51
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_goldheist_new.jpg" alt="Federal Reserve Gold Heist" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> skull </span>
+                Tier 4 · Expert · 19% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Tactical Heist Matrix</span>
+                <span class="vk-room-rate">75 Minutes</span>
+              </div>
+              <h3>Federal Reserve Gold Heist</h3>
+              <p>Coordinate precision timing across split squads to cut auxiliary power grids, crack rotary safe combinations, and bag the gold reserves.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–8 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 75 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $46/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="bank" style="width: 100%;">
+                Attempt Gold Heist
+              </button>
+            </div>
+          </article>
+
+          <article class="vk-room-card" data-reveal>
+            <div class="vk-room-image">
+              <img src="assets/images/chamber_davinci_new.jpg" alt="Da Vinci's Inverted Catacomb" loading="lazy" />
+              <span class="vk-difficulty-pill" style="--diff-color: #ef4444;">
+                <span class="material-symbols-rounded" style="font-size:14px;"> skull </span>
+                Tier 5 · Mastermind · 14% Escape
+              </span>
+            </div>
+            <div class="vk-room-content">
+              <div class="vk-room-header">
+                <span class="vk-room-genre">Renaissance Cryptography</span>
+                <span class="vk-room-rate">90 Minutes</span>
+              </div>
+              <h3>Da Vinci's Inverted Catacomb</h3>
+              <p>The ultimate test of mechanical intellect. Rotate mirror writing gears, balance counterweights, and decode celestial astrolabes to escape.</p>
+              <div class="vk-room-specs">
+                <span class="vk-spec-item"><i class="fa-solid fa-users"></i> 4–10 Players</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-clock"></i> 90 Minutes</span>
+                <span class="vk-spec-item"><i class="fa-solid fa-tag"></i> $48/player</span>
+              </div>
+              <button type="button" class="vk-button vk-button-primary" data-book-room="davinci" style="width: 100%;">
+                Attempt Da Vinci
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 7: BOOKING CTA AND FOOTER
+         ====================================================== -->
+    <section class="vk-section" id="roomsCta" style="padding-top: 0;">
+      <div class="vk-container">
+        <div class="vk-final-cta-box" data-reveal style="background-image: url('assets/images/rooms_cta_bg.jpg');">
+          <div class="vk-final-cta-content">
+            <h2>Ready to Lock In Your Mission?</h2>
+            <p>
+              Chambers are strictly private and sanitize thoroughly between sessions. Reserve your target room and claim your squad's place on our Hall of Legends.
+            </p>
+          </div>
+          <div class="vk-final-cta-action">
+            <button type="button" class="vk-primary-button" data-modal-open="bookingModalOverlay">
+              Reserve Your Chosen Chamber
+              <span class="material-symbols-rounded"> arrow_forward </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================
+       GLOBAL QUICK BOOKING MODAL POPUP
+       ====================================================== -->
+  <div class="vk-modal-overlay" id="bookingModalOverlay">
+    <div class="vk-modal-card">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+
+      <div id="bookingFormContainer">
+        <h2 class="vk-modal-title">Reserve a Chamber</h2>
+        <p class="vk-modal-subtitle">Pick your quest, lock in your squad slot, and prepare for immersion.</p>
+
+        <form class="vk-modal-form" id="popupBookingForm">
+          <div class="vk-modal-field">
+            <label for="modalChamber">Select Escape Chamber</label>
+            <select id="modalChamber" required>
+              <option value="">Choose your quest...</option>
+              <option value="toymaker">The Lost Toymaker's Workshop (Tier 1)</option>
+              <option value="magician">The Magician's Dressing Room (Tier 2)</option>
+              <option value="crypt">The Alchemist's Secret Crypt (Tier 2)</option>
+              <option value="clockwork">Clockwork Grand Station (Tier 1)</option>
+              <option value="pirate">Curse of Blackbeard's Galleon (Tier 3)</option>
+              <option value="sherlock">Sherlock's Baker Street Study (Tier 3)</option>
+              <option value="chernobyl">Chernobyl Reactor Meltdown (Tier 3)</option>
+              <option value="submarine">Submarine Abyss 404 (Tier 3)</option>
+              <option value="sanatorium">The Zodiac Sanatorium (Tier 4)</option>
+              <option value="area51">Area 51 Containment Breach (Tier 4)</option>
+              <option value="bank">Federal Reserve Gold Heist (Tier 4)</option>
+              <option value="davinci">Da Vinci's Inverted Catacomb (Tier 5)</option>
+            </select>
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalDate">Mission Date</label>
+            <input type="date" id="modalDate" required />
+          </div>
+
+          <div class="vk-modal-field">
+            <label for="modalSquadSize">Squad Size (Players)</label>
+            <select id="modalSquadSize" required>
+              <option value="2">2 Players (Duo Infiltration)</option>
+              <option value="4" selected>4 Players (Recommended Squad)</option>
+              <option value="6">6 Players (Full Investigation Unit)</option>
+              <option value="8">8 Players (Maximum Tactical Unit)</option>
+              <option value="10+">10+ Players (Corporate / Dual Room)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="vk-modal-submit">Confirm Mission Reservation</button>
+        </form>
+      </div>
+
+      <!-- SUCCESS CONFIRMATION STATE -->
+      <div class="vk-success-popup" id="bookingSuccessContainer">
+        <div class="vk-success-icon">
+          <span class="material-symbols-rounded"> verified </span>
+        </div>
+        <h3 class="vk-success-title">Mission Locked In!</h3>
+        <p class="vk-success-desc">
+          Your vault reservation has been secured. A confidential mission briefing document and entry code have been dispatched to your email.
+        </p>
+        <button type="button" class="vk-success-done" id="closeSuccessBookingBtn">Ready for Mission</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       SUBSCRIBE SUCCESS MODAL POPUP
+       ====================================================== -->
+  <div class="vk-modal-overlay" id="subscribeModalOverlay">
+    <div class="vk-modal-card" style="text-align: center; max-width: 420px;">
+      <button type="button" class="vk-modal-close" data-modal-close aria-label="Close modal">
+        <span class="material-symbols-rounded"> close </span>
+      </button>
+      <div class="vk-success-icon" style="margin: 0 auto 16px;">
+        <span class="material-symbols-rounded"> mark_email_read </span>
+      </div>
+      <h3 class="vk-success-title">Cipher Dispatch Enlisted!</h3>
+      <p class="vk-success-desc">
+        You are now on the confidential VIP dispatch list. Secret room releases, seasonal puzzle ciphers, and exclusive discounts will land in your inbox.
+      </p>
+      <button type="button" class="vk-success-done" data-modal-close style="width: 100%;">Understood</button>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       GLOBAL FOOTER
+       ====================================================== -->
+  <footer class="vk-footer">
+    <div class="vk-footer-main">
+      <div class="vk-container">
+        <div class="vk-footer-grid">
+          <div class="vk-footer-brand">
+            <a href="index.html" class="vk-brand">
+              <div class="vk-brand-mark">
+                <span class="material-symbols-rounded"> key </span>
+              </div>
+              <div class="vk-brand-name">Vault & <span>Key</span></div>
+            </a>
+            <p class="vk-footer-description">
+              Next-generation cinematic escape rooms and physical puzzle gauntlets. Engineered with authentic mechanical props, automated sensors, and deep storylines.
+            </p>
+            <div class="vk-footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="vk-social">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="vk-social">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="vk-social">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="vk-social">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="vk-footer-column">
+            <h3>Chambers</h3>
+            <a href="rooms.html">Toymaker's Workshop</a>
+            <a href="rooms.html">Blackbeard's Galleon</a>
+            <a href="rooms.html">Sherlock's Study</a>
+            <a href="rooms.html">Chernobyl Meltdown</a>
+            <a href="rooms.html">Da Vinci Catacomb</a>
+          </div>
+
+          <div class="vk-footer-column">
+            <h3>Experiences</h3>
+            <a href="pricing.html">Corporate Team Building</a>
+            <a href="pricing.html">Friends & Night Quests</a>
+            <a href="pricing.html">Family Detective Mode</a>
+            <a href="pricing.html">Birthday Packages</a>
+            <a href="dashboard.html">Player Leaderboards</a>
+          </div>
+
+          <div class="vk-footer-column">
+            <h3>Venue & Help</h3>
+            <a href="about.html">About Vault & Key</a>
+            <a href="contact.html">Venue Location & Map</a>
+            <a href="contact.html">Safety & Sensor Protocols</a>
+            <a href="contact.html">Frequently Asked Questions</a>
+            <a href="dashboard.html">Player Mission Portal</a>
+          </div>
+
+          <div class="vk-footer-cta">
+            <div class="vk-footer-cta-card">
+              <div class="vk-footer-cta-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <strong>Cipher Dispatch</strong>
+                <p>Receive secret monthly riddle perks.</p>
+              </div>
+            </div>
+            <form id="footerNewsletterForm" style="display: flex; gap: 8px; width: 100%; margin-top: 12px;">
+              <input
+                type="email"
+                id="footerSubscriberEmail"
+                placeholder="Enter operative email"
+                required
+                style="flex: 1; padding: 10px 14px; border-radius: var(--vk-radius-pill); background: var(--vk-bg-subtle); border: 1px solid var(--vk-border); color: var(--vk-text); font-size: 13px; outline: none;"
+              />
+              <button
+                type="submit"
+                class="vk-footer-button"
+                style="border:none; cursor:pointer; white-space: nowrap; padding: 5px 18px; width: auto;"
+              >
+                <span>Enlist</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vk-footer-bottom">
+      <div class="vk-container">
+        <div class="vk-footer-bottom-inner">
+          <p>© 2026 Vault & Key Adventure Venues Inc. All rights reserved.</p>
+          <div class="vk-footer-bottom-links">
+            <a href="contact.html">Terms & Rules</a>
+            <a href="contact.html">Privacy Policy</a>
+            <a href="contact.html">Booking Guarantee</a>
+          </div>
+          <div>Engineered for real-world mystery.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GLOBAL SCRIPT -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- ROOMS PAGE INTERACTIONS SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Minimum reservation date to tomorrow
+      const dateInput = document.getElementById("modalDate");
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.min = tomorrow.toISOString().split("T")[0];
+        dateInput.value = tomorrow.toISOString().split("T")[0];
+      }
+
+      // Functional Difficulty Filters in Section 3
+      const filterBtns = document.querySelectorAll(".vk-filter-btn");
+      const roomCards = document.querySelectorAll("#catalogGrid .vk-room-card");
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const diff = btn.getAttribute("data-difficulty");
+
+          roomCards.forEach(card => {
+            if (diff === "all" || card.getAttribute("data-diff") === diff) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Pre-select chamber when clicking room booking CTA
+      const modalOverlay = document.getElementById("bookingModalOverlay");
+      const chamberSelect = document.getElementById("modalChamber");
+
+      document.querySelectorAll("[data-book-room]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const roomCode = btn.getAttribute("data-book-room");
+          if (chamberSelect && roomCode) {
+            chamberSelect.value = roomCode;
+          }
+          if (modalOverlay) {
+            modalOverlay.classList.add("is-active");
+          }
+        });
+      });
+
+      // Quick Booking Form inside modal
+      const popupForm = document.getElementById("popupBookingForm");
+      const formContainer = document.getElementById("bookingFormContainer");
+      const successContainer = document.getElementById("bookingSuccessContainer");
+      const closeSuccessBtn = document.getElementById("closeSuccessBookingBtn");
+
+      if (popupForm) {
+        popupForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const chamber = document.getElementById("modalChamber").value;
+          const date = document.getElementById("modalDate").value;
+          const squad = document.getElementById("modalSquadSize").value;
+
+          if (chamber && date && squad) {
+            localStorage.setItem("vk_quick_booking_rooms", JSON.stringify({ chamber, date, squad, timestamp: Date.now() }));
+            formContainer.style.display = "none";
+            successContainer.classList.add("is-active");
+            popupForm.reset();
+          }
+        });
+      }
+
+      if (closeSuccessBtn && modalOverlay) {
+        closeSuccessBtn.addEventListener("click", () => {
+          modalOverlay.classList.remove("is-active");
+          setTimeout(() => {
+            formContainer.style.display = "block";
+            successContainer.classList.remove("is-active");
+          }, 400);
+        });
+      }
+
+      // Newsletter Form
+      const newsletterForm = document.getElementById("footerNewsletterForm");
+      const subscribeModal = document.getElementById("subscribeModalOverlay");
+      if (newsletterForm && subscribeModal) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById("footerSubscriberEmail");
+          if (emailInput && emailInput.value) {
+            subscribeModal.classList.add("is-active");
+            emailInput.value = "";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
