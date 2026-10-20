@@ -292,7 +292,7 @@ function initScrollReveal() {
    05. INTERACTIVE RIPPLE EFFECT
    ============================================================ */
 function initRippleEffect() {
-  document.querySelectorAll('button:not(.vk-nav-link):not(.vk-nav-dropdown-trigger):not(.vk-icon-button):not(.vk-direction-toggle):not(.vk-menu-toggle), .vk-button:not(.vk-nav-link), .vk-primary-button, .vk-secondary-button').forEach(btn => {
+  document.querySelectorAll('button:not(.vk-nav-link):not(.vk-nav-dropdown-trigger):not(.vk-icon-button):not(.vk-direction-toggle):not(.vk-menu-toggle):not(.vk-password-toggle), .vk-button:not(.vk-nav-link), .vk-primary-button, .vk-secondary-button').forEach(btn => {
     btn.style.position = 'relative';
     btn.style.overflow = 'hidden';
 
@@ -447,4 +447,3 @@ function initPageLoader() {
     setTimeout(dismissLoader, 2000);
   }
 }
-
