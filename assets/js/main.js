@@ -6,6 +6,7 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPageLoader();
   initTheme();
   initRTL();
   initHomeDropdown();
@@ -398,5 +399,52 @@ function initBackToTop() {
       behavior: 'smooth'
     });
   });
+}
+
+/* ============================================================
+   09. PAGE PRELOADER (CIPHER PULSE ENGINE)
+   ============================================================ */
+function initPageLoader() {
+  let loader = document.getElementById('vkPageLoader');
+  if (!loader) {
+    loader = document.createElement('div');
+    loader.id = 'vkPageLoader';
+    loader.className = 'vk-page-loader';
+    loader.setAttribute('aria-hidden', 'true');
+    loader.innerHTML = `
+      <div class="vk-loader-spinner-wrap">
+        <div class="vk-loader-vault-ring"></div>
+        <div class="vk-loader-vault-ring-inner"></div>
+        <div class="vk-loader-core">
+          <span class="material-symbols-rounded"> key </span>
+        </div>
+      </div>
+      <div class="vk-loader-text">
+        <span class="vk-loader-title">VAULT &amp; KEY</span>
+        <span class="vk-loader-subtitle">Deciphering Chamber...</span>
+      </div>
+    `;
+    if (document.body) {
+      document.body.prepend(loader);
+    }
+  }
+
+  const dismissLoader = () => {
+    if (loader && !loader.classList.contains('is-loaded')) {
+      loader.classList.add('is-loaded');
+      setTimeout(() => {
+        if (loader && loader.parentNode) loader.remove();
+      }, 500);
+    }
+  };
+
+  if (document.readyState === 'complete') {
+    setTimeout(dismissLoader, 300);
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(dismissLoader, 350);
+    });
+    setTimeout(dismissLoader, 2000);
+  }
 }
 

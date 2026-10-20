@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Explore all escape room chambers at Vault & Key. Filter by difficulty: Beginner, Intermediate, and Advanced Expert. Book your private real-world puzzle adventure today."
+    content="Explore all escape room chambers at Vault & Key across Beginner, Intermediate, and Advanced Expert tiers. Book your private real-world puzzle adventure today."
   />
   <meta name="theme-color" content="#f59e0b" />
   <title>Chambers & Quests Catalog | Vault & Key</title>
@@ -33,6 +33,21 @@
 </head>
 
 <body>
+  <!-- PAGE PRELOADER -->
+  <div id="vkPageLoader" class="vk-page-loader" aria-hidden="true">
+    <div class="vk-loader-spinner-wrap">
+      <div class="vk-loader-vault-ring"></div>
+      <div class="vk-loader-vault-ring-inner"></div>
+      <div class="vk-loader-core">
+        <span class="material-symbols-rounded"> key </span>
+      </div>
+    </div>
+    <div class="vk-loader-text">
+      <span class="vk-loader-title">VAULT &amp; KEY</span>
+      <span class="vk-loader-subtitle">Deciphering Chamber...</span>
+    </div>
+  </div>
+
   <!-- ============================================================
        00. GLOBAL HEADER & FLOATING NAVIGATION
        ============================================================ -->
@@ -207,9 +222,9 @@
               Browse All Chambers
               <span class="material-symbols-rounded"> arrow_downward </span>
             </a>
-            <a href="#beginnerRooms" class="vk-secondary-button">
-              <span class="material-symbols-rounded"> filter_list </span>
-              Beginner-Friendly
+            <a href="#adventuresIntro" class="vk-secondary-button">
+              <span class="material-symbols-rounded"> explore </span>
+              Venue Immersion
             </a>
           </div>
 
@@ -283,31 +298,11 @@
     <section class="vk-section" id="roomsCatalog" style="background: var(--vk-bg-subtle);">
       <div class="vk-container">
         <div class="vk-section-heading" data-reveal>
-          <div class="vk-section-eyebrow">Interactive Filter</div>
+          <div class="vk-section-eyebrow">Mission Chamber Catalog</div>
           <h2 class="vk-section-title">All Available Escape Chambers</h2>
           <p class="vk-section-desc">
-            Filter our chambers by challenge level or scroll down to explore each tier in depth.
+            Explore our complete collection of movie-grade physical escape room adventures across all challenge levels.
           </p>
-        </div>
-
-        <!-- FILTER BUTTONS -->
-        <div class="vk-filter-bar" data-reveal>
-          <button type="button" class="vk-filter-btn active" data-difficulty="all">
-            <span class="material-symbols-rounded" style="font-size:18px;"> apps </span>
-            <span>All Chambers (12)</span>
-          </button>
-          <button type="button" class="vk-filter-btn" data-difficulty="beginner">
-            <span class="material-symbols-rounded" style="font-size:18px;"> star </span>
-            <span>Beginner (Tier 1–2)</span>
-          </button>
-          <button type="button" class="vk-filter-btn" data-difficulty="intermediate">
-            <span class="material-symbols-rounded" style="font-size:18px;"> bolt </span>
-            <span>Intermediate (Tier 3)</span>
-          </button>
-          <button type="button" class="vk-filter-btn" data-difficulty="expert">
-            <span class="material-symbols-rounded" style="font-size:18px;"> skull </span>
-            <span>Advanced &amp; Expert (Tier 4–5)</span>
-          </button>
         </div>
 
         <!-- FULL CATALOG GRID (12 CHAMBERS · 4 PER FILTER ROW) -->
@@ -1316,26 +1311,6 @@
         dateInput.min = tomorrow.toISOString().split("T")[0];
         dateInput.value = tomorrow.toISOString().split("T")[0];
       }
-
-      // Functional Difficulty Filters in Section 3
-      const filterBtns = document.querySelectorAll(".vk-filter-btn");
-      const roomCards = document.querySelectorAll("#catalogGrid .vk-room-card");
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-          const diff = btn.getAttribute("data-difficulty");
-
-          roomCards.forEach(card => {
-            if (diff === "all" || card.getAttribute("data-diff") === diff) {
-              card.style.display = "flex";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
 
       // Pre-select chamber when clicking room booking CTA
       const modalOverlay = document.getElementById("bookingModalOverlay");

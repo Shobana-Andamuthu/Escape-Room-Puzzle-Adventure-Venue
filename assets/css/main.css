@@ -5097,9 +5097,21 @@ html:not(.dark) .vk-auth-layout::before {
 }
 
 .vk-auth-navbar {
-  position: relative;
-  z-index: 2;
-  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 14px 0;
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--vk-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+html:not(.dark) .vk-auth-navbar {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .vk-auth-main {
@@ -6620,4 +6632,123 @@ button {
   .vk-modal-card form > div[style*="grid-template-columns"] {
     grid-template-columns: minmax(0, 1fr) !important;
   }
+}
+
+/* ============================================================
+   PAGE PRELOADER: VAULT CIPHER PULSE ENGINE
+   ============================================================ */
+.vk-page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #060911;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s ease;
+  pointer-events: auto;
+}
+
+.vk-page-loader.is-loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.vk-loader-spinner-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vk-loader-vault-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2.5px dashed rgba(245, 158, 11, 0.4);
+  border-top-color: var(--vk-primary);
+  border-right-color: var(--vk-primary);
+  animation: vkLoaderSpin 2.4s linear infinite;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.vk-loader-vault-ring-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 2px solid rgba(245, 158, 11, 0.15);
+  border-bottom-color: var(--vk-primary);
+  animation: vkLoaderSpinReverse 1.6s linear infinite;
+}
+
+.vk-loader-core {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(9, 13, 22, 0.9) 70%);
+  border: 1.5px solid var(--vk-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vk-primary);
+  animation: vkLoaderPulse 1.8s ease-in-out infinite;
+  box-shadow: 0 0 16px var(--vk-primary-glow);
+}
+
+.vk-loader-core .material-symbols-rounded {
+  font-size: 22px;
+}
+
+.vk-loader-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.vk-loader-title {
+  font-family: var(--vk-font-heading);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.vk-loader-subtitle {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--vk-primary);
+  font-weight: 700;
+  animation: vkLoaderTextFade 1.6s ease-in-out infinite;
+}
+
+@keyframes vkLoaderSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes vkLoaderSpinReverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes vkLoaderPulse {
+  0%, 100% {
+    transform: scale(0.96);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 24px rgba(245, 158, 11, 0.6);
+  }
+}
+
+@keyframes vkLoaderTextFade {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
 }
